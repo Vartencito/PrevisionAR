@@ -33,22 +33,5 @@ public class CodigoDelMotorTests
 
     private static bool EsComentario(string linea) => linea.TrimStart().StartsWith("//", StringComparison.Ordinal);
 
-    private static IEnumerable<string> ArchivosDelMotor()
-    {
-        var carpeta = Path.Combine(RaizDelRepositorio(), "src", "PrevisionAR.Motor");
-        return Directory.EnumerateFiles(carpeta, "*.cs", SearchOption.AllDirectories)
-            .Where(ruta => !ruta.Contains($"{Path.DirectorySeparatorChar}obj{Path.DirectorySeparatorChar}", StringComparison.Ordinal)
-                        && !ruta.Contains($"{Path.DirectorySeparatorChar}bin{Path.DirectorySeparatorChar}", StringComparison.Ordinal));
-    }
-
-    private static string RaizDelRepositorio()
-    {
-        var carpeta = new DirectoryInfo(AppContext.BaseDirectory);
-        while (carpeta is not null && !File.Exists(Path.Combine(carpeta.FullName, "PrevisionAR.slnx")))
-        {
-            carpeta = carpeta.Parent;
-        }
-
-        return carpeta?.FullName ?? throw new InvalidOperationException("No se encontró PrevisionAR.slnx.");
-    }
+    private static IEnumerable<string> ArchivosDelMotor() => Repositorio.ArchivosCs("src", "PrevisionAR.Motor");
 }

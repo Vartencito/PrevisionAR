@@ -63,7 +63,8 @@ docs/
   normativa/                 Fichas de reglas (R001, R002, ...)
   conocimiento/              Notas de dominio (no normativa) y preguntas para el previsionalista
 .claude/
-  agents/                    Agentes especializados (investigador-previsional)
+  agents/                    Agentes: investigador-previsional, revisor-de-codigo
+  commands/                  Flujos: /nueva-ficha, /implementar-ficha, /procesar-respuestas
 .github/
   workflows/ci.yml           Compila y corre tests en cada push y PR
   dependabot.yml             Actualizaciones mensuales de dependencias
@@ -90,6 +91,9 @@ dotnet run --project src/PrevisionAR.Web
 - **CI:** un cambio no está terminado hasta que el pipeline de GitHub Actions está en verde.
 - **Dependabot:** los PRs de actualización con CI en verde los puede mergear la IA sin consultar. Si una actualización es de versión mayor de un paquete del motor o rompe algo, se consulta.
 - **Arquitectura verificada por tests:** las reglas de este archivo que se puedan comprobar con código tienen su test en `tests/PrevisionAR.Motor.Tests/Arquitectura/`.
+- **Cuatro capas de tests** (ADR 0004): casos de la ficha, invariantes (`Invariantes/`, con semilla fija), trazabilidad ficha ↔ tests y arquitectura. Una ficha con "implementada" en su Estado activa el control de trazabilidad.
+- **Revisión:** antes de cerrar una funcionalidad, pedir revisión al agente `revisor-de-codigo`.
+- **Permisos:** la IA no edita `.claude/settings.json` ni ninguna configuración de permisos; eso lo decide el responsable.
 
 ## Evolución técnica
 
@@ -105,6 +109,8 @@ dotnet run --project src/PrevisionAR.Web
 - Material de cursos o de terceros (PDFs, apuntes) **no se sube al repo**: solo se resume con palabras propias y se cita de dónde salió.
 
 ## Flujo de trabajo
+
+Los comandos `/nueva-ficha`, `/implementar-ficha` y `/procesar-respuestas` detallan estos pasos.
 
 1. El responsable pide una funcionalidad (surgida de los abogados).
 2. La IA la baja a requisito → ficha en `docs/normativa/` con fuente, vigencia, criterios y casos.

@@ -1,0 +1,70 @@
+@using PrevisionAR.Motor.Computo
+
+@* Muestra el resultado de R001 tal como lo devuelve el motor. No calcula nada. *@
+<section>
+    <h2>Cómputo de servicios (@Resultado.Regla)</h2>
+    <p class="total">
+        Total de servicios con aportes: <strong>@Resultado.Total</strong>
+        (@Resultado.Total.TotalMeses meses · @Resultado.Total.DiasCalendario días calendario)
+    </p>
+    <p>Calculado al @Resultado.FechaDeCalculo.ToString("dd/MM/yyyy").</p>
+
+    <h3>Desglose por tramo y tipo</h3>
+    <table class="tabla">
+        <thead>
+            <tr>
+                <th>Tramo</th>
+                <th>Total</th>
+                <th>Solo dependencia (n)</th>
+                <th>Solo autónomo (m)</th>
+                <th>Simultáneo (p)</th>
+            </tr>
+        </thead>
+        <tbody>
+            <FilaDesglose Nombre="Hasta 30/06/1994 (PC)" Desglose="Resultado.HastaJunio1994" />
+            <FilaDesglose Nombre="Desde 01/07/1994 (PAP)" Desglose="Resultado.DesdeJulio1994" />
+        </tbody>
+    </table>
+
+    <h3>Superposiciones (contadas una sola vez)</h3>
+    @if (Resultado.Superposiciones.Count == 0)
+    {
+        <p>No hay.</p>
+    }
+    else
+    {
+        <ul>
+            @foreach (var s in Resultado.Superposiciones)
+            {
+                <li>@s.PeriodoA y @s.PeriodoB: del @s.Desde.ToString("dd/MM/yyyy") al @s.Hasta.ToString("dd/MM/yyyy") (@s.DiasCalendario días)</li>
+            }
+        </ul>
+    }
+
+    <h3>Períodos no computados</h3>
+    @if (Resultado.NoComputados.Count == 0)
+    {
+        <p>Ninguno.</p>
+    }
+    else
+    {
+        <ul>
+            @foreach (var n in Resultado.NoComputados)
+            {
+                <li>@n.Periodo.Empleador: @DescribirMotivo(n.Motivo)</li>
+            }
+        </ul>
+    }
+</section>
+
+@code {
+    [Parameter, EditorRequired]
+    public ResultadoDelComputo Resultado { get; set; } = default!;
+
+    private static string DescribirMotivo(MotivoNoComputado motivo) => motivo switch
+    {
+        MotivoNoComputado.SinAportes => "sin aportes",
+        MotivoNoComputado.PosteriorALaFechaDeCalculo => "empieza después de la fecha de cálculo",
+        _ => motivo.ToString(),
+    };
+}

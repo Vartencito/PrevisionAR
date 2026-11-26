@@ -25,5 +25,27 @@ jobs:
       - name: Compilar
         run: dotnet build --no-restore --configuration Release
 
-      - name: Tests
-        run: dotnet test --no-build --configuration Release --verbosity normal
+      - name: Tests (con medición de cobertura)
+        run: >
+          dotnet test --no-build --configuration Release --verbosity normal
+          --collect:"XPlat Code Coverage" --results-directory ./resultados-tests
+
+      # Informe de cobertura: qué porcentaje del código ejecutan los tests.
+      # Se muestra en el resumen de cada ejecución del CI y se guarda como archivo descargable.
+      - name: Informe de cobertura
+        if: always()
+        run: |
+          dotnet tool install --global dotnet-reportgenerator-globaltool
+          reportgenerator \
+            -reports:"./resultados-tests/**/coverage.cobertura.xml" \
+            -targetdir:./cobertura \
+            -reporttypes:"MarkdownSummaryGithub;Html" \
+            -assemblyfilters:"+PrevisionAR.Motor"
+          cat ./cobertura/SummaryGithub.md >> "$GITHUB_STEP_SUMMARY"
+
+      - name: Guardar informe de cobertura
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: cobertura
+          path: ./cobertura

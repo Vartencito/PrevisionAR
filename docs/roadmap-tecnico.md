@@ -20,13 +20,18 @@ La IA actualiza este archivo cada vez que agrega una pieza o cambia el plan.
 | Test que revisa el código del motor | Prohíbe `DateTime.Now`, `double` y `float` en el motor (alternativa liviana a un analizador, sin paquetes) | 2026-11-26 |
 | Pantalla de prueba en la Web | Cargar una historia laboral y ver el cómputo y los requisitos (sin lógica propia) | 2026-11-26 |
 | Agente `investigador-previsional` | Investiga normativa y clasifica preguntas con fuentes | 2026-11-26 |
+| Agente `revisor-de-codigo` y comandos `/nueva-ficha`, `/implementar-ficha`, `/procesar-respuestas` | Revisión con ojos nuevos y flujo repetible (ADR 0004) | 2026-11-26 |
+| Tests de invariantes | Cientos de historias generadas con semilla fija (ADR 0004) | 2026-11-26 |
+| Test de trazabilidad ficha ↔ tests | Falla si un caso o criterio de una ficha implementada no tiene test | 2026-11-26 |
+| Medición de cobertura en CI | Informe en cada ejecución; por ahora no bloquea | 2026-11-26 |
+| Pantalla separada en componentes (`Components/Resultados`) | Base reutilizable para el informe | 2026-11-26 |
 
 ## Próximas piezas (con su disparador)
 
 | Pieza | Se agrega cuando... | Etapa |
 |-------|---------------------|-------|
-| Medición de cobertura de tests en CI | Haya varias reglas implementadas | MVP |
-| Tests de componentes de la UI (bUnit) | La Web tenga la primera pantalla con lógica | MVP |
+| Umbral mínimo de cobertura que bloquee el CI | La cobertura del motor se estabilice (varias fichas) | MVP |
+| Tests de componentes de la UI (bUnit) | La Web tenga lógica propia (hoy solo muestra lo que da el motor) | MVP |
 | Generación del informe (PDF o HTML imprimible) | Se defina el formato con los abogados | MVP |
 | Persistencia local con SQLite | Haya que guardar casos entre sesiones | Post-MVP |
 | Empaquetado e instalador para Windows | Primera versión para que la prueben abogados | Post-MVP |

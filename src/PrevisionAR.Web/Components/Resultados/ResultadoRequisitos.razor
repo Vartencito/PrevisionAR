@@ -1,0 +1,20 @@
+@using PrevisionAR.Motor.Requisitos
+
+@* Muestra el resultado de R002 tal como lo devuelve el motor. No calcula nada. *@
+<section>
+    <h2>Requisitos de la PBU (@Resultado.Regla)</h2>
+    <p class="@(Resultado.TieneDerecho ? "veredicto si" : "veredicto no")">
+        @(Resultado.TieneDerecho ? "Cumple los requisitos de la PBU." : "No cumple los requisitos de la PBU.")
+    </p>
+    <ol>
+        @foreach (var paso in Resultado.Explicacion)
+        {
+            <li>@paso</li>
+        }
+    </ol>
+</section>
+
+@code {
+    [Parameter, EditorRequired]
+    public ResultadoRequisitosPbu Resultado { get; set; } = default!;
+}
