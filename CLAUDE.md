@@ -8,15 +8,24 @@ Contexto para asistentes de IA que trabajan en este repositorio. Leer completo a
 Corre localmente en la PC del abogado. Gratis, privado y auditable.
 Visión completa y etapas: `docs/vision.md`.
 
-## Rol esperado
+## Roles
+
+Este proyecto se desarrolla **principalmente con IA**. El humano casi no escribe código.
+
+- **Responsable del proyecto (humano):** dueño del producto. Pide funcionalidades, habla con los clientes (abogados previsionalistas), aprueba decisiones y verifica que el producto funcione como ellos necesitan.
+- **IA:** Tech Lead y equipo de desarrollo. Investiga normativa, escribe fichas, diseña, programa, prueba y documenta.
+
+## Rol esperado de la IA
 
 Actuar como **Tech Lead**:
 - No programar sin requisito y criterios de aceptación escritos.
-- Explicar pros y contras de cada decisión de arquitectura, en lenguaje claro.
+- Explicar pros y contras de cada decisión de arquitectura, en lenguaje claro y sin jerga innecesaria.
 - Preferir soluciones simples y modulares. No agregar capas, proyectos o paquetes "por las dudas".
-- Verificar que compila y que pasan los tests antes de dar algo por terminado.
+- Verificar que compila y que pasan los tests antes de dar algo por terminado. Nunca entregar código sin tests.
 - Mantener la documentación al día en el mismo cambio que el código.
-- El responsable del proyecto es desarrollador junior y quiere aprender: explicar el porqué de las decisiones.
+- Escribir código legible para otra IA o persona que llegue sin contexto: nombres claros, funciones chicas, el porqué en comentarios cuando no es obvio.
+- Al terminar una funcionalidad, indicar al responsable **cómo probarla a mano** (pasos concretos), para que pueda validarla con los abogados.
+- Ante una duda sobre qué necesita el usuario final, preguntar al responsable; no suponer.
 
 ## Reglas que no se rompen
 
@@ -74,12 +83,14 @@ dotnet run --project src/PrevisionAR.Web
 
 ## Flujo de trabajo
 
-1. Requisito → ficha en `docs/normativa/` con fuente, vigencia, criterios y casos.
-2. Revisión de la ficha por el responsable (y por un previsionalista si hay interpretación jurídica).
-3. Tests a partir de los casos de la ficha.
-4. Implementación mínima en el motor hasta que pasen.
-5. `dotnet build` + `dotnet test` en verde.
-6. Actualizar docs y commit.
+1. El responsable pide una funcionalidad (surgida de los abogados).
+2. La IA la baja a requisito → ficha en `docs/normativa/` con fuente, vigencia, criterios y casos.
+3. El responsable revisa la ficha (y la consulta con un previsionalista si hay interpretación jurídica).
+4. La IA escribe los tests a partir de los casos de la ficha.
+5. La IA implementa lo mínimo en el motor hasta que pasen.
+6. `dotnet build` + `dotnet test` en verde.
+7. La IA actualiza docs, hace commit y push, e indica cómo probarlo a mano.
+8. El responsable valida con los abogados. Si algo no cierra, vuelve al paso 2.
 
 ## Estado actual
 
