@@ -42,7 +42,19 @@ BlueCorp, JubiLex, Universo Prev, PreviProrrata, Sistema Jauregui, Sistema Moren
 - Pruebas unitarias, de integración y de regresión.
 - Cambios en visión, licencia, privacidad, arquitectura central o reglas validadas requieren aprobación del responsable del proyecto.
 
+## MVP (aprobado 2026-11-26)
+
+Cómputo de servicios del régimen general:
+1. Carga manual de historia laboral
+2. Cómputo de servicios (años, meses, días)
+3. Detección de superposiciones
+4. Verificación de requisitos básicos (Ley 24.241), sin moratorias ni regímenes especiales
+5. Informe auditable
+
+Fuera del MVP: cálculo del haber, moratorias, regímenes especiales, OCR/IA, base de datos, reajustes, retroactivos.
+
 ## Pendiente
 
-- [ ] Definir alcance del MVP
-- [ ] Primer requisito del motor con criterios de aceptación
+- [x] Definir alcance del MVP
+- [ ] R001 — Cómputo de servicios con aportes (borrador, en revisión)
+- [ ] R002 — Requisitos de edad y servicios para la PBU
