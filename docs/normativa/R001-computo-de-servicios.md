@@ -13,6 +13,9 @@
 | Decreto 679/95, art. 2 | Define "servicios con aportes": en relación de dependencia, los períodos en que se devengaron y retuvieron aportes y contribuciones; en autónomos, los períodos en que se devengaron e ingresaron las cotizaciones | [Biblioteca AFIP/ARCA](https://biblioteca.afip.gob.ar/dcp/DEC_C_000679_1995_05_11) |
 | Decreto 679/95, reglamentación art. 19 | Los 30 años equivalen a **360 meses** de servicios con aportes | Ídem |
 | Decreto-Ley 9.316/46, art. 2 | En servicios simultáneos **no se acumulan los tiempos de servicio** (sí las remuneraciones, a otros fines) | [InfoLEG](https://servicios.infoleg.gob.ar/infolegInternet/anexos/230000-234999/233426/texact.htm) |
+| Ley 18.037, art. 15 | Régimen anterior (al que remite el art. 22 de la Ley 24.241 para servicios previos): simultaneidad no acumula tiempo; servicios desde los 18 años | Texto de la ley (a reemplazar por link InfoLEG) |
+| Ley 18.037, art. 17 | No se computa más tiempo que el calendario entre fechas ni más de 12 meses en un año calendario | Ídem |
+| Ley 24.241, arts. 17, 24 y 30 | La PC usa servicios hasta el 30/06/1994 y la PAP desde el 01/07/1994; por eso el cómputo se separa en esos dos tramos | Texto actualizado (ver arriba). Detalle en ficha futura de PC/PAP |
 
 ## Vigencia
 
@@ -42,6 +45,12 @@ Dada la historia laboral de una persona (lista de períodos de trabajo), el moto
 4. Nada posterior a la fecha de cálculo se computa.
 5. El resultado se expresa en **años, meses y días**, y también en **meses totales** (unidad que usa el Decreto 679/95).
 6. Cada superposición detectada se informa (qué períodos, qué tramo, cuántos días se descontaron).
+7. **Desglose para fórmulas futuras.** El total en meses se separa:
+   - por tramo: **hasta el 30/06/1994** y **desde el 01/07/1994** (los usarán la PC y la PAP);
+   - por tipo, dentro de cada tramo: **n** = solo relación de dependencia, **m** = solo autónomo, **p** = simultáneo dependencia y autónomo.
+   - Se cumple siempre: n + m + p = total del tramo, y tramo 1 + tramo 2 = total.
+
+   Este punto no decide ningún derecho: solo ordena el tiempo ya computado para que las fichas de PC y PAP lo usen después.
 
 ## Datos de entrada
 
@@ -79,6 +88,8 @@ No encontré en la normativa revisada una regla explícita sobre cómo convertir
 8. **Fechas inválidas.** Dado un período con fecha hasta anterior a fecha desde, entonces el cálculo informa un error que identifica el período.
 9. **Trazabilidad.** Todo resultado indica que fue calculado con la regla R001.
 10. **Determinismo.** Con los mismos datos y la misma fecha de cálculo, el resultado es idéntico siempre.
+11. **Desglose por tramo.** Dado un período que cruza el 01/07/1994, entonces se parte en dos: hasta el 30/06/1994 y desde el 01/07/1994, y la suma de ambos da el total.
+12. **Desglose por tipo.** Dados un período en dependencia y otro autónomo que se superponen, entonces el tramo común se informa como **p**, y el resto como **n** o **m** según corresponda.
 
 ## Casos de prueba
 
@@ -95,13 +106,11 @@ Fecha de cálculo para todos: **01/01/2026** salvo que se indique otra.
 | 7 | A: 01/01/2016–31/12/2030 c/a; fecha de cálculo 31/12/2025 | 10a 0m 0d — 120 meses | Construido (criterio 7) |
 | 8 | A: 01/01/2010–31/12/2009 | Error: período A con fechas invertidas | Construido (criterio 8) |
 | 9 | A: 01/03/2000–15/03/2000 c/a | 0a 0m 15d — 0 meses (días sueltos) | Construido (convención, **a validar**) |
+| 10 | A: 01/01/1990–31/12/1999 c/a, dependencia | Total 120 meses. Hasta 30/06/1994: 54 meses (n=54). Desde 01/07/1994: 66 meses (n=66) | Construido (criterio 11) |
+| 11 | A: 01/01/2000–31/12/2009 c/a, dependencia; B: 01/01/2005–31/12/2014 c/a, autónomo | Total 180 meses, todo desde 01/07/1994: n=60 (2000–2004), p=60 (2005–2009), m=60 (2010–2014) | Construido (criterio 12) |
 
 Los casos 1 a 8 usan meses completos a propósito, para no depender de la convención de días que falta validar. Cuando un previsionalista la confirme, se agregan casos con días sueltos y con un caso real anonimizado.
 
 ## Preguntas abiertas para el previsionalista
 
-1. ¿Cómo convierte ANSES días sueltos a meses y años? ¿30 días = 1 mes? ¿Se suman días de distintos períodos para formar meses?
-2. ¿Las fechas desde y hasta se cuentan ambas inclusive?
-3. ¿La regla de no acumular servicios simultáneos (Decreto-Ley 9.316/46, art. 2) es la que se aplica hoy, también entre dependencia y autónomo? ¿Hay otra norma más específica?
-4. ¿Hay edad mínima desde la que se computan servicios en el régimen general actual?
-5. Cuando hay superposición entre un período con aportes y otro sin aportes, ¿el tramo cuenta como con aportes? (La propuesta asume que sí, porque basta un período con aportes en ese tramo.)
+Están en `docs/conocimiento/preguntas-previsionalista.md` (preguntas 1 a 9). Cuando se respondan, se actualiza esta ficha y se agregan casos con días sueltos y un caso real anonimizado.

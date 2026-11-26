@@ -61,6 +61,7 @@ docs/
   roadmap-tecnico.md         Piezas técnicas actuales y cuándo se suman las próximas
   decisiones/                ADR numerados (0001, 0002, ...)
   normativa/                 Fichas de reglas (R001, R002, ...)
+  conocimiento/              Notas de dominio (no normativa) y preguntas para el previsionalista
 .github/
   workflows/ci.yml           Compila y corre tests en cada push y PR
   dependabot.yml             Actualizaciones mensuales de dependencias
@@ -93,6 +94,12 @@ dotnet run --project src/PrevisionAR.Web
 - Las piezas técnicas entran cuando una funcionalidad las necesita, no antes. Plan en `docs/roadmap-tecnico.md`.
 - Al empezar una funcionalidad, revisar el roadmap: si su disparador se cumplió, **proponer** la pieza al responsable (qué es, para qué, pros y contras) antes de agregarla.
 - Al agregar o descartar una pieza, actualizar el roadmap y, si es una decisión de arquitectura, crear un ADR.
+
+## Conocimiento del dominio
+
+- Antes de escribir una ficha, leer `docs/conocimiento/notas-de-dominio.md`.
+- Las dudas que la normativa no resuelve van a `docs/conocimiento/preguntas-previsionalista.md`. Nunca se resuelven suponiendo.
+- Material de cursos o de terceros (PDFs, apuntes) **no se sube al repo**: solo se resume con palabras propias y se cita de dónde salió.
 
 ## Flujo de trabajo
 
