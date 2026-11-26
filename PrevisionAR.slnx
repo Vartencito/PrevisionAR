@@ -1,0 +1,9 @@
+<Solution>
+  <Folder Name="/src/">
+    <Project Path="src/PrevisionAR.Motor/PrevisionAR.Motor.csproj" />
+    <Project Path="src/PrevisionAR.Web/PrevisionAR.Web.csproj" />
+  </Folder>
+  <Folder Name="/tests/">
+    <Project Path="tests/PrevisionAR.Motor.Tests/PrevisionAR.Motor.Tests.csproj" />
+  </Folder>
+</Solution>

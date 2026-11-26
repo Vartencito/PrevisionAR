@@ -1,0 +1,9 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <!-- Motor previsional: sin dependencias externas, determinístico y testeable. -->
+  <PropertyGroup>
+    <RootNamespace>PrevisionAR.Motor</RootNamespace>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+  </PropertyGroup>
+
+</Project>
