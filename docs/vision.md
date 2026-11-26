@@ -59,5 +59,8 @@ Fuera del MVP: cálculo del haber, moratorias, regímenes especiales, OCR/IA, ba
 - [ ] R001 — Cómputo de servicios con aportes (implementada; falta validar la convención de días con previsionalista)
 - [ ] R002 — Requisitos de edad y servicios para la PBU (implementada; falta validar redondeos con previsionalista)
 - [ ] R003 — Cómputo de servicios por hijos (en investigación: norma y vigencia relevadas, faltan criterios y casos)
+- [ ] R004 — Moratorias (en investigación)
+- [ ] R005 — Haber inicial: PBU, PC y PAP (en investigación)
+- [ ] R006 — PUAM y prestación por edad avanzada (en investigación)
 
 Conocimiento del dominio y dudas abiertas: `docs/conocimiento/`.

@@ -77,3 +77,9 @@ Contexto para las próximas fichas. Las fuentes y los links están en `preguntas
 - **PBU:** monto fijo desde 03/2009 (Ley 26.417). Reajuste según el fallo "Quiroga" (CSJN 2014), con un test de incidencia sobre el haber total. Distintas cámaras usan criterios diferentes (Badaro, ISBIC).
 - **Haber inicial vs. haber al alta:** la fórmula da el haber a la fecha de solicitud o adquisición; a eso se le suma la movilidad hasta el alta.
 - **Otras prestaciones:** PEA, RTI, pensiones, PUAM, regímenes especiales; cada una con su propia forma de calcular el haber inicial.
+
+## Panorama relevado el 2026-11-26 (detalle y fuentes en las fichas R004 a R006)
+
+- **Moratorias vigentes hoy:** Ley 24.476 (aportes de autónomos hasta 09/1993, con evaluación socioeconómica) y Unidades de Cancelación de Aportes Previsionales de la Ley 27.705 (personas en actividad cerca de la edad jubilatoria, períodos hasta 03/2012). La moratoria para quien ya tiene la edad (Ley 27.705, Unidad de Pago) venció en 2025; la prórroga (Ley 27.792) fue vetada (Decreto 534/2025). Ver R004.
+- **Haber inicial:** PBU suma fija (Ley 26.417). PC: 1,5% por año (fracción mayor de 6 meses = 1 año), tope 35 años, sobre el promedio de 120 remuneraciones actualizadas. PAP: 1,5% por año desde 07/1994, sin tope (0,85% para pedidos antes del 01/07/2007). Actualización por índice combinado trimestral (Ley 27.609); movilidad mensual por IPC (Decreto 274/2024). El art. 125 bis garantiza el 82% del salario mínimo con 30 años de aportes efectivos. Ver R005.
+- **Sin 30 años:** PEA (70 años, 10 años de aportes con 5 en los últimos 8; 70% de PBU + PC + PAP) y PUAM (65 años, no contributiva, 80% del haber mínimo). Ver R006.
