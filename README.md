@@ -43,6 +43,8 @@ dotnet run --project src/PrevisionAR.Web
 
 ## Estado
 
+Avance y próximos pasos: [`docs/estado-del-proyecto.md`](docs/estado-del-proyecto.md) · Plan: [`docs/plan-del-proyecto.md`](docs/plan-del-proyecto.md).
+
 MVP en curso. Ya funciona el cómputo de servicios con aportes (R001), pendiente de validación por un previsionalista. Ver `docs/vision.md`.
 
 ## Aviso

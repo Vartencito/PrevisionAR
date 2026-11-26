@@ -57,6 +57,8 @@ src/
 tests/
   PrevisionAR.Motor.Tests/   xUnit
 docs/
+  plan-del-proyecto.md       Metodología (Kanban), versiones y rutinas
+  estado-del-proyecto.md     Avance, pronóstico y qué hacer ahora (generado)
   vision.md                  Visión, etapas, alcance
   roadmap-tecnico.md         Piezas técnicas actuales y cuándo se suman las próximas
   decisiones/                ADR numerados (0001, 0002, ...)
@@ -65,6 +67,8 @@ docs/
 .claude/
   agents/                    Agentes: investigador-previsional, revisor-de-codigo
   commands/                  Flujos: /nueva-ficha, /implementar-ficha, /procesar-respuestas
+herramientas/
+  estado_del_proyecto.py     Genera docs/estado-del-proyecto.md desde GitHub
 .github/
   workflows/ci.yml           Compila y corre tests en cada push y PR
   dependabot.yml             Actualizaciones mensuales de dependencias
@@ -107,6 +111,14 @@ dotnet run --project src/PrevisionAR.Web
 - Para investigar normativa a fondo, usar el agente `investigador-previsional` (`.claude/agents/`): investiga, cita fuentes y clasifica preguntas, pero no decide criterios ni escribe código.
 - Las dudas que la normativa no resuelve van a `docs/conocimiento/preguntas-previsionalista.md`. Nunca se resuelven suponiendo.
 - Material de cursos o de terceros (PDFs, apuntes) **no se sube al repo**: solo se resume con palabras propias y se cita de dónde salió.
+
+## Gestión del proyecto (ADR 0005)
+
+- **Al empezar una sesión:** leer `docs/estado-del-proyecto.md` y tomar la primera tarea de "Le toca a la IA", salvo que el responsable pida otra.
+- **Tareas = issues de GitHub**, con versión (milestone), tamaño (`tamaño: S/M/L`) y tipo. Trabajo nuevo → issue nuevo. Si algo espera al abogado: `bloqueado: abogado`.
+- **Commits:** incluir "Cierra #N" cuando terminan una tarea.
+- **Al terminar una sesión:** correr `python herramientas/estado_del_proyecto.py` y commitear el estado actualizado.
+- Detalle en `docs/plan-del-proyecto.md`.
 
 ## Flujo de trabajo
 

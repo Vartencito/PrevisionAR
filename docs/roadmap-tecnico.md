@@ -25,6 +25,7 @@ La IA actualiza este archivo cada vez que agrega una pieza o cambia el plan.
 | Test de trazabilidad ficha ↔ tests | Falla si un caso o criterio de una ficha implementada no tiene test | 2026-11-26 |
 | Medición de cobertura en CI | Informe en cada ejecución; por ahora no bloquea | 2026-11-26 |
 | Pantalla separada en componentes (`Components/Resultados`) | Base reutilizable para el informe | 2026-11-26 |
+| Gestión con Kanban en GitHub y script de estado | Avance, pronóstico y qué hacer ahora (ADR 0005) | 2026-11-26 |
 
 ## Próximas piezas (con su disparador)
 
