@@ -1,5 +1,7 @@
 # Previsión AR
 
+[![CI](https://github.com/Vartencito/PrevisionAR/actions/workflows/ci.yml/badge.svg)](https://github.com/Vartencito/PrevisionAR/actions/workflows/ci.yml)
+
 Software libre para abogados previsionalistas de Argentina.  
 Alternativa gratuita, privada y transparente a las plataformas comerciales de cálculo previsional.
 

@@ -58,8 +58,12 @@ tests/
   PrevisionAR.Motor.Tests/   xUnit
 docs/
   vision.md                  Visión, etapas, alcance
+  roadmap-tecnico.md         Piezas técnicas actuales y cuándo se suman las próximas
   decisiones/                ADR numerados (0001, 0002, ...)
   normativa/                 Fichas de reglas (R001, R002, ...)
+.github/
+  workflows/ci.yml           Compila y corre tests en cada push y PR
+  dependabot.yml             Actualizaciones mensuales de dependencias
 ```
 
 ## Comandos
@@ -80,6 +84,14 @@ dotnet run --project src/PrevisionAR.Web
 - **Tests:** nombre `Metodo_Escenario_ResultadoEsperado`. Cada criterio de aceptación de una ficha tiene al menos un test. Los casos de prueba de la ficha se copian tal cual.
 - **Decisiones:** toda decisión de arquitectura nueva va como ADR en `docs/decisiones/`.
 - **Commits:** chicos y en español, en imperativo ("Agrega cómputo de superposiciones").
+- **CI:** un cambio no está terminado hasta que el pipeline de GitHub Actions está en verde.
+- **Arquitectura verificada por tests:** las reglas de este archivo que se puedan comprobar con código tienen su test en `tests/PrevisionAR.Motor.Tests/Arquitectura/`.
+
+## Evolución técnica
+
+- Las piezas técnicas entran cuando una funcionalidad las necesita, no antes. Plan en `docs/roadmap-tecnico.md`.
+- Al empezar una funcionalidad, revisar el roadmap: si su disparador se cumplió, **proponer** la pieza al responsable (qué es, para qué, pros y contras) antes de agregarla.
+- Al agregar o descartar una pieza, actualizar el roadmap y, si es una decisión de arquitectura, crear un ADR.
 
 ## Flujo de trabajo
 
