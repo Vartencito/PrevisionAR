@@ -58,5 +58,6 @@ Fuera del MVP: cálculo del haber, moratorias, regímenes especiales, OCR/IA, ba
 - [x] Definir alcance del MVP
 - [ ] R001 — Cómputo de servicios con aportes (implementada; falta validar la convención de días con previsionalista)
 - [ ] R002 — Requisitos de edad y servicios para la PBU (implementada; falta validar redondeos con previsionalista)
+- [ ] R003 — Cómputo de servicios por hijos (en investigación: norma y vigencia relevadas, faltan criterios y casos)
 
 Conocimiento del dominio y dudas abiertas: `docs/conocimiento/`.

@@ -60,6 +60,16 @@ Flujo típico enseñado en el curso:
 
 La Ley 24.241 (art. 22) remite a esa normativa para los servicios anteriores. Queda por confirmar con un previsionalista cuánto de esto se aplica a servicios posteriores a 1994.
 
+## Hallazgos de la investigación normativa del 2026-11-26
+
+Contexto para las próximas fichas. Las fuentes y los links están en `preguntas-previsionalista.md` (preguntas 4 a 9 y 13 a 15) y en `docs/normativa/R003-computo-por-hijos.md`.
+
+- **Numeración de la Ley 18.037 t.o. 1976 (copia de ARCA):** la edad de cómputo (16 años) está en el art. 14, la regla de jornada y simultaneidad (un día por jornada legal, tope calendario y 12 meses por año) en el art. 16, y las licencias pagas en el art. 17. En algunos documentos del repo figura "art. 15" para la simultaneidad.
+- **Corte PC/PAP:** el Decreto 679/95 toma para la PAP los meses desde julio de 1994 inclusive, pero el Libro I de la Ley 24.241 entró en vigor el 15/07/1994 (Decreto 56/94), y la PC usa servicios hasta esa fecha. Hay que definir con un previsionalista qué pasa con el 01/07 al 14/07/1994.
+- **Fracción de años:** la Ley 24.241, art. 24 inc. a), cuenta como año la fracción mayor de 6 meses para la PC. El art. 30 (PAP) remite a la metodología de la PC.
+- **Edad y 29 de febrero:** el Código Civil y Comercial, art. 6, cuenta los plazos de años de fecha a fecha. Si no hay día equivalente, el plazo vence el último día del mes (28/02). Falta confirmar si se aplica a la edad jubilatoria.
+- **Cómputo por hijos (art. 22 bis):** vigente al 26/11/2026, sin modificaciones encontradas. Sirve solo para el mínimo de servicios de la PBU, no para el haber. ANSES lo tramita como "Reconocimiento de aportes por tareas de cuidado".
+
 ## Temas que vendrán (no son del MVP)
 
 - **Autónomos y monotributo:** reglas distintas según la época del aporte (1998-2000, 2000-2010, desde 2010). Algunos períodos de monotributo no suman a la PAP. Hay jurisprudencia que excluye el monotributo cuando perjudica el haber.

@@ -14,6 +14,7 @@
 | Ley 24.241, art. 19 inc. c) | 30 años de servicios con aportes computables en uno o más regímenes del sistema de reciprocidad | Ídem |
 | Ley 24.241, art. 19, párrafo de compensación | Solo para acreditar el mínimo de servicios de la PBU, el exceso de edad compensa la falta de servicios: **2 años de edad excedentes por 1 año de servicios faltantes** | Ídem |
 | Ley 24.241, art. 19, opción de la mujer | Las mujeres pueden optar por seguir trabajando hasta los 65 años | Ídem |
+| Código Civil y Comercial, art. 6 | Los plazos de años y meses se cuentan de fecha a fecha; sin día equivalente, vencen el último día del mes | [argentina.gob.ar](https://www.argentina.gob.ar/normativa/nacional/norma-235975/actualizacion) |
 | Decreto 679/95, reglamentación art. 19 | Los 30 años equivalen a **360 meses** de servicios con aportes. Cualquier fracción de edad excedente, aunque sea menor a un año, compensa servicios faltantes en la misma proporción | [Biblioteca AFIP/ARCA](https://biblioteca.afip.gob.ar/dcp/DEC_C_000679_1995_05_11) |
 | Ley 24.241, art. 37 | Escala transitoria de edades por año (gradualismo). Sus escalones terminaron: hoy coinciden con los 65/60 del art. 19 | InfoLEG (ídem) |
 
@@ -54,7 +55,7 @@ Dada una persona (fecha de nacimiento y sexo según el art. 19) y su historia la
 
 | Punto | Decisión propuesta | Respaldo |
 |-------|-------------------|----------|
-| Edad en meses | Meses cumplidos entre la fecha de nacimiento y la de cálculo (el mes se cumple el mismo número de día) | Propuesta técnica |
+| Edad en meses | Meses cumplidos "de fecha a fecha" entre el nacimiento y la fecha de cálculo. Si el mes no tiene ese día (29/02, 31), se cumple el último día del mes. El día del cumpleaños ya cuenta como cumplido | Código Civil y Comercial, art. 6 ([texto](https://www.argentina.gob.ar/normativa/nacional/norma-235975/actualizacion)). **Confirmar** que ANSES lo aplica así a la edad jubilatoria (pregunta 15) |
 | Compensación en meses | Meses compensados = meses de edad excedente ÷ 2, **sin redondear hacia arriba** (5 meses de exceso compensan 2 meses) | La ley fija la proporción 2 a 1 y el Decreto 679/95 admite fracciones de edad. El redondeo de la fracción no está explícito: **A VALIDAR** |
 | Días sueltos de servicios | No cuentan para los 360 meses: solo meses completos (359 meses y 20 días no alcanza) | **A VALIDAR** (ligado a la pregunta 1 de R001) |
 
