@@ -114,7 +114,7 @@ dotnet run --project src/PrevisionAR.Web
 
 ## Estado actual
 
-**MVP en curso: cómputo de servicios del régimen general.**
+**MVP en curso: cómputo de servicios del régimen general.** R001 implementada (pantalla de prueba en la Web); falta validar la convención de días.
 1. Carga manual de historia laboral (períodos, empleador, desde/hasta, tipo, con o sin aportes)
 2. Cómputo de servicios (años, meses, días)
 3. Detección de superposiciones

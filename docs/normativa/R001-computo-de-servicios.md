@@ -1,6 +1,7 @@
 # R001 — Cómputo de servicios con aportes (régimen general)
 
-- **Estado:** Borrador
+- **Estado:** Borrador — **implementada** con la convención propuesta (pendiente de validar con previsionalista)
+- **Código:** `src/PrevisionAR.Motor/Computo/ComputoDeServicios.cs` · **Tests:** `tests/PrevisionAR.Motor.Tests/Computo/`
 - **Validada por:** (pendiente: responsable del proyecto y previsionalista)
 - **Alcance MVP:** puntos 1, 2 y 3 (carga de historia laboral, cómputo de servicios, superposiciones)
 

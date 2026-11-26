@@ -16,14 +16,14 @@ La IA actualiza este archivo cada vez que agrega una pieza o cambia el plan.
 | CI con GitHub Actions | Compila y corre tests en cada push y PR | 2026-11-26 |
 | Dependabot (mensual) | Avisa versiones nuevas de paquetes y acciones | 2026-11-26 |
 | Test de arquitectura | Verifica que el motor no dependa de nada externo | 2026-11-26 |
+| Modelo de dominio (`HistoriaLaboral`, `PeriodoDeServicio`) y resultado trazable | Base del motor; cada resultado indica su regla | 2026-11-26 |
+| Test que revisa el código del motor | Prohíbe `DateTime.Now`, `double` y `float` en el motor (alternativa liviana a un analizador, sin paquetes) | 2026-11-26 |
+| Pantalla de prueba en la Web | Cargar una historia laboral y ver el cómputo (sin lógica propia) | 2026-11-26 |
 
 ## Próximas piezas (con su disparador)
 
 | Pieza | Se agrega cuando... | Etapa |
 |-------|---------------------|-------|
-| Modelo de dominio (`HistoriaLaboral`, `PeriodoDeServicio`) | Se apruebe la primera ficha (R001) | MVP |
-| Resultado trazable (cada número con su regla) | Primer cálculo del motor | MVP |
-| Analizador que prohíba `DateTime.Now` y `double` en el motor | Exista código de dominio en el motor | MVP |
 | Medición de cobertura de tests en CI | Haya varias reglas implementadas | MVP |
 | Tests de componentes de la UI (bUnit) | La Web tenga la primera pantalla con lógica | MVP |
 | Generación del informe (PDF o HTML imprimible) | Se defina el formato con los abogados | MVP |

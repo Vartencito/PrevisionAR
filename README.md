@@ -43,7 +43,7 @@ dotnet run --project src/PrevisionAR.Web
 
 ## Estado
 
-Etapa 1 (motor de cálculo) en definición. Ver `docs/vision.md`.
+MVP en curso. Ya funciona el cómputo de servicios con aportes (R001), pendiente de validación por un previsionalista. Ver `docs/vision.md`.
 
 ## Aviso
 

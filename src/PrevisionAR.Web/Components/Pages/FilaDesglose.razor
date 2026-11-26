@@ -1,0 +1,17 @@
+@using PrevisionAR.Motor.Computo
+
+<tr>
+    <td>@Nombre</td>
+    <td>@Desglose.Total</td>
+    <td>@Desglose.SoloDependencia</td>
+    <td>@Desglose.SoloAutonomo</td>
+    <td>@Desglose.Simultaneo</td>
+</tr>
+
+@code {
+    [Parameter, EditorRequired]
+    public string Nombre { get; set; } = string.Empty;
+
+    [Parameter, EditorRequired]
+    public DesgloseDeTramo Desglose { get; set; } = default!;
+}
