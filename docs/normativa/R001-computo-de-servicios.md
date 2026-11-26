@@ -13,8 +13,8 @@
 | Decreto 679/95, art. 2 | Define "servicios con aportes": en relación de dependencia, los períodos en que se devengaron y retuvieron aportes y contribuciones; en autónomos, los períodos en que se devengaron e ingresaron las cotizaciones | [Biblioteca AFIP/ARCA](https://biblioteca.afip.gob.ar/dcp/DEC_C_000679_1995_05_11) |
 | Decreto 679/95, reglamentación art. 19 | Los 30 años equivalen a **360 meses** de servicios con aportes | Ídem |
 | Decreto-Ley 9.316/46, art. 2 | En servicios simultáneos **no se acumulan los tiempos de servicio** (sí las remuneraciones, a otros fines) | [InfoLEG](https://servicios.infoleg.gob.ar/infolegInternet/anexos/230000-234999/233426/texact.htm) |
-| Ley 18.037, art. 15 | Régimen anterior (al que remite el art. 22 de la Ley 24.241 para servicios previos): simultaneidad no acumula tiempo; servicios desde los 18 años | Texto de la ley (a reemplazar por link InfoLEG) |
-| Ley 18.037, art. 17 | No se computa más tiempo que el calendario entre fechas ni más de 12 meses en un año calendario | Ídem |
+| Ley 18.037 (t.o. 1976), cómputo de tiempo | Régimen anterior, al que remite el art. 22 de la Ley 24.241 para servicios previos. Trabajos continuos: la antigüedad corre desde la fecha de inicio hasta la de cese. Simultaneidad: no se acumulan los tiempos. Se computa un día por jornada legal. **No se computa más tiempo que el calendario entre las fechas ni más de 12 meses dentro de un año calendario.** El t.o. 1976 fija los 16 años como edad desde la que se computan servicios (el texto original de 1968 decía 18) | [InfoLEG t.o. 1976](https://servicios.infoleg.gob.ar/infolegInternet/anexos/150000-154999/154617/texact.htm) · [Texto original](https://servicios.infoleg.gob.ar/infolegInternet/anexos/25000-29999/28127/norma.htm) |
+| Decreto 1645/78 (reglamentario de la Ley 18.037) | Para el prorrateo de edades con servicios mixtos dispone que en los cómputos finales se desprecian las fracciones menores de un mes. Es otro contexto, pero es una pista sobre cómo trata ANSES las fracciones | [Copia en el Boletín Oficial CABA](https://boletinoficial.buenosaires.gob.ar/normativaba/norma/50213) |
 | Ley 24.241, arts. 17, 24 y 30 | La PC usa servicios hasta el 30/06/1994 y la PAP desde el 01/07/1994; por eso el cómputo se separa en esos dos tramos | Texto actualizado (ver arriba). Detalle en ficha futura de PC/PAP |
 
 ## Vigencia
@@ -48,7 +48,7 @@ Dada la historia laboral de una persona (lista de períodos de trabajo), el moto
 7. **Desglose para fórmulas futuras.** El total en meses se separa:
    - por tramo: **hasta el 30/06/1994** y **desde el 01/07/1994** (los usarán la PC y la PAP);
    - por tipo, dentro de cada tramo: **n** = solo relación de dependencia, **m** = solo autónomo, **p** = simultáneo dependencia y autónomo.
-   - Se cumple siempre: n + m + p = total del tramo, y tramo 1 + tramo 2 = total.
+   - En **días calendario** se cumple siempre: n + m + p = total del tramo, y tramo 1 + tramo 2 = total. Expresado en años/meses/días puede haber una diferencia de días sueltos si un mismo mes calendario queda repartido entre dos tipos.
 
    Este punto no decide ningún derecho: solo ordena el tiempo ya computado para que las fichas de PC y PAP lo usen después.
 
@@ -68,13 +68,17 @@ Dada la historia laboral de una persona (lista de períodos de trabajo), el moto
 - Fecha hasta anterior a fecha desde → error.
 - Fecha desde posterior a la fecha de cálculo → el período no computa y se avisa.
 
-## Convención de cómputo propuesta (A VALIDAR)
+## Convención de cómputo
 
-No encontré en la normativa revisada una regla explícita sobre cómo convertir días a meses y años. Propuesta técnica, a confirmar por un previsionalista:
+| Punto | Decisión | Respaldo |
+|-------|----------|----------|
+| Fechas inclusive | Desde y hasta se cuentan las dos | Ley 18.037: la antigüedad corre "desde la fecha de iniciación… hasta la de cesación". **Confirmar** con previsionalista |
+| Tope calendario | Nunca más tiempo que el calendario ni más de 12 meses por año calendario | Ley 18.037. El algoritmo lo cumple por construcción: cuenta cada día del calendario una sola vez |
+| Meses completos | Se cuentan meses calendario cubiertos enteros | Propuesta técnica |
+| Días sueltos | **30 días sueltos = 1 mes** | **A VALIDAR.** No hay norma nacional explícita encontrada. El IPS (provincia de Bs. As.) usa mes de 30 días; el Decreto 1645/78 desprecia fracciones menores de un mes en otro contexto |
+| Años | 12 meses = 1 año | — |
 
-- Ambas fechas del período son **inclusive** (del 01/03/2000 al 31/03/2000 = 1 mes completo).
-- Se cuentan **meses calendario completos**; los días sueltos que no completan un mes se acumulan como días.
-- **30 días sueltos = 1 mes**; **12 meses = 1 año**.
+La conversión de días sueltos está aislada en el código (`ConvencionDeComputo`) para poder cambiarla sin tocar el resto.
 
 ## Criterios de aceptación
 

@@ -3,15 +3,17 @@
 Lista de dudas que la normativa revisada no resuelve. El responsable las lleva al abogado y anota las respuestas acá.
 Cuando una pregunta se responde, la IA actualiza la ficha que corresponda.
 
+Referencias: ❓ sin norma encontrada · ⚠️ hay norma pero hay que confirmar cómo se aplica · ✅ resuelta por norma.
+
 ## Cómputo de servicios (R001)
 
 | # | Pregunta | Respuesta | Fecha |
 |---|----------|-----------|-------|
-| 1 | ¿Cómo pasa ANSES los días sueltos a meses? ¿30 días = 1 mes? ¿Se juntan días de distintos períodos para formar meses? | | |
-| 2 | ¿Las fechas desde y hasta de un período se cuentan las dos inclusive? | | |
-| 3 | La Ley 18.037 dice que no se computan más de 12 meses en un año calendario ni más tiempo que el calendario entre fechas. ¿Eso se aplica también a servicios posteriores a 1994? | | |
+| 1 | ❓ ¿Cómo pasa ANSES los días sueltos a meses? ¿30 días = 1 mes? ¿Se juntan días de distintos períodos para formar meses? ¿O se desprecian las fracciones menores de un mes, como hace el Decreto 1645/78 para el prorrateo de edades? *(No se encontró norma nacional explícita.)* | | |
+| 2 | ⚠️ ¿Las fechas desde y hasta se cuentan las dos inclusive? *(La Ley 18.037 dice que la antigüedad corre "desde la fecha de iniciación hasta la de cesación"; asumimos inclusive. Confirmar.)* | | |
+| 3 | ⚠️ La Ley 18.037 dice que no se computa más tiempo que el calendario ni más de 12 meses en un año calendario. ¿Se aplica igual a servicios posteriores a 1994? *(El programa lo cumple de todos modos, así que no frena nada.)* | | |
 | 4 | Servicios simultáneos: ¿la regla de no acumular tiempos (Decreto-Ley 9.316/46 art. 2, Ley 18.037 art. 15) es la que se usa hoy, también entre dependencia y autónomo? ¿Hay una norma más específica? | | |
-| 5 | ¿Desde qué edad se computan servicios en el régimen general actual? ¿Siguen siendo los 18 años? | | |
+| 5 | ⚠️ ¿Desde qué edad se computan servicios en el régimen general actual? *(La Ley 18.037 original decía 18 años; el texto ordenado de 1976 dice 16. ¿Cuál aplica hoy?)* | | |
 | 6 | Si en un mismo tramo hay un trabajo con aportes y otro sin aportes, ¿el tramo cuenta como con aportes? | | |
 | 7 | Las interrupciones sin remuneración dentro de un empleo (licencias sin goce, suspensiones), ¿se descuentan siempre? ¿Cómo figuran en la historia laboral de ANSES? | | |
 
