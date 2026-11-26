@@ -26,3 +26,11 @@ Referencias: ❓ sin norma encontrada · ⚠️ hay norma pero hay que confirmar
 | 10 | ¿Qué formato tiene la historia laboral que les entrega ANSES (Mi ANSES, PRPA/PRPB, formularios)? ¿Nos pueden pasar un ejemplo con datos tapados? | | |
 | 11 | ¿Qué es lo primero que les gustaría que haga el programa en su trabajo diario? ¿Qué les lleva más tiempo hoy? | | |
 | 12 | ¿Qué programas usan hoy (BlueCorp, Jáuregui, otros) y qué es lo que menos les gusta de ellos? | | |
+
+## Requisitos de la PBU (R002)
+
+| # | Pregunta | Respuesta | Fecha |
+|---|----------|-----------|-------|
+| 13 | ⚠️ Compensación de edad por servicios (2 a 1): si sobran 5 meses de edad, ¿compensan 2 meses de servicios, 2 y medio, o 3? ¿Se calcula en meses, en días o en años? *(La ley fija la proporción y el Decreto 679/95 admite fracciones de edad, pero no dice cómo redondear.)* | | |
+| 14 | ❓ Para llegar a los 30 años (360 meses), ¿los días sueltos de servicios suman? Por ejemplo, 359 meses y 20 días, ¿alcanzan? | | |
+| 15 | ⚠️ ¿La edad se cumple el mismo número de día del nacimiento? ¿Y alguien nacido un 29 de febrero? *(El programa toma que cumple el día del cumpleaños; un 29/02 cumple el 1/03 en años no bisiestos.)* | | |

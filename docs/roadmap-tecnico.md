@@ -18,7 +18,8 @@ La IA actualiza este archivo cada vez que agrega una pieza o cambia el plan.
 | Test de arquitectura | Verifica que el motor no dependa de nada externo | 2026-11-26 |
 | Modelo de dominio (`HistoriaLaboral`, `PeriodoDeServicio`) y resultado trazable | Base del motor; cada resultado indica su regla | 2026-11-26 |
 | Test que revisa el código del motor | Prohíbe `DateTime.Now`, `double` y `float` en el motor (alternativa liviana a un analizador, sin paquetes) | 2026-11-26 |
-| Pantalla de prueba en la Web | Cargar una historia laboral y ver el cómputo (sin lógica propia) | 2026-11-26 |
+| Pantalla de prueba en la Web | Cargar una historia laboral y ver el cómputo y los requisitos (sin lógica propia) | 2026-11-26 |
+| Agente `investigador-previsional` | Investiga normativa y clasifica preguntas con fuentes | 2026-11-26 |
 
 ## Próximas piezas (con su disparador)
 

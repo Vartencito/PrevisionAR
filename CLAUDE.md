@@ -62,6 +62,8 @@ docs/
   decisiones/                ADR numerados (0001, 0002, ...)
   normativa/                 Fichas de reglas (R001, R002, ...)
   conocimiento/              Notas de dominio (no normativa) y preguntas para el previsionalista
+.claude/
+  agents/                    Agentes especializados (investigador-previsional)
 .github/
   workflows/ci.yml           Compila y corre tests en cada push y PR
   dependabot.yml             Actualizaciones mensuales de dependencias
@@ -98,6 +100,7 @@ dotnet run --project src/PrevisionAR.Web
 ## Conocimiento del dominio
 
 - Antes de escribir una ficha, leer `docs/conocimiento/notas-de-dominio.md`.
+- Para investigar normativa a fondo, usar el agente `investigador-previsional` (`.claude/agents/`): investiga, cita fuentes y clasifica preguntas, pero no decide criterios ni escribe código.
 - Las dudas que la normativa no resuelve van a `docs/conocimiento/preguntas-previsionalista.md`. Nunca se resuelven suponiendo.
 - Material de cursos o de terceros (PDFs, apuntes) **no se sube al repo**: solo se resume con palabras propias y se cita de dónde salió.
 
@@ -114,7 +117,7 @@ dotnet run --project src/PrevisionAR.Web
 
 ## Estado actual
 
-**MVP en curso: cómputo de servicios del régimen general.** R001 implementada (pantalla de prueba en la Web); falta validar la convención de días.
+**MVP en curso: cómputo de servicios del régimen general.** R001 y R002 implementadas (pantalla de prueba en la Web); faltan validar convenciones de días y redondeos con previsionalista.
 1. Carga manual de historia laboral (períodos, empleador, desde/hasta, tipo, con o sin aportes)
 2. Cómputo de servicios (años, meses, días)
 3. Detección de superposiciones

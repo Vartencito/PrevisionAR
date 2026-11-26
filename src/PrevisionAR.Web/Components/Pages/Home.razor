@@ -2,14 +2,30 @@
 @rendermode InteractiveServer
 @using PrevisionAR.Motor.Computo
 @using PrevisionAR.Motor.Modelo
+@using PrevisionAR.Motor.Requisitos
 
-<PageTitle>Previsión AR — Cómputo de servicios</PageTitle>
+<PageTitle>Previsión AR — Cómputo y requisitos de la PBU</PageTitle>
 
-<h1>Cómputo de servicios con aportes</h1>
+<h1>Cómputo de servicios y requisitos de la PBU</h1>
 <p class="aviso">
-    Versión de prueba (ficha R001, en revisión). Herramienta de apoyo: no reemplaza el criterio profesional.
+    Versión de prueba (fichas R001 y R002, en revisión). Herramienta de apoyo: no reemplaza el criterio profesional.
     Usar datos ficticios.
 </p>
+
+<section>
+    <h2>Persona</h2>
+    <label>
+        Fecha de nacimiento:
+        <input type="date" @bind="_fechaDeNacimiento" />
+    </label>
+    <label>
+        Sexo (Ley 24.241, art. 19):
+        <select @bind="_sexo">
+            <option value="@Sexo.Hombre">Hombre</option>
+            <option value="@Sexo.Mujer">Mujer</option>
+        </select>
+    </label>
+</section>
 
 <section>
     <h2>Historia laboral</h2>
@@ -61,10 +77,26 @@
     <p class="error">@_error</p>
 }
 
+@if (_requisitos is not null)
+{
+    <section>
+        <h2>Requisitos de la PBU (R002)</h2>
+        <p class="@(_requisitos.TieneDerecho ? "veredicto si" : "veredicto no")">
+            @(_requisitos.TieneDerecho ? "Cumple los requisitos de la PBU." : "No cumple los requisitos de la PBU.")
+        </p>
+        <ol>
+            @foreach (var paso in _requisitos.Explicacion)
+            {
+                <li>@paso</li>
+            }
+        </ol>
+    </section>
+}
+
 @if (_resultado is not null)
 {
     <section>
-        <h2>Resultado</h2>
+        <h2>Cómputo de servicios (R001)</h2>
         <p class="total">
             Total de servicios con aportes: <strong>@_resultado.Total</strong>
             (@_resultado.Total.TotalMeses meses · @_resultado.Total.DiasCalendario días calendario)
@@ -123,7 +155,10 @@
 @code {
     private readonly List<FilaPeriodo> _filas = [new FilaPeriodo()];
     private DateOnly _fechaDeCalculo = DateOnly.FromDateTime(DateTime.Today);
+    private DateOnly _fechaDeNacimiento = new(1960, 1, 1);
+    private Sexo _sexo = Sexo.Hombre;
     private ResultadoDelComputo? _resultado;
+    private ResultadoRequisitosPbu? _requisitos;
     private string? _error;
 
     private void Agregar() => _filas.Add(new FilaPeriodo());
@@ -137,7 +172,10 @@
         _filas.Add(new FilaPeriodo { Empleador = "Actividad autónoma (ficticia)", Desde = new(2005, 1, 1), Hasta = new(2014, 12, 31), Tipo = TipoDeServicio.Autonomo });
         _filas.Add(new FilaPeriodo { Empleador = "Empresa B sin aportes (ficticia)", Desde = new(2015, 1, 1), Hasta = new(2016, 6, 30), ConAportes = false });
         _fechaDeCalculo = new DateOnly(2026, 1, 1);
+        _fechaDeNacimiento = new DateOnly(1958, 4, 15);
+        _sexo = Sexo.Hombre;
         _resultado = null;
+        _requisitos = null;
         _error = null;
     }
 
@@ -145,12 +183,18 @@
     {
         _error = null;
         _resultado = null;
+        _requisitos = null;
         try
         {
             var historia = new HistoriaLaboral(_filas.Select(f => f.APeriodo()).ToList());
-            _resultado = ComputoDeServicios.Calcular(historia, _fechaDeCalculo);
+            _requisitos = RequisitosPbu.Verificar(new Persona(_fechaDeNacimiento, _sexo), historia, _fechaDeCalculo);
+            _resultado = _requisitos.ComputoDeServicios;
         }
         catch (HistoriaLaboralInvalidaException ex)
+        {
+            _error = ex.Message;
+        }
+        catch (DatosPersonalesInvalidosException ex)
         {
             _error = ex.Message;
         }

@@ -92,3 +92,24 @@ button.principal {
 .total {
     font-size: 1.15rem;
 }
+
+label {
+    margin-right: 1.5rem;
+}
+
+.veredicto {
+    font-size: 1.2rem;
+    font-weight: 600;
+    padding: .5rem 1rem;
+    border-radius: 4px;
+}
+
+.veredicto.si {
+    background: #e6f4ea;
+    color: #1e6b34;
+}
+
+.veredicto.no {
+    background: #fdecea;
+    color: #8a1c1c;
+}
