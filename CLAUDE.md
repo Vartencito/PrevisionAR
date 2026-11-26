@@ -85,6 +85,7 @@ dotnet run --project src/PrevisionAR.Web
 - **Decisiones:** toda decisión de arquitectura nueva va como ADR en `docs/decisiones/`.
 - **Commits:** chicos y en español, en imperativo ("Agrega cómputo de superposiciones").
 - **CI:** un cambio no está terminado hasta que el pipeline de GitHub Actions está en verde.
+- **Dependabot:** los PRs de actualización con CI en verde los puede mergear la IA sin consultar. Si una actualización es de versión mayor de un paquete del motor o rompe algo, se consulta.
 - **Arquitectura verificada por tests:** las reglas de este archivo que se puedan comprobar con código tienen su test en `tests/PrevisionAR.Motor.Tests/Arquitectura/`.
 
 ## Evolución técnica
