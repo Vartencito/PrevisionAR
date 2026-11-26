@@ -20,7 +20,7 @@
 
 ## Vigencia
 
-- Ley 24.241, art. 19: vigente. Hubo intentos de modificación (Decreto 1306/2000, abrogado; Ley 26.222, con vigencia suspendida en ese punto según nota de InfoLEG) que no cambian las edades ni los 30 años. **Confirmar** con previsionalista.
+- Ley 24.241, art. 19: vigente. El Decreto 1306/2000 intentó modificarlo; su aplicación fue suspendida judicialmente y luego la Ley 26.222 lo abrogó. Las edades y los 30 años no cambiaron. El Decreto 460/1999 modificó el Decreto 679/95. **Confirmar** con previsionalista.
 - Gradualismo (arts. 37 y 128): agotado para solicitudes actuales. Fuera de esta ficha.
 
 ## Excepciones (fuera de esta ficha)
@@ -57,7 +57,7 @@ Dada una persona (fecha de nacimiento y sexo según el art. 19) y su historia la
 |-------|-------------------|----------|
 | Edad en meses | Meses cumplidos "de fecha a fecha" entre el nacimiento y la fecha de cálculo. Si el mes no tiene ese día (29/02, 31), se cumple el último día del mes. El día del cumpleaños ya cuenta como cumplido | Código Civil y Comercial, art. 6 ([texto](https://www.argentina.gob.ar/normativa/nacional/norma-235975/actualizacion)). **Confirmar** que ANSES lo aplica así a la edad jubilatoria (pregunta 15) |
 | Compensación en meses | Meses compensados = meses de edad excedente ÷ 2, **sin redondear hacia arriba** (5 meses de exceso compensan 2 meses) | La ley fija la proporción 2 a 1 y el Decreto 679/95 admite fracciones de edad. El redondeo de la fracción no está explícito: **A VALIDAR** |
-| Días sueltos de servicios | No cuentan para los 360 meses: solo meses completos (359 meses y 20 días no alcanza) | **A VALIDAR** (ligado a la pregunta 1 de R001) |
+| Días sueltos de servicios | Se usan los meses que da R001 (que ya convierte cada 30 días sueltos en un mes); los días que quedan sin formar un mes no suman (359 meses y 20 días no alcanza) | **A VALIDAR** (ligado a la pregunta 1 de R001) |
 
 ## Criterios de aceptación
 

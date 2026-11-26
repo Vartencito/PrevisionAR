@@ -14,9 +14,8 @@
 | Decreto 679/95, art. 2 | Define "servicios con aportes": en relación de dependencia, los períodos en que se devengaron y retuvieron aportes y contribuciones; en autónomos, los períodos en que se devengaron e ingresaron las cotizaciones | [Biblioteca AFIP/ARCA](https://biblioteca.afip.gob.ar/dcp/DEC_C_000679_1995_05_11) |
 | Decreto 679/95, reglamentación art. 19 | Los 30 años equivalen a **360 meses** de servicios con aportes | Ídem |
 | Decreto-Ley 9.316/46, art. 2 | En servicios simultáneos **no se acumulan los tiempos de servicio** (sí las remuneraciones, a otros fines) | [InfoLEG](https://servicios.infoleg.gob.ar/infolegInternet/anexos/230000-234999/233426/texact.htm) |
-| Ley 18.037 (t.o. 1976), arts. 14 a 16 (cómputo de tiempo) | Régimen anterior, al que remite el art. 22 de la Ley 24.241 para servicios previos. Trabajos continuos: la antigüedad corre desde la fecha de inicio hasta la de cese. Simultaneidad: no se acumulan los tiempos. Se computa un día por jornada legal. **No se computa más tiempo que el calendario entre las fechas ni más de 12 meses dentro de un año calendario.** El t.o. 1976 fija los 16 años como edad desde la que se computan servicios (el texto original de 1968 decía 18) | [InfoLEG t.o. 1976](https://servicios.infoleg.gob.ar/infolegInternet/anexos/150000-154999/154617/texact.htm) · [Texto original](https://servicios.infoleg.gob.ar/infolegInternet/anexos/25000-29999/28127/norma.htm) |
-| Decreto 1645/78 (reglamentario de la Ley 18.037) | Para el prorrateo de edades con servicios mixtos dispone que en los cómputos finales se desprecian las fracciones menores de un mes. Es otro contexto, pero es una pista sobre cómo trata ANSES las fracciones | [Copia en el Boletín Oficial CABA](https://boletinoficial.buenosaires.gob.ar/normativaba/norma/50213) |
-| Ley 24.241, arts. 23, 24 y 30; Decreto 679/95, art. 30 | La PAP toma los meses desde julio de 1994 inclusive; por eso el cómputo se separa en dos tramos con corte el 01/07/1994. **Abierto:** para la PC, el art. 23 toma servicios hasta la vigencia del Libro I, que el Decreto 56/94 fijó en el 15/07/1994 (pregunta 8) | Texto actualizado (ver arriba). Detalle en ficha futura de PC/PAP |
+| Ley 18.037 (t.o. 1976), arts. 14 a 16 (cómputo de tiempo) | Régimen anterior. Se aplica en forma **supletoria**, en lo que no se oponga a la Ley 24.241 (art. 156 de la Ley 24.241; el art. 168 la deroga como régimen). **Su aplicación a servicios actuales debe confirmarla un previsionalista.** Trabajos continuos: la antigüedad corre desde la fecha de inicio hasta la de cese. Simultaneidad: no se acumulan los tiempos (texto original de 1968, art. 15; en el t.o. 1976 el efecto equivalente sale del art. 16). Se computa un día por jornada legal. **No se computa más tiempo que el calendario entre las fechas ni más de 12 meses dentro de un año calendario.** El t.o. 1976 fija los 16 años como edad desde la que se computan servicios (el texto original de 1968 decía 18) | [InfoLEG t.o. 1976](https://servicios.infoleg.gob.ar/infolegInternet/anexos/150000-154999/154617/texact.htm) · [Texto original](https://servicios.infoleg.gob.ar/infolegInternet/anexos/25000-29999/28127/norma.htm) |
+| Ley 24.241, arts. 23, 24 y 30 inc. b); Decreto 679/95, reglamentación del art. 30 | La PAP toma los meses desde julio de 1994 inclusive; por eso el cómputo se separa en dos tramos con corte el 01/07/1994. **Abierto:** para la PC, el art. 23 toma servicios hasta la vigencia del Libro I, que el [Decreto 56/94](https://biblioteca.afip.gob.ar/dcp/DEC_C_000056_1994_01_19) fijó en el 15/07/1994 (pregunta 8) | Texto actualizado (ver arriba). Detalle en ficha futura de PC/PAP |
 
 ## Vigencia
 
@@ -25,6 +24,8 @@
 - Decreto-Ley 9.316/46, art. 2: a confirmar vigencia y aplicación actual por previsionalista (ver preguntas abiertas).
 
 ## Modificaciones relevantes
+
+- Decreto 460/1999 modificó el Decreto 679/95 (revisar su alcance en la reglamentación citada).
 
 - Decreto 475/2021 incorporó el art. 22 bis (cómputo por hijos). **Fuera de esta ficha**: irá en una ficha propia.
 
@@ -76,7 +77,7 @@ Dada la historia laboral de una persona (lista de períodos de trabajo), el moto
 | Fechas inclusive | Desde y hasta se cuentan las dos | Ley 18.037: la antigüedad corre "desde la fecha de iniciación… hasta la de cesación". **Confirmar** con previsionalista |
 | Tope calendario | Nunca más tiempo que el calendario ni más de 12 meses por año calendario | Ley 18.037. El algoritmo lo cumple por construcción: cuenta cada día del calendario una sola vez |
 | Meses completos | Se cuentan meses calendario cubiertos enteros | Propuesta técnica |
-| Días sueltos | **30 días sueltos = 1 mes** | **A VALIDAR.** No hay norma nacional explícita encontrada. El IPS (provincia de Bs. As.) usa mes de 30 días; el Decreto 1645/78 desprecia fracciones menores de un mes en otro contexto |
+| Días sueltos | **30 días sueltos = 1 mes** | **A VALIDAR.** No hay norma nacional explícita encontrada. El IPS (provincia de Bs. As.) usa mes de 30 días (otra caja, solo como referencia) |
 | Años | 12 meses = 1 año | — |
 
 La conversión de días sueltos está aislada en el código (`ConvencionDeComputo`) para poder cambiarla sin tocar el resto.
@@ -114,7 +115,7 @@ Fecha de cálculo para todos: **01/01/2026** salvo que se indique otra.
 | 10 | A: 01/01/1990–31/12/1999 c/a, dependencia | Total 120 meses. Hasta 30/06/1994: 54 meses (n=54). Desde 01/07/1994: 66 meses (n=66) | Construido (criterio 11) |
 | 11 | A: 01/01/2000–31/12/2009 c/a, dependencia; B: 01/01/2005–31/12/2014 c/a, autónomo | Total 180 meses, todo desde 01/07/1994: n=60 (2000–2004), p=60 (2005–2009), m=60 (2010–2014) | Construido (criterio 12) |
 
-Los casos 1 a 8 usan meses completos a propósito, para no depender de la convención de días que falta validar. Cuando un previsionalista la confirme, se agregan casos con días sueltos y con un caso real anonimizado.
+Los casos 1 a 8 usan meses completos a propósito, para no depender de la convención de días sueltos. Sí dependen de contar las dos fechas inclusive (pregunta 2), y los casos 6 y 7 también de contar el día de cálculo. Cuando un previsionalista la confirme, se agregan casos con días sueltos y con un caso real anonimizado.
 
 ## Preguntas abiertas para el previsionalista
 
