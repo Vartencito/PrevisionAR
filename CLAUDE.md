@@ -61,17 +61,19 @@ docs/
   estado-del-proyecto.md     Avance, pronóstico y qué hacer ahora (generado)
   arquitectura.md            Mapa, principios, buenas prácticas y evolución por disparadores
   vision.md                  Visión, etapas, alcance
+  guia-de-uso.md             Guía para abogados: instalar y usar la versión de prueba
   roadmap-tecnico.md         Piezas técnicas actuales y cuándo se suman las próximas
   decisiones/                ADR numerados (0001, 0002, ...)
   normativa/                 Fichas de reglas (R001, R002, ...)
   conocimiento/              Notas de dominio (no normativa) y preguntas para el previsionalista
 .claude/
   agents/                    Agentes: investigador-previsional, revisor-de-codigo, arquitecto-de-software
-  commands/                  Flujos: /nueva-ficha, /implementar-ficha, /procesar-respuestas
+  commands/                  Flujos: /inicio-de-sesion, /cierre-de-sesion, /nueva-ficha, /implementar-ficha, /procesar-respuestas
 herramientas/
   estado_del_proyecto.py     Genera docs/estado-del-proyecto.md desde GitHub
 .github/
   workflows/ci.yml           Compila y corre tests en cada push y PR
+  workflows/release.yml      Arma la versión para abogados al subir una etiqueta v* (ADR 0009)
   dependabot.yml             Actualizaciones mensuales de dependencias
 ```
 
@@ -138,7 +140,7 @@ Los comandos `/nueva-ficha`, `/implementar-ficha` y `/procesar-respuestas` detal
 
 ## Estado actual
 
-**MVP en curso: cómputo de servicios del régimen general.** R001 y R002 implementadas (pantalla de prueba en la Web); faltan validar convenciones de días y redondeos con previsionalista.
+**MVP en curso: cómputo de servicios del régimen general.** R001 y R002 implementadas (pantalla de prueba con ejemplos e informe imprimible); faltan validar convenciones de días y redondeos con previsionalista.
 1. Carga manual de historia laboral (períodos, empleador, desde/hasta, tipo, con o sin aportes)
 2. Cómputo de servicios (años, meses, días)
 3. Detección de superposiciones

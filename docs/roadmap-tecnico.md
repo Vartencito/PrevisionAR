@@ -28,6 +28,9 @@ La IA actualiza este archivo cada vez que agrega una pieza o cambia el plan.
 | Gestión con Kanban en GitHub y script de estado | Avance, pronóstico y qué hacer ahora (ADR 0005) | 2026-11-26 |
 | Analizadores de .NET y arreglos de la auditoría | Calidad verificada al compilar (ADR 0006) | 2026-11-26 |
 | Agente `arquitecto-de-software` y `docs/arquitectura.md` | Diseño antes de cambios grandes; evolución por disparadores | 2026-11-26 |
+| Informe imprimible (HTML con estilos de impresión, "Guardar como PDF" del navegador) | Informe auditable con el paso a paso y las normas de cada ficha, sin librerías de PDF (issue #16) | 2026-11-27 |
+| `CatalogoDeFichas` en el motor, con test contra `docs/normativa/` | Única fuente de las normas que cita el informe | 2026-11-27 |
+| Workflow `release.yml` (ejecutable autocontenido, solo al subir una etiqueta `v*`) | Versión descargable sin instalar .NET (ADR 0009, propuesta) | 2026-11-27 |
 
 ## Próximas piezas (con su disparador)
 
@@ -35,9 +38,9 @@ La IA actualiza este archivo cada vez que agrega una pieza o cambia el plan.
 |-------|---------------------|-------|
 | Umbral mínimo de cobertura que bloquee el CI | La cobertura del motor se estabilice (varias fichas) | MVP |
 | Tests de componentes de la UI (bUnit) | La Web tenga lógica propia (hoy solo muestra lo que da el motor) | MVP |
-| Generación del informe (PDF o HTML imprimible) | Se defina el formato con los abogados | MVP |
+| Ajustes del formato del informe | Responda el abogado la pregunta C4 (issue #17) | MVP |
+| Proyecto de tests de la Web (`PrevisionAR.Web.Tests`) | Guardar y abrir casos (ADR 0007, propuesta) | MVP |
 | Persistencia local con SQLite | Haya que guardar casos entre sesiones | Post-MVP |
 | Empaquetado e instalador para Windows | Primera versión para que la prueben abogados | Post-MVP |
-| Versionado y releases en GitHub | Primera versión publicada | Post-MVP |
 | Tests de regresión con casos reales anonimizados | Los abogados aporten casos | Post-MVP |
 | OCR y capa de IA (`IAIProvider`) | Etapa 2: automatización documental | Etapa 2 |
