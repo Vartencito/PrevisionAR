@@ -28,7 +28,11 @@ docs/
   normativa/                Fichas de reglas previsionales con su fuente
 ```
 
-## Requisitos
+## Para abogados
+
+Descargar la versión de prueba desde [Releases](https://github.com/Vartencito/PrevisionAR/releases) y seguir la [guía de uso](docs/guia-de-uso.md). No hace falta instalar nada.
+
+## Requisitos (para desarrollar)
 
 - .NET SDK 10
 - Visual Studio 2026 (o `dotnet` CLI)
@@ -45,7 +49,7 @@ dotnet run --project src/PrevisionAR.Web
 
 Avance y próximos pasos: [`docs/estado-del-proyecto.md`](docs/estado-del-proyecto.md) · Plan: [`docs/plan-del-proyecto.md`](docs/plan-del-proyecto.md).
 
-MVP en curso. Ya funciona el cómputo de servicios con aportes (R001), pendiente de validación por un previsionalista. Ver `docs/vision.md`.
+MVP en curso. Ya funcionan el cómputo de servicios con aportes (R001), los requisitos de la PBU (R002) y el informe imprimible, pendientes de validación por un previsionalista. Ver `docs/vision.md`.
 
 ## Aviso
 

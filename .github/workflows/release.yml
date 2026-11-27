@@ -1,0 +1,48 @@
+# Arma la versión para abogados (ADR 0009): un .zip con el programa para Windows que no necesita instalar .NET.
+# Se dispara al subir una etiqueta de versión (por ejemplo v0.1.0). La etiqueta la crea el responsable
+# cuando decide publicar; nunca se publica sola con cada cambio.
+name: Publicar versión
+
+on:
+  push:
+    tags: ['v*']
+
+permissions:
+  contents: read
+
+jobs:
+  publicar:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write # necesario para crear la versión en GitHub Releases
+    steps:
+      - uses: actions/checkout@v7
+
+      - uses: actions/setup-dotnet@v6
+        with:
+          dotnet-version: '10.0.x'
+
+      # No se publica nada que no pase los tests.
+      - name: Tests
+        run: dotnet test --configuration Release
+
+      - name: Armar el programa para Windows (autocontenido)
+        run: >
+          dotnet publish src/PrevisionAR.Web --configuration Release
+          --runtime win-x64 --self-contained true -p:PublishSingleFile=true
+          --output ./publicar/PrevisionAR
+
+      - name: Comprimir
+        run: |
+          cp docs/guia-de-uso.md ./publicar/PrevisionAR/LEEME.md
+          cp LICENSE ./publicar/PrevisionAR/
+          cd publicar && zip -r "PrevisionAR-${GITHUB_REF_NAME}-windows.zip" PrevisionAR
+
+      - name: Crear la versión en GitHub Releases
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: >
+          gh release create "$GITHUB_REF_NAME" "publicar/PrevisionAR-${GITHUB_REF_NAME}-windows.zip"
+          --title "Previsión AR $GITHUB_REF_NAME"
+          --notes "Versión de prueba para abogados. Instrucciones en docs/guia-de-uso.md (también incluidas en el .zip como LEEME.md)."
+          --prerelease
