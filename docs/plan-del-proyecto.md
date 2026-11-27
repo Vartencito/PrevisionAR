@@ -57,8 +57,8 @@ Las fechas suponen 10 h por semana y **no incluyen esperas del abogado**: si una
 ## Rutinas
 
 **Cada sesión de trabajo con la IA:**
-1. La IA lee `docs/estado-del-proyecto.md` y toma la primera tarea de "Le toca a la IA", salvo que el responsable pida otra.
-2. Al terminar: commits con "Cierra #N", CI en verde, regenera el estado y lo commitea.
+1. El responsable empieza con `/inicio-de-sesion`: la IA sincroniza, lee `docs/estado-del-proyecto.md`, muestra qué cambió y qué espera una decisión, y toma la primera tarea de "Le toca a la IA" (salvo que el responsable pida otra).
+2. Al terminar, `/cierre-de-sesion`: commits con "Cierra #N", CI en verde, estado regenerado y resumen de lo que le toca al responsable.
 3. Tareas nuevas que aparezcan → issue nuevo con versión y tamaño.
 
 **Repaso semanal (15 minutos, el responsable con la IA):**
@@ -81,3 +81,13 @@ La API que usa la IA no permite crear tableros, así que este paso lo hace el re
 3. Activar los workflows **Item closed → Done** y **Item reopened → Todo**.
 
 Desde ahí el tablero se mantiene solo con lo que la IA hace en los issues.
+
+## Validación con abogados (aprobado el 2026-11-27)
+
+Forma de trabajo completa en `docs/propuesta-forma-de-trabajo.md`. En resumen:
+
+- **Un solo archivo de preguntas:** `docs/conocimiento/preguntas-previsionalista.md`. Cada pregunta tiene un código fijo y se marca abierta, respondida o validada. La hoja de cada reunión sale de ahí.
+- **Notas de reunión:** `docs/conocimiento/reuniones/AAAA-MM-DD.md`.
+- **Casos dorados:** historias laborales reales anonimizadas junto con el cómputo de ANSES. Procedimiento en `docs/conocimiento/casos-dorados.md`.
+- **Límite de investigación:** como máximo dos fichas en "Investigación" esperando al abogado.
+- **Validación de una regla:** dos abogados, o un abogado más un caso dorado que coincida.

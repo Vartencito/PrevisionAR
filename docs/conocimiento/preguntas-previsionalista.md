@@ -5,6 +5,13 @@ Cuando una pregunta se responde, la IA actualiza la ficha que corresponda.
 
 Referencias: ❓ sin norma encontrada · ⚠️ hay norma pero hay que confirmar cómo se aplica · ✅ resuelta por norma.
 
+**Es el único archivo de preguntas del proyecto** (forma de trabajo aprobada el 2026-11-27). Códigos fijos, que no se renumeran:
+- `P-n`: preguntas generales y de R001, R002 y R003 (las tablas numeradas de 1 en adelante).
+- `R004-n`, `R005-n`, `R006-n`: preguntas de cada ficha, con su propia numeración.
+- Repreguntas: el código de la original con "-bis" (por ejemplo, A2-bis repregunta la P-2).
+
+Las hojas para cada reunión (por ejemplo `hoja-reunion-v0.2.md`) se arman con estas preguntas y citan su código.
+
 ## Cómputo de servicios (R001)
 
 | # | Pregunta | Respuesta | Fecha |
@@ -54,3 +61,91 @@ Los casos de `docs/normativa/R003-computo-por-hijos.md` muestran el efecto de ca
 | 26 | ❓ ¿Hay pronunciamiento del Congreso o fallos que afecten la vigencia del art. 22 bis (DNU 475/2021)? *(Consulta 2026-11-27: el buscador muestra un Orden del Día de Diputados n.º 602/2021, que sería un dictamen de la Comisión Bicameral de Trámite Legislativo sobre este decreto, pero HCDN no dejó abrirlo (error 403). No se usa como fuente. No se encontró ningún rechazo del decreto por las Cámaras.)* | | |
 | 27 | ❓ ¿Hay casos de solicitudes anteriores al 19/07/2021 donde se haya pedido aplicarlo por vía judicial? | | |
 | 28 | ❓ *(Nueva, 2026-11-27.)* ¿De dónde saca el abogado los datos de los hijos que el programa necesitaría: vínculos cargados en Mi ANSES, fecha de adopción, CUD, meses de AUH liquidados por cada hijo y meses suspendidos? ¿Hay una pantalla o formulario de ANSES que los muestre? *(Pregunta práctica: la Res. ANSES 154/2021, art. 2, ap. 1, toma lo registrado en las bases de ANSES, pero no dice cómo lo ve el abogado.)* | | |
+
+
+## R004 Moratorias — códigos R004-n
+
+El número de cada pregunta es su código: la pregunta 3 de esta sección es `R004-3`.
+
+Consulta de fuentes: 2026-11-26. Detalle y links en `docs/normativa/R004-moratorias.md`.
+
+Marcas: ⚠️ hay norma pero hay que confirmar cómo se aplica · ❓ no se encontró norma.
+
+1. ⚠️ ¿Los meses comprados con la Ley 27.705 sirven solo para llegar a los 30 años, o también suman a la PC o la PAP? — Ley 27.705, art. 7: sirven "al único fin de acreditar el mínimo de servicios" de la PBU; no nombra PC ni PAP.
+2. ⚠️ ¿Los meses pagados con la Ley 24.476 suman también al haber (PC, PAP), o solo para los 30 años? — Res. ANSES 884/2006, art. 1: aplica el trámite a PBU, PC y PAP con servicios autónomos; la ley no lo dice expreso.
+3. ⚠️ En la Ley 24.476, ¿qué diferencia práctica hay entre los años del Cap. I ("de servicios, no de aportes") y los meses que se pagan por el Cap. II? — art. 3: "Los años declarados podrán computarse como años de servicios, no de aportes."
+4. ⚠️ ¿La UCAP incluye marzo de 2012 completo? — La ley (art. 3) habla de períodos anteriores al 31/03/2012; el Decreto 173/2023 y la guía oficial dicen "marzo de 2012 inclusive".
+5. ❓ ¿Desde qué edad se pueden regularizar períodos con la Ley 24.476 (18 años)? — No se encontró en la ley, el Decreto 1454/2005, la RG AFIP 2017/2006 ni las Res. ANSES 319/2006 y 579/2006 (anexos no leídos). Solo la UCAP cuenta la residencia desde los 18 años (Ley 27.705, art. 16).
+6. ⚠️ ¿La evaluación socioeconómica de la RGC 5345/2023 sigue aplicándose hoy a la Ley 24.476, aunque la Unidad de Pago de la 27.705 venció? — RGC 5372/2023 la extiende a la Ley 24.476 "en los términos de la Ley N° 24.476"; no se encontró norma que la deje sin efecto.
+7. ⚠️ ¿La Unidad de Pago de la Ley 27.705 venció exactamente el 23/03/2025? — La ley (art. 4) fija dos años desde su vigencia, sin fecha; la fecha sale de un proyecto del Congreso (1310-D-2025), no de una norma.
+8. ⚠️ ¿El Congreso trató en 2026 la insistencia sobre la Ley 27.792 (prórroga de la moratoria) vetada por el Decreto 534/2025? — El listado de leyes insistidas de Diputados (actualizado al 29/10/2025) no la incluye; no se encontró dato posterior.
+9. ⚠️ ¿La UCAP sigue abierta y sin plazo de fin? — La ley no le fija plazo (el de dos años es de la Unidad de Pago, art. 4); la guía oficial sigue publicada (modificada el 20/11/2026).
+10. ⚠️ En la UCAP, ¿la edad (50 a 59 mujer, 55 a 64 varón) se mira el día que se pide, o el día de cada pago? — Ley 27.705, art. 16 fija el rango; art. 18: cada unidad se paga dentro del mes en que se adquiere.
+11. ⚠️ ¿Se pueden combinar en una misma persona la Ley 24.476 (hasta 1993) y la UCAP (hasta 2012)? — Ninguna norma leída lo prohíbe; la Ley 27.705, art. 3 solo excluye meses con empleo, autónomo o monotributo registrados.
+12. ⚠️ ¿Se pueden sumar moratoria y años por hijos (R003) para llegar a 30? — La guía del trámite de tareas de cuidado la declara compatible con la Ley 24.476; no se encontró nada sobre la UCAP.
+13. ⚠️ Si una persona ya tiene una moratoria vencida otorgada (Ley 26.970, 25.994 o Unidad de Pago 27.705), ¿el programa debe cargar esos meses como servicios normales o con un tipo propio? — Ley 26.970, art. 10 y Ley 27.705, art. 21: valen para condición de aportante solo si se llega al mínimo de la PBU.
+14. ⚠️ ¿La moratoria del art. 6 de la Ley 25.994 sigue usable o se considera cerrada? — El art. 6 remite a la moratoria de la Ley 25.865 para quienes cumplían edad en 2004; no se encontró fecha de fin expresa.
+15. ❓ ¿Cuántas cuotas y qué interés tiene hoy el plan de la Ley 24.476? — La RG AFIP 2017/2006 remite al plan de la Ley 25.865 sin fijar el número; la cifra de 60 cuotas solo aparece en prensa.
+16. ⚠️ ¿Los meses de moratoria se pueden usar para retiro por invalidez o pensión (aportante irregular)? — Ley 27.705, art. 21: sirven para completar el 50% del mínimo del aportante irregular con derecho.
+17. ❓ ¿Hay fallos de la CSJN o de la Cámara Federal de la Seguridad Social que permitan usar moratorias vencidas o que se aparten de estas reglas? — No se buscó jurisprudencia en esta ronda.
+
+
+## Haber inicial (R005) — códigos R005-n
+
+El número de cada pregunta es su código: la pregunta 3 de esta sección es `R005-3`.
+
+Dudas de la ficha `docs/normativa/R005-haber-inicial.md`. Consulta: 2026-11-26.
+Referencias: ❓ sin norma encontrada · ⚠️ hay norma pero hay que confirmar cómo se aplica.
+Las fuentes y links están en la tabla "Norma y fuente" de la ficha.
+
+| # | Pregunta | Respuesta | Fecha |
+|---|----------|-----------|-------|
+| P1 | ⚠️ ¿La PBU es igual para todos, o se suma algo por cada año trabajado por encima de 30? *(El art. 20 vigente solo fija una suma fija (Ley 26.417). El Decreto 679/95 todavía reglamenta un plus que estaba en el texto viejo: 1% por año hasta 45.)* | | |
+| P2 | ⚠️ Para la PC, si sobran 6 meses justos (no 7), ¿se pierden? *(Art. 24 inc. a): "fracción mayor de SEIS (6) meses".)* | | |
+| P3 | ⚠️ Para la PAP, ¿también la fracción de más de 6 meses cuenta como un año? ¿O se calcula por meses? *(Art. 30 remite a la "forma y metodología" de la PC; el Decreto 679/95 habla de "total de meses con aportes".)* | | |
+| P4 | ⚠️ Si en los 10 años antes del cese hay menos de 120 meses cobrados, ¿se divide por los meses que hay, por 120, o se buscan meses más atrás? *(Art. 24 inc. a) excluye la inactividad; Decreto 679/95 habla de 120 meses con remuneraciones, sin decir qué pasa si faltan.)* | | |
+| P5 | ⚠️ Servicios mixtos (dependencia y autónomo): ¿la PC es 1,5% × años de dependencia × W, más 1,5% × años de autónomo × R? *(Art. 24 inc. c) dice "proporcional al tiempo"; la fórmula está en el Anexo I del Decreto 679/95, que todavía no leímos.)* | | |
+| P6 | ⚠️ ¿El tope de 35 años y el de 420 meses son lo mismo? ¿Cuáles meses se descartan como "menos favorables"? *(Art. 24: máximo 35 años; Decreto 679/95: máximo 420 meses en mixtos.)* | | |
+| P7 | ❓ ¿Qué valor se usa hoy como tope de la PC ("1 AMPO por año", art. 26)? ¿Se aplica también a la PAP? *(El AMPO se derogó (Ley 26.417, art. 5) y el MOPRE se reemplazó por una proporción del haber mínimo (art. 13). No encontramos el valor vigente.)* | | |
+| P8 | ⚠️ ¿En qué orden se aplican PBU + PC + PAP, el haber máximo, el haber mínimo y el 82% del salario mínimo? *(Res. ANSES 304/2026 fija mínimo y máximo; art. 125 bis da el 82% con 30 años de aportes efectivos.)* | | |
+| P9 | ⚠️ ¿Qué índice de actualización se usa: el de la fecha de cese o el de la fecha de solicitud, si caen en trimestres distintos? *(Las disposiciones dicen "cesen desde... o soliciten su beneficio desde...".)* | | |
+| P10 | ❓ ¿Dónde consiguen ustedes los coeficientes del índice? ¿Del anexo del Boletín Oficial o de otra tabla de ANSES? *(El anexo solo sale en la edición web del B.O.)* | | |
+| P11 | ⚠️ Autónomos: ¿las rentas de referencia se toman a valores de la fecha de solicitud aunque haya cesado antes? *(Decreto 679/95: valores "vigentes al momento de la solicitud".)* | | |
+| P12 | ⚠️ ¿Los meses con aportes en la ex AFJP cuentan para la PAP como si fueran al régimen público? *(Ley 26.425, art. 3: "como si hubiesen sido prestados al régimen previsional público".)* | | |
+| P13 | ⚠️ ¿La PAP al 1,5% se aplica a todos los que piden hoy, sin importar desde cuándo aportaron? *(Decreto 313/2007: 1,5% para beneficios pedidos desde 01/07/2007.)* | | |
+| P14 | ❓ En la práctica, ¿se usa el índice oficial o los índices de los fallos (Elliff, ISBIC) para el cálculo que presentan? *(Pregunta de uso, no normativa: decide qué variantes de cálculo ofrece el programa.)* | | |
+
+
+## R006 (PUAM y PEA) — códigos R006-n
+
+El número de cada pregunta es su código: la pregunta 3 de esta sección es `R006-3`.
+
+Dudas que salieron de la investigación del 26/11/2026 para `docs/normativa/R006-puam-y-pea.md`. Una por línea. El responsable anota la respuesta al lado.
+
+Referencias: ❓ sin norma encontrada · ⚠️ hay norma pero hay que confirmar cómo se aplica.
+
+### PEA (Ley 24.241, art. 34 bis)
+
+1. ⚠️ Los "5 años en los últimos 8 antes del cese": ¿se cuentan hacia atrás desde el último trabajo o desde el día en que pide la PEA? *(La ley dice "cese de la actividad" y no lo define para la PEA. El Decreto 679/95 define "cese" solo para el art. 24. Ver caso 4 de la ficha.)* — Respuesta:
+2. ⚠️ Si la persona dejó de trabajar hace muchos años y cumple 70 después, ¿igual puede pedir la PEA? *(Misma duda que la 1: la ley no fija plazo entre el cese y la edad.)* — Respuesta:
+3. ⚠️ Para autónomos, ¿qué cuenta como "cese"? ¿La baja en ARCA? *(El art. 34 bis incluye autónomos, pero ni la ley ni el Decreto 679/95 definen su cese.)* — Respuesta:
+4. ❓ A la PEA, ¿se le aplica la compensación "2 años de edad por 1 de servicios" de la PBU? *(El art. 19 la prevé solo para la PBU; el art. 34 bis no dice nada. Buscado en Ley 24.241 y Decreto 679/95.)* — Respuesta:
+5. ⚠️ ¿El cómputo por hijos (art. 22 bis) suma para los 10 años de la PEA? *(El Decreto 475/2021 lo da "para acreditar" la PBU; no menciona la PEA. [Boletín Oficial](https://www.boletinoficial.gob.ar/pdf/aviso/primera/246989/20250516))* — Respuesta:
+6. ❓ ¿Los años por moratoria sirven para los 10 años y para los 5 de los últimos 8? *(No encontré norma que lo resuelva para la PEA.)* — Respuesta:
+7. ⚠️ Autónomos: ¿cómo prueban en la práctica los 5 años de "antigüedad en la afiliación"? *(El Decreto 679/95 cuenta solo desde la afiliación formal y solo años con la mitad de los aportes pagos, sin planes de pago. [ARCA](https://biblioteca.afip.gob.ar/dcp/DEC_C_000679_1995_05_11))* — Respuesta:
+8. ❓ La guía oficial dice que no pueden pedir la PEA quienes trabajaron en casas particulares. ¿Qué norma lo dice y qué prestación les corresponde? *(No figura en el art. 34 bis. [Guía](https://www.argentina.gob.ar/servicio/obtener-la-prestacion-por-edad-avanzada), actualizada 04/05/2023.)* — Respuesta:
+9. ⚠️ La nota de InfoLEG sobre la Ley 26.222 y el Decreto 1306/2000, ¿cambia algo de la PEA hoy? *(InfoLEG indica que el art. 34 bis solo fue incorporado por la Ley 24.347. [InfoLEG](https://servicios.infoleg.gob.ar/infolegInternet/anexos/0-4999/639/texact.htm))* — Respuesta:
+10. ⚠️ Si alguien cumple la PBU (R002) y también la PEA, ¿siempre conviene la jubilación ordinaria? ¿El programa debe mostrar las dos? *(La PEA paga 70 % de la PBU; es una decisión del abogado, no de la norma.)* — Respuesta:
+
+### PUAM (Ley 27.260, arts. 13 a 17)
+
+11. ⚠️ ¿Puede pedir la PUAM alguien que **tiene derecho** a una jubilación (por ejemplo, a la PEA) pero no la pidió? *(La ley dice "no ser beneficiario"; la guía de Derecho Fácil dice "ni tener derecho". [Ley](https://www.argentina.gob.ar/normativa/nacional/263691/actualizacion) · [Guía](https://www.argentina.gob.ar/node/159819))* — Respuesta:
+12. ⚠️ ¿Qué mira hoy ANSES en la evaluación socioeconómica y patrimonial? ¿Sigue la RESGC 5345/2023 aunque terminó la moratoria? *(Res. ANSES 56/2023 remite a esa resolución. [Boletín Oficial](https://www.boletinoficial.gob.ar/detalleAviso/primera/286477/20230510))* — Respuesta:
+13. ⚠️ ¿Confirman que la PUAM sigue igual (65 años para todos, incompatible con trabajar)? *(El proyecto 27.792 que la cambiaba fue vetado por el Decreto 534/2025; no lo encontré en el listado de leyes insistidas al 29/10/2025.)* — Respuesta:
+14. ⚠️ Residencia: ¿un viaje de más de 90 días corridos hace perder la PUAM o solo la suspende? ¿Y cuenta para los "10 años inmediatamente anteriores"? *(Res. ANSES 918/2024 habla de suspensión. [Boletín Oficial](https://www.boletinoficial.gob.ar/detalleAviso/primera/315235/20241007))* — Respuesta:
+15. ⚠️ Si alguien cobra la PUAM y después junta los requisitos de una jubilación, ¿cómo se pasa de una a otra? *(La ley permite optar si se cobra una sola prestación, pero no explica el paso al revés.)* — Respuesta:
+16. ❓ ¿Quieren que el programa revise la PUAM, que no depende de los servicios, o solo la PEA? *(Pregunta de alcance para el responsable.)* — Respuesta:
+
+### Agregada al armar criterios y casos (2026-11-27)
+
+17. ⚠️ PEA: los "5 años en los 8 anteriores al cese", ¿se cuentan en meses (60 de 96), como en los casos 9 y 10 de la ficha? ¿Qué pasa con los días sueltos de un período que empieza o termina a mitad de mes? *(El art. 34 bis habla de años y el Decreto 679/95 no fija la unidad para este requisito. Ligada a las preguntas 1 y 14 de `preguntas-previsionalista.md`.)* — Respuesta:

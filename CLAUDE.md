@@ -12,7 +12,7 @@ Visión completa y etapas: `docs/vision.md`.
 
 Este proyecto se desarrolla **principalmente con IA**. El humano casi no escribe código.
 
-- **Responsable del proyecto (humano):** dueño del producto. Pide funcionalidades, habla con los clientes (abogados previsionalistas), aprueba decisiones y verifica que el producto funcione como ellos necesitan.
+- **Responsable del proyecto (humano): Product Owner con foco en validación.** Consigue la verdad del dominio (reuniones con abogados, respuestas, casos dorados), decide (ADR, fichas, prioridades), prueba como usuario y planifica. No revisa código línea por línea ni investiga normativa. Detalle en `docs/propuesta-forma-de-trabajo.md`.
 - **IA:** Tech Lead y equipo de desarrollo. Investiga normativa, escribe fichas, diseña, programa, prueba y documenta.
 
 ## Rol esperado de la IA
@@ -35,7 +35,7 @@ Actuar como **Tech Lead**:
 4. **El motor es determinístico.** Mismos datos de entrada → mismo resultado, siempre.
 5. **La IA nunca calcula ni decide reglas jurídicas.** Solo lee documentos y extrae datos, que un humano valida.
 6. **Privacidad.** Nunca subir datos reales de clientes al repo (tampoco en tests ni ejemplos). Usar datos ficticios.
-7. **Dependencias en un solo sentido:** `Web → Motor`, `Tests → Motor`. Nunca al revés.
+7. **Dependencias en un solo sentido:** `Web → Motor`, `Motor.Tests → Motor`, `Web.Tests → Web`. Nunca al revés.
 
 ## Requiere aprobación del responsable
 
@@ -56,6 +56,7 @@ src/
   PrevisionAR.Web/           Blazor Web App (Server), local. Solo presenta.
 tests/
   PrevisionAR.Motor.Tests/   xUnit
+  PrevisionAR.Web.Tests/     xUnit: código puro de la Web (archivo de caso, ADR 0007)
 docs/
   plan-del-proyecto.md       Metodología (Kanban), versiones y rutinas
   estado-del-proyecto.md     Avance, pronóstico y qué hacer ahora (generado)
@@ -114,15 +115,19 @@ dotnet run --project src/PrevisionAR.Web
 
 - Antes de escribir una ficha, leer `docs/conocimiento/notas-de-dominio.md`.
 - Para investigar normativa a fondo, usar el agente `investigador-previsional` (`.claude/agents/`): investiga, cita fuentes y clasifica preguntas, pero no decide criterios ni escribe código.
-- Las dudas que la normativa no resuelve van a `docs/conocimiento/preguntas-previsionalista.md`. Nunca se resuelven suponiendo.
+- Las dudas que la normativa no resuelve van a `docs/conocimiento/preguntas-previsionalista.md`, **el único archivo de preguntas** (cada una con código fijo). Nunca se resuelven suponiendo. Las hojas para cada reunión se arman desde ahí.
+- Notas de cada reunión con abogados: `docs/conocimiento/reuniones/AAAA-MM-DD.md`, con palabras propias.
+- **Límite de investigación:** no más de dos fichas en "Investigación" esperando al abogado. Si se llega al límite, la IA trabaja en producto, calidad o preparación de reuniones.
+- **Validación:** una regla pasa a "Validada" con dos abogados, o con un abogado más un caso dorado que coincida.
+- **Casos dorados:** historias reales **anonimizadas** con el cómputo que hizo ANSES. Procedimiento en `docs/conocimiento/casos-dorados.md`. Cada caso entra al repo solo con la aprobación del responsable.
 - Material de cursos o de terceros (PDFs, apuntes) **no se sube al repo**: solo se resume con palabras propias y se cita de dónde salió.
 
 ## Gestión del proyecto (ADR 0005)
 
-- **Al empezar una sesión:** leer `docs/estado-del-proyecto.md` y tomar la primera tarea de "Le toca a la IA", salvo que el responsable pida otra.
+- **Al empezar una sesión:** `/inicio-de-sesion` (sincroniza con `git pull`, lee el estado y toma la primera tarea de "Le toca a la IA", salvo que el responsable pida otra).
 - **Tareas = issues de GitHub**, con versión (milestone), tamaño (`tamaño: S/M/L`) y tipo. Trabajo nuevo → issue nuevo. Si algo espera al abogado: `bloqueado: abogado`.
 - **Commits:** incluir "Cierra #N" cuando terminan una tarea.
-- **Al terminar una sesión:** correr `python herramientas/estado_del_proyecto.py` y commitear el estado actualizado.
+- **Al terminar una sesión:** `/cierre-de-sesion` (tests, revisión, commits, push, estado regenerado y qué le toca al responsable).
 - Detalle en `docs/plan-del-proyecto.md`.
 
 ## Flujo de trabajo
@@ -140,7 +145,9 @@ Los comandos `/nueva-ficha`, `/implementar-ficha` y `/procesar-respuestas` detal
 
 ## Estado actual
 
-**MVP en curso: cómputo de servicios del régimen general.** R001 y R002 implementadas (pantalla de prueba con ejemplos e informe imprimible); faltan validar convenciones de días y redondeos con previsionalista.
+**Avance y próximos pasos:** `docs/estado-del-proyecto.md` (no se repite acá para que no se desactualice).
+
+**Alcance del MVP: cómputo de servicios del régimen general.**
 1. Carga manual de historia laboral (períodos, empleador, desde/hasta, tipo, con o sin aportes)
 2. Cómputo de servicios (años, meses, días)
 3. Detección de superposiciones

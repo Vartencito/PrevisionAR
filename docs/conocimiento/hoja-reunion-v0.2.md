@@ -91,7 +91,7 @@ Todas las personas de la tabla son mujeres de 60 años justos (no tienen edad de
 | 21 | Varón de 71 que cumple la PEA y no cobra nada | Muestra **las dos** y advierte. Pregunta R006-11 | |
 | 22 | Mujer de 70 que estuvo 120 días fuera del país en 2025 | **Solo advierte**. Pregunta R006-14 | |
 
-**Preguntas (numeración de `preguntas-R006.md`):**
+**Preguntas (códigos R006-n de `preguntas-previsionalista.md`):**
 
 - **1 y 2.** Los "8 años antes del cese": ¿desde el último trabajo o desde el pedido? ¿Puede pedirla quien dejó de trabajar hace mucho? (caso 4)
 - **3.** Autónomos: ¿qué es el "cese"? ¿La baja en ARCA?
@@ -113,7 +113,7 @@ Todas las personas de la tabla son mujeres de 60 años justos (no tienen edad de
 
 ## Bloque F — Moratorias (solo preguntas, sin casos todavía)
 
-Numeración de `preguntas-R004.md`. Elegimos las que más cambian lo que hace el programa.
+Códigos R004-n de `preguntas-previsionalista.md`. Elegimos las que más cambian lo que hace el programa.
 
 - **1 y 2.** Los meses de moratoria (Ley 27.705 y Ley 24.476), ¿sirven solo para llegar a 30 años o también suman a la PC y la PAP?
 - **11.** ¿Se pueden combinar en la misma persona la Ley 24.476 (hasta 1993) y las unidades de la Ley 27.705 (hasta marzo 2012)?

@@ -253,10 +253,10 @@ No hay interfaces (puertos) nuevas: todo es dominio puro, sin nada externo que r
 | ¿Los años por hijo solo completan hasta 360 y el resto se pierde? | 16 (`preguntas-previsionalista.md`) | El tope en R002 |
 | ¿Años por hijo y compensación por edad se suman? ¿En qué orden? | 17 | El método que completa los 360 meses; R003 entera |
 | ¿Los años por hijo sirven para la PEA? | 25 | Qué servicios recibe la PEA |
-| ¿Los meses de moratoria cuentan para la compensación por edad y para la PEA? (la Ley 24.476, Cap. I, habla de "servicios, no de aportes") | `preguntas-R004.md` | Si la moratoria entra en "faltantes" y en R006 |
+| ¿Los meses de moratoria cuentan para la compensación por edad y para la PEA? (la Ley 24.476, Cap. I, habla de "servicios, no de aportes") | preguntas-previsionalista.md (R004) | Si la moratoria entra en "faltantes" y en R006 |
 | ¿Qué moratorias carga el programa: solo las ya otorgadas, o también propone candidatas para los huecos? | Alcance de R004 (responsable) | Qué valores se suman al enum y si hace falta la tabla de vigencias |
-| ¿Desde cuándo se cuentan los 8 años de la PEA: desde el cese o desde la solicitud? | `preguntas-R006.md` (caso 4 de R006) | `RequisitosPea` |
-| PUAM: nacionalidad, residencia, otras prestaciones y evaluación socioeconómica | `preguntas-R006.md` | Qué datos nuevos pide el caso (o si el motor solo los lista como "a verificar por el abogado") |
+| ¿Desde cuándo se cuentan los 8 años de la PEA: desde el cese o desde la solicitud? | preguntas-previsionalista.md (R006) (caso 4 de R006) | `RequisitosPea` |
+| PUAM: nacionalidad, residencia, otras prestaciones y evaluación socioeconómica | preguntas-previsionalista.md (R006) | Qué datos nuevos pide el caso (o si el motor solo los lista como "a verificar por el abogado") |
 
 ## Pendiente del responsable
 

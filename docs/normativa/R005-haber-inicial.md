@@ -5,7 +5,7 @@
 - **Alcance:** fuera del MVP actual (cálculo del haber). Ficha de relevamiento para una etapa futura.
 - **Depende de:** R001 (cómputo de servicios, con desglose por tramo y por tipo n/m/p) y R002 (requisitos de la PBU).
 - **Fecha de consulta de todas las fuentes:** 2026-11-26.
-- **Dudas:** `docs/conocimiento/preguntas-R005.md`.
+- **Dudas:** `docs/conocimiento/preguntas-previsionalista.md`, sección R005 (códigos R005-n).
 
 ## Norma y fuente
 
@@ -72,7 +72,7 @@
 
 ## Enunciado preliminar (sin criterios de aceptación)
 
-Lenguaje claro, solo lo que dicen las normas. Todo lo marcado "duda" está en `preguntas-R005.md`.
+Lenguaje claro, solo lo que dicen las normas. Todo lo marcado "duda" está en `preguntas-previsionalista.md` (códigos R005-n).
 
 **PBU.** Monto fijo, igual para todos los que cumplen los requisitos de R002. Hoy lo publica ANSES cada mes; noviembre 2026: $ 203.182,22. El texto vigente del art. 20 no da un plus por años por encima de 30 (duda P1).
 

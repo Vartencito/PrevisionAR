@@ -97,7 +97,7 @@ Los servicios no son requisito de la PUAM: es no contributiva.
 
 ## Criterios de aceptación
 
-Los criterios marcados **A VALIDAR** dependen de la pregunta indicada. "R006-n" es la pregunta n de `docs/conocimiento/preguntas-R006.md`; "P-n" es la pregunta n de `docs/conocimiento/preguntas-previsionalista.md`. Fecha de cálculo = fecha de solicitud.
+Los criterios marcados **A VALIDAR** dependen de la pregunta indicada. "R006-n" es la pregunta n de `docs/conocimiento/preguntas-previsionalista.md (sección R006)`; "P-n" es la pregunta n de `docs/conocimiento/preguntas-previsionalista.md`. Fecha de cálculo = fecha de solicitud.
 
 **PEA (Ley 24.241, art. 34 bis)**
 
@@ -154,4 +154,4 @@ Casos que faltan y dependen de respuestas: persona con servicios por moratoria (
 
 ## Preguntas abiertas para el previsionalista
 
-En `docs/conocimiento/preguntas-R006.md`.
+En `docs/conocimiento/preguntas-previsionalista.md`, sección R006 (códigos R006-n).

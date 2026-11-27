@@ -1,6 +1,6 @@
 # 0009 — Distribución de la versión de prueba: ejecutable autocontenido local
 
-- **Estado:** Propuesta. Ya está programada (el arranque en `Program.cs` y el workflow), pero no se publicó nada. #19 no se cierra sin la aprobación del responsable. La licencia actual es Unlicense; el issue #20 decide si se mantiene antes de la primera publicación
+- **Estado:** Aceptada el 2026-11-27 por el responsable. Programada, todavía sin publicar: la primera versión se publica cuando el responsable crea la etiqueta, después de decidir la licencia (issue #20; hoy es Unlicense)
 - **Fecha:** 2026-11-27
 - **Issues:** #19 (publicar v0.1) · relacionado con #37 (instalador, v0.4)
 

@@ -112,4 +112,4 @@ No hay criterios de aceptación todavía: se escriben cuando el responsable deci
 
 ## Preguntas abiertas
 
-En `docs/conocimiento/preguntas-R004.md`. El Tech Lead las integra a `preguntas-previsionalista.md`.
+En `docs/conocimiento/preguntas-previsionalista.md`, sección R004 (códigos R004-n).

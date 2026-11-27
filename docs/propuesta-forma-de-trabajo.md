@@ -1,6 +1,6 @@
 # Propuesta: estructura del proyecto, rol del responsable y comunicación con la IA
 
-- **Estado:** Propuesta (requiere aprobación del responsable: cambia el modelo de trabajo)
+- **Estado:** Aceptada el 2026-11-27 por el responsable (las cuatro piezas, el rol recomendado y los comandos de sesión)
 - **Fecha:** 2026-11-27
 - **Base:** revisión de `CLAUDE.md`, agentes y comandos (`.claude/`), código y tests, `docs/` (plan, estado, arquitectura, ADR, fichas, conocimiento), issues de GitHub y el historial de commits.
 

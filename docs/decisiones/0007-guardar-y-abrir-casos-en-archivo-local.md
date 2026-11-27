@@ -1,6 +1,6 @@
 # 0007 — Guardar y abrir casos en un archivo local
 
-- **Estado:** Propuesta (requiere aprobación del responsable: toca privacidad y suma un proyecto de tests)
+- **Estado:** Aceptada el 2026-11-27 por el responsable, con las recomendaciones: opción A (descarga y `InputFile`), referencia del caso opcional (decisión 3, opción 2), proyecto `tests/PrevisionAR.Web.Tests` (T1) y archivo sin cifrar en v0.1
 - **Fecha:** 2026-11-27
 - **Tarea:** issue #15 (versión v0.1)
 
