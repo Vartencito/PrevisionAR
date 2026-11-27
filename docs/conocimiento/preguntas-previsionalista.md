@@ -63,7 +63,7 @@ Los casos de `docs/normativa/R003-computo-por-hijos.md` muestran el efecto de ca
 | 28 | ❓ *(Nueva, 2026-11-27.)* ¿De dónde saca el abogado los datos de los hijos que el programa necesitaría: vínculos cargados en Mi ANSES, fecha de adopción, CUD, meses de AUH liquidados por cada hijo y meses suspendidos? ¿Hay una pantalla o formulario de ANSES que los muestre? *(Pregunta práctica: la Res. ANSES 154/2021, art. 2, ap. 1, toma lo registrado en las bases de ANSES, pero no dice cómo lo ve el abogado.)* | | |
 
 
-## Surgidas de los casos reales CD-001 y CD-002 (2026-11-27)
+## Surgidas de los casos reales CD-001 a CD-004 (2026-11-27)
 
 Evidencia de un acuerdo de ANSES anonimizado. Detalle en `casos-dorados.md`. No es respuesta del abogado: se anota como **evidencia de ANSES** en las preguntas que toca y se le pide que la confirme.
 
@@ -72,7 +72,10 @@ Evidencia de un acuerdo de ANSES anonimizado. Detalle en `casos-dorados.md`. No 
 - **P-9 (fracciones de año):** en CD-001, PC con 15 años (descarta 4 meses) y PAP con 31 años (descarta 5 meses): las fracciones de 6 meses o menos no cuentan, tampoco en la PAP. En **CD-002**, la PC se calculó con 17 años a partir de 16a 10m: **una fracción de más de 6 meses suma un año**. Falta ver el caso de 6 meses exactos y una PAP con más de 6 meses.
 - **P-1 y P-14, ampliación con CD-002:** 29 días en un tramo y 14 en el otro se descartan los dos. **Los días no se suman entre los tramos antes y después de 7/94.** Todavía no se sabe si se suman entre períodos de un mismo tramo.
 - **P-2 (fechas inclusive) y P-8 (corte de 1994):** con el cese de CD-001 (30/11/2025), un período del 01/07/1994 al 30/11/2025 da en el motor 31a 5m 0d, igual que ANSES (suponiendo trabajo continuo).
-- **P-30 (leyes citadas):** CD-002 (2009) cita casi las mismas leyes que CD-001 (2026) sin moratoria a la vista: indicio fuerte de que es un texto fijo.
+- **P-30 (leyes citadas):** CD-001, CD-002 y CD-004 citan las mismas leyes, con moratoria (CD-004) y sin ella: **es un texto fijo**. La moratoria se ve en el tipo de beneficio ("PBU/PC/PAP - MORATORIA"), no en la lista de leyes.
+- **P-9, ampliación con CD-003 y CD-004:** en CD-004, ANSES toma 1 año de 1a 1m (PC) y 28 de 28a 0m 1d (PAP). En CD-003 (solo BlueCorp, **no es evidencia de ANSES**), 6 meses exactos no suman el año.
+- **R004-1 y R004-2 (moratoria y haber):** en CD-004, los meses de moratoria completan los 30 años del total informado, pero no entran en "tomado para el cálculo": no suman a la PC ni a la PAP. Falta saber de qué ley era la moratoria (P-34).
+- **Centavos (R005):** cinco cuentas en tres casos (CD-001, CD-002, CD-004) muestran que ANSES **trunca** los centavos en lugar de redondear.
 - **P-15 (edad):** otorgada con la solicitud presentada al día siguiente de cumplir 65.
 
 | # | Pregunta | Respuesta | Fecha |
@@ -81,6 +84,8 @@ Evidencia de un acuerdo de ANSES anonimizado. Detalle en `casos-dorados.md`. No 
 | 30 | ❓ La resolución de CD-001 cita las leyes 24.476, 25.865, 25.994 (art. 6) y 27.705, aunque todos los servicios son en relación de dependencia con aportes. ¿ANSES cita esas leyes en todas las resoluciones, o indica que se usó alguna moratoria? | | |
 | 32 | ❓ CD-002 se jubiló con 55 años y 10 meses y unos 26 años de servicios, con una prestación PBU/PC/PAP. ¿Por qué régimen? *(Hipótesis a confirmar: el régimen de la construcción, Ley 26.494, que pide 55 años y 25 de servicios. Si es así, queda fuera del MVP.)* | | |
 | 33 | ❓ En CD-002 el tiempo total informado es 34a 6m 23d, pero los tramos suman unos 26 años. ¿De dónde salen los otros 8 años: servicios en otra caja (reciprocidad), servicios sin aportes u otra cosa? | | |
+| 34 | ❓ CD-004 es una prestación "PBU/PC/PAP - MORATORIA" otorgada a una mujer de 50 años y 11 meses. ¿Por qué régimen se otorgó a esa edad? ¿Y con qué ley se hizo la moratoria (24.476, la Unidad de Pago o las UCAP de la 27.705)? | | |
+| 35 | ⚠️ ¿ANSES trunca siempre los centavos (en la PC, la PAP y los promedios), o es casualidad en estos casos? *(Cinco cuentas en CD-001, CD-002 y CD-004 dan truncado.)* | | |
 | 31 | ⚠️ ¿Puede conseguir la historia laboral de CD-001 (con los empleadores tachados) para comparar el cómputo del programa con el de ANSES? ¿Y otros casos con fracciones de **más** de 6 meses en la PC o la PAP, o con días sueltos repartidos en varios períodos? | | |
 
 ## R004 Moratorias — códigos R004-n

@@ -5,6 +5,8 @@ Objetivo: cerrar los criterios que faltan para la primera versión de prueba (c�
 
 **Qué llevar:** esta hoja, la [comparación de métodos de días](comparacion-metodos-de-dias-R001.md) impresa y, si se puede, un informe del programa impreso con un ejemplo.
 
+**Casos reales que se citan** (todos anonimizados, detalle en `casos-dorados.md`): CD-001 (jubilación 2026), CD-002 (2009), CD-003 (2017, solo cálculo de BlueCorp) y CD-004 (2025, con moratoria). Si el abogado los reconoce, mejor: puede contarnos qué pasó en cada uno.
+
 ---
 
 ## 1. Días sueltos y meses (A2-bis, P-1, P-14) — lo más importante
@@ -16,7 +18,7 @@ En un acuerdo real de ANSES (caso CD-001, anonimizado) vimos esto:
 | Tiempo informado | 15 años, 4 meses, 19 días | 31 años, 5 meses, 0 días |
 | Tiempo tomado para el cálculo | 15 años, 4 meses | 31 años, 5 meses |
 
-O sea: **para el cálculo, ANSES descarta los días sueltos.**
+O sea: **para el cálculo, ANSES descarta los días sueltos.** Pasa lo mismo en CD-002 (descarta 29 días en un tramo y 14 en el otro) y en CD-004 (descarta 1 día).
 
 | # | Pregunta | Respuesta |
 |---|----------|-----------|
@@ -27,12 +29,12 @@ O sea: **para el cálculo, ANSES descarta los días sueltos.**
 
 ## 2. Fracciones de año para la PC y la PAP (P-9)
 
-En CD-001, la PC se calculó con 15 años (descartó 4 meses) y la PAP con 31 (descartó 5 meses). En CD-002, la PC se calculó con 17 años a partir de 16 años y 10 meses: más de 6 meses suma un año.
+En CD-001, la PC se calculó con 15 años (descartó 4 meses) y la PAP con 31 (descartó 5 meses). En CD-004, la PC con 1 año a partir de 1 año y 1 mes. En CD-002, la PC se calculó con 17 años a partir de 16 años y 10 meses: más de 6 meses suma un año.
 
 | # | Pregunta | Respuesta |
 |---|----------|-----------|
 | 2.1 | ¿Pasa lo mismo en la PAP: más de 6 meses suma un año? | |
-| 2.2 | ¿Y con 6 meses exactos? | |
+| 2.2 | ¿Y con 6 meses exactos? BlueCorp (caso CD-003) no suma el año: 18 años y 6 meses los toma como 18. ¿ANSES hace lo mismo? | |
 
 ## 3. Corte de julio de 1994 (P-8)
 
@@ -55,14 +57,17 @@ ANSES separa "antes del 7/94" y "después del 7/94".
 | 5.1 | ¿Se puede pedir el **mismo día** del cumpleaños 65 (o 60)? En CD-001 se pidió al día siguiente | |
 | 5.2 | Alguien nacido un 29 de febrero, ¿cumple el 28 de febrero o el 1 de marzo en los años no bisiestos? | |
 
-## 6. Sobre los casos CD-001 y CD-002 (P-29 a P-33)
+## 6. Sobre los casos reales (P-29 a P-35)
 
 | # | Pregunta | Respuesta |
 |---|----------|-----------|
 | 6.1 | El total "tomado para el cálculo" dice 46 años y 5 meses, pero 15a 4m + 31a 5m = 46a 9m. ¿Error de impresión, o hay un tope o descuento que no se ve? | |
-| 6.2 | La resolución cita las leyes 24.476, 25.865, 25.994 y 27.705 (moratorias) aunque no usó moratoria, y la de CD-002 (2009) cita casi las mismas. ¿Es un texto que ANSES pone siempre? | |
+| 6.2 | Las resoluciones de CD-001, CD-002 y CD-004 citan las mismas leyes de moratoria, la tengan o no. ¿Confirma que es un texto fijo y que la moratoria se ve solo en el tipo de beneficio ("- MORATORIA")? | |
 | 6.3 | ¿Tiene otros casos parecidos (resolución de ANSES + historia laboral) que nos pueda pasar con los datos personales tapados? Sirven más los que están cerca de los 30 años, tienen días sueltos o trabajos superpuestos | |
 | 6.4 | CD-002 se jubiló con 55 años y 10 meses. ¿Por qué régimen (¿construcción, Ley 26.494?)? ¿Y de dónde salen los 34a 6m 23d del total informado, si los tramos suman unos 26 años? | |
+| 6.5 | CD-004 es "PBU/PC/PAP - MORATORIA" para una mujer de 50 años y 11 meses. ¿Por qué régimen se otorgó a esa edad? ¿Con qué ley se hizo la moratoria (24.476, Unidad de Pago o UCAP de la 27.705)? | |
+| 6.6 | En CD-004 la moratoria completa los 30 años del total, pero no entra en el tiempo tomado para la PC y la PAP. ¿Es siempre así con todas las moratorias? | |
+| 6.7 | (Para el cálculo del haber, más adelante.) En cinco cuentas de tres casos, ANSES **trunca** los centavos en lugar de redondear. ¿Lo sabía? ¿Es siempre así? | |
 
 ## 7. El informe del programa (C4, issue #17)
 

@@ -113,6 +113,8 @@ Todas las personas de la tabla son mujeres de 60 años justos (no tienen edad de
 
 ## Bloque F — Moratorias (solo preguntas, sin casos todavía)
 
+**Evidencia nueva (CD-004, ANSES 2025, anonimizado):** en una prestación con moratoria, los meses de moratoria completan el total de 30 años, pero no entran en el tiempo tomado para la PC y la PAP. Ver `casos-dorados.md` y la pregunta 6.5 de la hoja v0.1.
+
 Códigos R004-n de `preguntas-previsionalista.md`. Elegimos las que más cambian lo que hace el programa.
 
 - **1 y 2.** Los meses de moratoria (Ley 27.705 y Ley 24.476), ¿sirven solo para llegar a 30 años o también suman a la PC y la PAP?
