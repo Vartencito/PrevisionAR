@@ -2,14 +2,17 @@
 Estado del proyecto: lee issues y milestones de GitHub y escribe docs/estado-del-proyecto.md
 con el avance, el pronóstico y qué hacer ahora.
 
-Uso (necesita la CLI `gh` autenticada):  python herramientas/estado_del_proyecto.py
+Uso:  python herramientas/estado_del_proyecto.py
+Usa la CLI `gh` si está instalada; si no, lee la API pública de GitHub (el repositorio es público).
 Lo corre la IA al cerrar cada sesión de trabajo (ver docs/plan-del-proyecto.md).
 """
 import datetime as dt
 import json
 import math
 import pathlib
+import re
 import subprocess
+import urllib.request
 
 REPO = "Vartencito/PrevisionAR"
 HORAS_POR_TAMANIO = {"tamaño: S": 2, "tamaño: M": 4, "tamaño: L": 8}
@@ -17,10 +20,28 @@ CAPACIDAD_SEMANAL_HORAS = 10  # disponibilidad del responsable; ver plan
 
 
 def gh(ruta):
-    salida = subprocess.run(["gh", "api", "--paginate", f"repos/{REPO}/{ruta}"],
-                            capture_output=True, text=True, check=True).stdout
-    # --paginate concatena arrays JSON: los unimos.
-    return json.loads(salida.replace("][", ","))
+    """Lee la API de GitHub con la CLI `gh`; si no está instalada o autenticada, usa la API pública."""
+    try:
+        salida = subprocess.run(["gh", "api", "--paginate", f"repos/{REPO}/{ruta}"],
+                                capture_output=True, text=True, check=True).stdout
+        # --paginate concatena arrays JSON: los unimos.
+        return json.loads(salida.replace("][", ","))
+    except (FileNotFoundError, subprocess.CalledProcessError):
+        return api_publica(ruta)
+
+
+def api_publica(ruta):
+    """Plan B sin `gh`: el repositorio es público, así que se puede leer sin credenciales (60 consultas por hora)."""
+    resultado = []
+    url = f"https://api.github.com/repos/{REPO}/{ruta}"
+    while url:
+        pedido = urllib.request.Request(url, headers={"Accept": "application/vnd.github+json",
+                                                      "User-Agent": "estado-del-proyecto"})
+        with urllib.request.urlopen(pedido, timeout=30) as respuesta:
+            resultado += json.load(respuesta)
+            siguiente = re.search(r'<([^>]+)>;\s*rel="next"', respuesta.headers.get("Link", ""))
+        url = siguiente.group(1) if siguiente else None
+    return resultado
 
 
 def horas(issue):

@@ -126,7 +126,7 @@ dotnet run --project src/PrevisionAR.Web
 
 - **Al empezar una sesión:** `/inicio-de-sesion` (sincroniza con `git pull`, lee el estado y toma la primera tarea de "Le toca a la IA", salvo que el responsable pida otra).
 - **Tareas = issues de GitHub**, con versión (milestone), tamaño (`tamaño: S/M/L`) y tipo. Trabajo nuevo → issue nuevo. Si algo espera al abogado: `bloqueado: abogado`.
-- **Commits:** incluir "Cierra #N" cuando terminan una tarea.
+- **Commits:** incluir "Closes #N" cuando terminan una tarea. Va en inglés porque GitHub solo cierra issues con sus palabras clave en inglés; "Cierra #N" no hace nada.
 - **Al terminar una sesión:** `/cierre-de-sesion` (tests, revisión, commits, push, estado regenerado y qué le toca al responsable).
 - Detalle en `docs/plan-del-proyecto.md`.
 

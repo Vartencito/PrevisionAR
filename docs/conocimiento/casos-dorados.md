@@ -69,3 +69,16 @@ Autónomos y simultáneos: vacíos.
 6. **Edad:** se otorgó con la solicitud presentada al día siguiente de cumplir 65. Es compatible con el criterio de R002 de fecha a fecha (P-15), pero no prueba qué pasa el mismo día del cumpleaños.
 
 **Qué hace falta para completarlo:** la historia laboral de esta persona (empleadores reemplazados por letras, fechas exactas, con o sin aportes) para cargarla en el programa y ver si da 15a 4m 19d y 31a 5m 0d.
+
+## Plantilla para pasar una historia laboral
+
+Lo más fácil es pegar en el chat el PDF o la captura **con los datos personales tapados**. Si se transcribe, sirve este formato (una fila por período, tal como figura en ANSES, sin juntar ni corregir nada):
+
+| # | Empleador | Desde (dd/mm/aaaa) | Hasta (dd/mm/aaaa) | Tipo (dependencia / autónomo) | ¿Con aportes? | Observaciones de ANSES (si las hay) |
+|---|-----------|--------------------|--------------------|-------------------------------|---------------|-------------------------------------|
+| 1 | Empresa A | | | | | |
+| 2 | Empresa B | | | | | |
+
+Agregar debajo: el **total de años, meses y días** que informó ANSES (antes y después del 7/94), la fecha de solicitud y, para la edad, el mes y el año de nacimiento más cuántos días antes o después del cumpleaños se pidió.
+
+**Cómo se compara:** la IA carga los períodos en el programa con la misma fecha de cálculo y compara tramo por tramo los años, meses y días contra ANSES. Si coinciden, el caso pasa a ser un test permanente. Si no coinciden, se anota la diferencia y se pregunta: no se cambia el código para forzar que coincida.

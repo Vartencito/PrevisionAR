@@ -21,7 +21,7 @@ De PMI se toma solo lo útil: **hitos** (versiones con fecha objetivo), **estima
 - **Issue = tarea.** Título claro, versión (milestone) y etiquetas.
 - **Milestone = versión.** GitHub muestra el porcentaje de avance de cada una.
 - **Project = tablero Kanban** con columnas *Pendiente → En curso → Hecho* (se crea una vez a mano, ver abajo).
-- **Commits que cierran tareas:** un commit con "Cierra #14" cierra el issue 14 al llegar a `main`.
+- **Commits que cierran tareas:** un commit con "Closes #14" cierra el issue 14 al llegar a `main`. Tiene que ser en inglés: GitHub no reconoce "Cierra #14".
 
 ### Etiquetas
 
@@ -58,7 +58,7 @@ Las fechas suponen 10 h por semana y **no incluyen esperas del abogado**: si una
 
 **Cada sesión de trabajo con la IA:**
 1. El responsable empieza con `/inicio-de-sesion`: la IA sincroniza, lee `docs/estado-del-proyecto.md`, muestra qué cambió y qué espera una decisión, y toma la primera tarea de "Le toca a la IA" (salvo que el responsable pida otra).
-2. Al terminar, `/cierre-de-sesion`: commits con "Cierra #N", CI en verde, estado regenerado y resumen de lo que le toca al responsable.
+2. Al terminar, `/cierre-de-sesion`: commits con "Closes #N", CI en verde, estado regenerado y resumen de lo que le toca al responsable.
 3. Tareas nuevas que aparezcan → issue nuevo con versión y tamaño.
 
 **Repaso semanal (15 minutos, el responsable con la IA):**

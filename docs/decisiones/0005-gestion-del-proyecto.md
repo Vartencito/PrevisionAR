@@ -10,7 +10,7 @@ El responsable dispone de ~10 h por semana, la IA ejecuta la mayor parte del tra
 ## Decisión
 
 - **Metodología:** Kanban con repaso semanal. De PMI se toman hitos con fecha objetivo, estimación y seguimiento.
-- **Herramienta:** GitHub Issues (tareas), Milestones (versiones) y Projects (tablero). Los commits cierran tareas con "Cierra #N".
+- **Herramienta:** GitHub Issues (tareas), Milestones (versiones) y Projects (tablero). Los commits cierran tareas con "Closes #N" (corrección del 2026-11-27: GitHub no reconoce "Cierra #N").
 - **Estimación:** tamaños S/M/L = 2/4/8 h. El avance se mide en horas.
 - **Pronóstico:** `herramientas/estado_del_proyecto.py` genera `docs/estado-del-proyecto.md` con el avance, el pronóstico a 10 h por semana y qué hacer ahora.
 - Detalle en `docs/plan-del-proyecto.md`.
