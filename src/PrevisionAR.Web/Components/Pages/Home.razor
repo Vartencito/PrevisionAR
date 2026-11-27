@@ -1,8 +1,11 @@
 @page "/"
 @rendermode InteractiveServer
+@using System.Reflection
+@using System.Text
 @using PrevisionAR.Motor.Computo
 @using PrevisionAR.Motor.Modelo
 @using PrevisionAR.Motor.Requisitos
+@using PrevisionAR.Web.Casos
 @inject IJSRuntime JS
 
 <PageTitle>Previsión AR — Cómputo y requisitos de la PBU</PageTitle>
@@ -14,6 +17,23 @@
         Versión de prueba (fichas R001 y R002, en revisión). Herramienta de apoyo: no reemplaza el criterio profesional.
         Usar datos ficticios.
     </p>
+
+    <section>
+        <h2>Caso</h2>
+        <button type="button" @onclick="GuardarCaso">Guardar caso</button>
+        <label class="abrir">
+            Abrir caso guardado:
+            @* La clave nueva tras cada intento permite volver a elegir el mismo archivo (si no, el navegador no avisa el cambio). *@
+            <InputFile @key="_intentosDeApertura" OnChange="AbrirCaso" accept=".json" />
+        </label>
+        <p class="nota">
+            El caso se guarda como un archivo en esta PC (normalmente en "Descargas"). No se envía a ningún lado.
+        </p>
+        @if (_mensajeArchivo is not null)
+        {
+            <p class="nota">@_mensajeArchivo</p>
+        }
+    </section>
 
     <section>
         <h2>Ejemplos</h2>
@@ -36,16 +56,16 @@
     <section>
         <h2>Persona</h2>
         <label>
-            Referencia del caso (opcional, sale en el informe, no se guarda):
-            <input @bind="_referencia" placeholder="Ej.: carpeta 123" />
+            Referencia del caso (opcional; sale en el informe y se guarda en el archivo del caso, en esta PC):
+            <input @bind="_caso.Referencia" placeholder="Ej.: carpeta 123" />
         </label>
         <label>
             Fecha de nacimiento:
-            <input type="date" @bind="_fechaDeNacimiento" />
+            <input type="date" @bind="_caso.FechaDeNacimiento" />
         </label>
         <label>
             Sexo (Ley 24.241, art. 19):
-            <select @bind="_sexo">
+            <select @bind="_caso.Sexo">
                 <option value="@Sexo.Hombre">Hombre</option>
                 <option value="@Sexo.Mujer">Mujer</option>
             </select>
@@ -66,7 +86,7 @@
                 </tr>
             </thead>
             <tbody>
-                @foreach (var fila in _filas)
+                @foreach (var fila in _caso.Filas)
                 {
                     <tr>
                         <td><input @bind="fila.Empleador" /></td>
@@ -79,19 +99,19 @@
                             </select>
                         </td>
                         <td><input type="checkbox" @bind="fila.ConAportes" /></td>
-                        <td><button type="button" @onclick="() => Quitar(fila)">Quitar</button></td>
+                        <td><button type="button" @onclick="() => _caso.Filas.Remove(fila)">Quitar</button></td>
                     </tr>
                 }
             </tbody>
         </table>
-        <button type="button" @onclick="Agregar">Agregar período</button>
+        <button type="button" @onclick="() => _caso.Filas.Add(new FilaPeriodo())">Agregar período</button>
     </section>
 
     <section>
         <h2>Cálculo</h2>
         <label>
             Fecha de cálculo (solicitud):
-            <input type="date" @bind="_fechaDeCalculo" />
+            <input type="date" @bind="_caso.FechaDeCalculo" />
         </label>
         <button type="button" class="principal" @onclick="Calcular">Calcular</button>
         @if (_calculo is not null)
@@ -112,35 +132,39 @@
              Historia="_calculo.Historia"
              Resultado="_calculo.Resultado"
              FechaDeEmision="_calculo.FechaDeEmision"
-             Referencia="@_referencia" />
+             Referencia="@_calculo.Referencia" />
 }
 
 @code {
-    private readonly List<FilaPeriodo> _filas = [new FilaPeriodo()];
-    private DateOnly _fechaDeCalculo = DateOnly.FromDateTime(DateTime.Today);
-    private DateOnly _fechaDeNacimiento = new(1960, 1, 1);
-    private Sexo _sexo = Sexo.Hombre;
-    private string? _referencia;
+    private CasoEnEdicion _caso = CasoNuevo();
     private int _ejemploElegido;
     private EjemploDeCarga? _ejemploCargado;
     private CalculoHecho? _calculo;
     private string? _error;
+    private string? _mensajeArchivo;
+    private int _intentosDeApertura;
 
-    private void Agregar() => _filas.Add(new FilaPeriodo());
+    private static DateOnly Hoy => DateOnly.FromDateTime(DateTime.Today);
 
-    private void Quitar(FilaPeriodo fila) => _filas.Remove(fila);
+    private static CasoEnEdicion CasoNuevo()
+    {
+        var caso = new CasoEnEdicion { FechaDeCalculo = Hoy };
+        caso.Filas.Add(new FilaPeriodo());
+        return caso;
+    }
 
     private void CargarEjemplo()
     {
         var ejemplo = EjemplosDeCarga.Todos[_ejemploElegido];
-        _filas.Clear();
-        _filas.AddRange(ejemplo.Periodos.Select(FilaPeriodo.DesdePeriodo));
-        _fechaDeNacimiento = ejemplo.FechaDeNacimiento;
-        _sexo = ejemplo.Sexo;
-        _fechaDeCalculo = ejemplo.FechaDeCalculo;
+        var caso = new CasoEnEdicion
+        {
+            FechaDeNacimiento = ejemplo.FechaDeNacimiento,
+            Sexo = ejemplo.Sexo,
+            FechaDeCalculo = ejemplo.FechaDeCalculo,
+        };
+        caso.Filas.AddRange(ejemplo.Periodos.Select(FilaPeriodo.DesdePeriodo));
+        Reemplazar(caso);
         _ejemploCargado = ejemplo;
-        _calculo = null;
-        _error = null;
     }
 
     private void Calcular()
@@ -149,10 +173,10 @@
         _calculo = null;
         try
         {
-            var persona = new Persona(_fechaDeNacimiento, _sexo);
-            var historia = new HistoriaLaboral(_filas.Select(f => f.APeriodo()).ToList());
-            var resultado = RequisitosPbu.Verificar(persona, historia, _fechaDeCalculo);
-            _calculo = new CalculoHecho(persona, historia, resultado, DateOnly.FromDateTime(DateTime.Today));
+            var persona = _caso.APersona();
+            var historia = _caso.AHistoriaLaboral();
+            var resultado = RequisitosPbu.Verificar(persona, historia, _caso.FechaDeCalculo);
+            _calculo = new CalculoHecho(persona, historia, resultado, Hoy, _caso.Referencia);
         }
         catch (HistoriaLaboralInvalidaException ex)
         {
@@ -164,28 +188,77 @@
         }
     }
 
+    // Descarga el caso como archivo (ADR 0007). Guarda lo que hay en pantalla, aunque esté incompleto.
+    private async Task GuardarCaso()
+    {
+        var contenido = ArchivoDeCasos.Guardar(_caso, VersionDeLaApp());
+        using var flujo = new MemoryStream(Encoding.UTF8.GetBytes(contenido));
+        using var referencia = new DotNetStreamReference(flujo);
+        try
+        {
+            await JS.InvokeVoidAsync("descargarArchivo", ArchivoDeCasos.NombreSugerido(Hoy), referencia);
+            _mensajeArchivo = "Caso guardado. Para retomarlo, use \"Abrir caso guardado\".";
+        }
+        catch (JSException)
+        {
+            _mensajeArchivo = "No se pudo descargar el archivo. Recargue la página e intente de nuevo; los datos cargados siguen en pantalla.";
+        }
+    }
+
+    // Carga un archivo de caso. Si tiene cualquier problema, no se carga nada y el formulario queda como estaba.
+    private async Task AbrirCaso(InputFileChangeEventArgs e)
+    {
+        _intentosDeApertura++;
+        if (e.File.Size > ArchivoDeCasos.TamanioMaximoEnBytes)
+        {
+            _mensajeArchivo = "El archivo es demasiado grande para ser un caso de Previsión AR (máximo 1 MB).";
+            return;
+        }
+
+        string contenido;
+        try
+        {
+            await using var flujo = e.File.OpenReadStream(ArchivoDeCasos.TamanioMaximoEnBytes);
+            using var lector = new StreamReader(flujo, Encoding.UTF8);
+            contenido = await lector.ReadToEndAsync();
+        }
+        catch (IOException)
+        {
+            _mensajeArchivo = "No se pudo leer el archivo. Intente elegirlo de nuevo.";
+            return;
+        }
+
+        var apertura = ArchivoDeCasos.Abrir(contenido);
+        if (apertura.Caso is null)
+        {
+            _mensajeArchivo = apertura.Error;
+            return;
+        }
+
+        Reemplazar(apertura.Caso);
+        _mensajeArchivo = $"Caso abierto: {e.File.Name}. Toque \"Calcular\" para ver el resultado.";
+    }
+
+    // Cambia el caso en pantalla y limpia los resultados: nunca se muestra un resultado de otros datos.
+    private void Reemplazar(CasoEnEdicion caso)
+    {
+        _caso = caso;
+        _ejemploCargado = null;
+        _calculo = null;
+        _error = null;
+        _mensajeArchivo = null;
+    }
+
     // Abre el diálogo de impresión del navegador; desde ahí también se puede "Guardar como PDF".
     private async Task Imprimir() => await JS.InvokeVoidAsync("print");
+
+    private static string VersionDeLaApp() =>
+        typeof(CasoEnEdicion).Assembly.GetCustomAttribute<AssemblyInformationalVersionAttribute>()?.InformationalVersion.Split('+')[0]
+        ?? "desconocida";
 
     /// <summary>
     /// Lo que se usó en el último cálculo. Se guarda aparte de los campos editables para que el informe
     /// muestre exactamente los datos con que se calculó, aunque después se edite la tabla.
     /// </summary>
-    private sealed record CalculoHecho(Persona Persona, HistoriaLaboral Historia, ResultadoRequisitosPbu Resultado, DateOnly FechaDeEmision);
-
-    /// <summary>Fila editable de la tabla. Solo traslada datos al motor; no calcula nada.</summary>
-    private sealed class FilaPeriodo
-    {
-        public string Empleador { get; set; } = string.Empty;
-        public DateOnly Desde { get; set; } = new(2000, 1, 1);
-        public DateOnly? Hasta { get; set; }
-        public TipoDeServicio Tipo { get; set; } = TipoDeServicio.RelacionDeDependencia;
-        public bool ConAportes { get; set; } = true;
-
-        public static FilaPeriodo DesdePeriodo(PeriodoDeServicio p) =>
-            new() { Empleador = p.Empleador, Desde = p.Desde, Hasta = p.Hasta, Tipo = p.Tipo, ConAportes = p.ConAportes };
-
-        public PeriodoDeServicio APeriodo() =>
-            new(string.IsNullOrWhiteSpace(Empleador) ? "(sin nombre)" : Empleador.Trim(), Desde, Hasta, Tipo, ConAportes);
-    }
+    private sealed record CalculoHecho(Persona Persona, HistoriaLaboral Historia, ResultadoRequisitosPbu Resultado, DateOnly FechaDeEmision, string Referencia);
 }

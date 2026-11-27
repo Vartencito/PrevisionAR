@@ -209,3 +209,8 @@ Con T1 las dependencias quedan: `Web → Motor`, `Motor.Tests → Motor`, `Web.T
 2. **Privacidad:** ¿se guarda una "Referencia del caso" opcional (recomendado), nada identificatorio, o datos completos?
 3. **Proyecto de tests:** ¿se crea `tests/PrevisionAR.Web.Tests` (recomendado) o se cambia la regla 7 para que `Motor.Tests` pruebe la Web?
 4. Confirmar que **no se cifra** el archivo en v0.1 (queda bajo resguardo del abogado, como el resto del expediente).
+
+## Notas de implementación (2026-11-27)
+
+- Los criterios 5 (limpiar resultados al abrir) y 6 (rechazar más de 1 MB) viven en la pantalla (`Home.razor`) y por ahora se prueban a mano: no hay tests de componentes (bUnit) hasta que la Web tenga más lógica propia.
+- `PrevisionAR.Web` entra al informe de cobertura del CI.

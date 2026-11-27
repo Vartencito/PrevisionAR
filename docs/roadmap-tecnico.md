@@ -30,7 +30,9 @@ La IA actualiza este archivo cada vez que agrega una pieza o cambia el plan.
 | Agente `arquitecto-de-software` y `docs/arquitectura.md` | Diseño antes de cambios grandes; evolución por disparadores | 2026-11-26 |
 | Informe imprimible (HTML con estilos de impresión, "Guardar como PDF" del navegador) | Informe auditable con el paso a paso y las normas de cada ficha, sin librerías de PDF (issue #16) | 2026-11-27 |
 | `CatalogoDeFichas` en el motor, con test contra `docs/normativa/` | Única fuente de las normas que cita el informe | 2026-11-27 |
-| Workflow `release.yml` (ejecutable autocontenido, solo al subir una etiqueta `v*`) | Versión descargable sin instalar .NET (ADR 0009, propuesta) | 2026-11-27 |
+| Guardar y abrir casos en un archivo `.previsionar.json` (JSON versionado, sin base de datos) | Retomar un caso sin volver a cargarlo (ADR 0007, issue #15) | 2026-11-27 |
+| Proyecto `PrevisionAR.Web.Tests` (xUnit, mismos paquetes) | Probar el código puro de la Web (ADR 0007) | 2026-11-27 |
+| Workflow `release.yml` (ejecutable autocontenido, solo al subir una etiqueta `v*`) | Versión descargable sin instalar .NET (ADR 0009) | 2026-11-27 |
 
 ## Próximas piezas (con su disparador)
 
@@ -39,8 +41,7 @@ La IA actualiza este archivo cada vez que agrega una pieza o cambia el plan.
 | Umbral mínimo de cobertura que bloquee el CI | La cobertura del motor se estabilice (varias fichas) | MVP |
 | Tests de componentes de la UI (bUnit) | La Web tenga lógica propia (hoy solo muestra lo que da el motor) | MVP |
 | Ajustes del formato del informe | Responda el abogado la pregunta C4 (issue #17) | MVP |
-| Proyecto de tests de la Web (`PrevisionAR.Web.Tests`) | Guardar y abrir casos (ADR 0007, propuesta) | MVP |
-| Persistencia local con SQLite | Haya que guardar casos entre sesiones | Post-MVP |
+| Persistencia local con SQLite | Los abogados pidan una lista de casos guardados, búsqueda o historial (guardar en archivo ya existe, ADR 0007) | Post-MVP |
 | Empaquetado e instalador para Windows | Primera versión para que la prueben abogados | Post-MVP |
 | Tests de regresión con casos reales anonimizados | Los abogados aporten casos | Post-MVP |
 | OCR y capa de IA (`IAIProvider`) | Etapa 2: automatización documental | Etapa 2 |

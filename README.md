@@ -49,7 +49,7 @@ dotnet run --project src/PrevisionAR.Web
 
 Avance y próximos pasos: [`docs/estado-del-proyecto.md`](docs/estado-del-proyecto.md) · Plan: [`docs/plan-del-proyecto.md`](docs/plan-del-proyecto.md).
 
-MVP en curso. Ya funcionan el cómputo de servicios con aportes (R001), los requisitos de la PBU (R002) y el informe imprimible, pendientes de validación por un previsionalista. Ver `docs/vision.md`.
+MVP en curso. Ya funcionan el cómputo de servicios con aportes (R001), los requisitos de la PBU (R002), el informe imprimible y guardar o abrir casos en un archivo local, pendientes de validación por un previsionalista. Ver `docs/vision.md`.
 
 ## Aviso
 

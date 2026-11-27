@@ -5,6 +5,8 @@
   </ItemGroup>
 
   <PropertyGroup>
+    <!-- Versión de la app; el workflow de release la reemplaza por la de la etiqueta. Se guarda en los archivos de caso. -->
+    <Version>0.1.0</Version>
     <BlazorDisableThrowNavigationException>true</BlazorDisableThrowNavigationException>
   </PropertyGroup>
 

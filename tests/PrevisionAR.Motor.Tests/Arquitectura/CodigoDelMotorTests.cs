@@ -19,6 +19,8 @@ public class CodigoDelMotorTests
         { @"\b(File|Directory|Path)\.", "El motor no accede a disco: los datos entran como parámetros." },
         { @"\b(HttpClient|WebClient|Socket)\b", "El motor no accede a la red." },
         { @"\b(Random|Guid\.NewGuid|Environment\.|TimeProvider|Stopwatch)\b", "El motor es determinístico: sin azar, entorno ni reloj." },
+        // ADR 0007: el formato de archivo de los casos es un detalle de la Web, no del dominio.
+        { @"\b(System\.Text\.Json|JsonSerializer)\b", "La serialización de casos va en la Web (PrevisionAR.Web/Casos)." },
     };
 
     [Theory]

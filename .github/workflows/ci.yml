@@ -40,7 +40,7 @@ jobs:
             -reports:"./resultados-tests/**/coverage.cobertura.xml" \
             -targetdir:./cobertura \
             -reporttypes:"MarkdownSummaryGithub;Html" \
-            -assemblyfilters:"+PrevisionAR.Motor"
+            -assemblyfilters:"+PrevisionAR.Motor;+PrevisionAR.Web"
           cat ./cobertura/SummaryGithub.md >> "$GITHUB_STEP_SUMMARY"
 
       - name: Guardar informe de cobertura

@@ -12,7 +12,7 @@ Versión de prueba (v0.1). Para abogados previsionalistas. Lleva unos 5 minutos.
 
 - El programa corre **solo en su computadora**. No usa internet ni manda datos a ningún servidor.
 - Solo se puede abrir desde la misma PC: otra computadora de la red no tiene acceso.
-- Esta versión **no guarda nada**: al cerrar, los datos cargados se pierden. Si imprime o guarda el informe como PDF, ese archivo queda donde usted lo guarde.
+- El programa **no guarda nada por su cuenta**. Si usted toca "Guardar caso", se descarga un archivo `.previsionar.json` en su PC (normalmente en "Descargas"); ese archivo y los PDF del informe quedan donde usted los guarde, bajo su resguardo, como cualquier documento del expediente. No están cifrados.
 
 ## Instalar
 
@@ -37,7 +37,8 @@ Versión de prueba (v0.1). Para abogados previsionalistas. Lleva unos 5 minutos.
    - Un renglón por cada período de la historia laboral: empleador, desde, hasta (vacío si sigue trabajando), tipo y si tiene aportes. **Agregar período** suma un renglón.
    - Fecha de cálculo: normalmente, la fecha de la solicitud.
 3. Toque **Calcular**. Abajo aparece el informe: si cumple los requisitos, el paso a paso, el cómputo separado antes y después de julio de 1994, las superposiciones y los períodos que no se computaron.
-4. **Imprimir o guardar como PDF:** toque **Imprimir informe o guardar como PDF**. En la ventana de impresión elija su impresora o "Guardar como PDF". En el papel sale solo el informe, sin los campos de carga.
+4. **Guardar el caso para seguir otro día:** toque **Guardar caso**. Se descarga un archivo `caso-AAAA-MM-DD.previsionar.json` (normalmente en "Descargas"); le conviene renombrarlo y moverlo a la carpeta del cliente. Para retomarlo, use **Abrir caso guardado** y elija el archivo. El archivo guarda solo los datos cargados: al abrirlo, toque **Calcular** de nuevo.
+5. **Imprimir o guardar como PDF:** toque **Imprimir informe o guardar como PDF**. En la ventana de impresión elija su impresora o "Guardar como PDF". En el papel sale solo el informe, sin los campos de carga.
 
 ## Cómo leer el resultado
 

@@ -9,12 +9,13 @@ Regla general: la arquitectura más simple que alcanza hoy, con el camino de cre
 ┌────────────────────────┐        ┌────────────────────────────┐
 │ PrevisionAR.Web        │ ─────► │ PrevisionAR.Motor          │
 │ Blazor, local          │        │ Dominio: reglas y cálculos │
-│ Solo carga y muestra   │        │ Sin dependencias           │
-└────────────────────────┘        └────────────────────────────┘
-                                              ▲
-┌────────────────────────┐                    │
-│ PrevisionAR.Motor.Tests│ ───────────────────┘
-└────────────────────────┘
+│ Carga, muestra y       │        │ Sin dependencias           │
+│ guarda casos (Casos/)  │        └────────────────────────────┘
+└────────────────────────┘                    ▲
+            ▲                                 │
+┌────────────────────────┐    ┌────────────────────────┐
+│ PrevisionAR.Web.Tests  │    │ PrevisionAR.Motor.Tests│
+└────────────────────────┘    └────────────────────────┘
 ```
 
 ## Principios de Clean Architecture que ya se cumplen
@@ -22,7 +23,8 @@ Regla general: la arquitectura más simple que alcanza hoy, con el camino de cre
 | Principio | Cómo se cumple | Quién lo controla |
 |-----------|----------------|-------------------|
 | Regla de dependencias: el dominio no depende de nada | El Motor no referencia proyectos ni paquetes | `ReglasDeArquitecturaTests` |
-| El dominio no conoce detalles externos (disco, red, reloj, azar) | Todo entra como parámetro, incluida la fecha de cálculo | `CodigoDelMotorTests` |
+| El dominio no conoce detalles externos (disco, red, reloj, azar, formato de archivos) | Todo entra como parámetro, incluida la fecha de cálculo. El archivo de caso vive en la Web (ADR 0007) | `CodigoDelMotorTests` |
+| La conversión del archivo de caso es pura | `PrevisionAR.Web/Casos` no usa disco, JavaScript ni Blazor | `ArchivoDeCasosPuroTests` |
 | La interfaz no tiene lógica de negocio | La Web arma los datos, llama al Motor y muestra el resultado | Revisión (agente `revisor-de-codigo`) |
 | Resultados trazables e inmutables | Records con la propiedad `Regla` | `Motor_TiposResultado_IndicanLaReglaQueLosProdujo` |
 
