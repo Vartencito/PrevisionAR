@@ -39,7 +39,8 @@ Un caso dorado que coincide, más la confirmación de un abogado, alcanza para m
 
 | Código | Qué es | Estado |
 |--------|--------|--------|
-| CD-001 | Jubilación PBU/PC/PAP otorgada por ANSES en 2026. Varón, todos los servicios en relación de dependencia | **Parcial:** tiene el cómputo de ANSES pero no los períodos. Falta la historia laboral anonimizada para cargarlo en el programa y comparar |
+| CD-001 | Jubilación PBU/PC/PAP otorgada por ANSES en 2026. Varón, todos los servicios en relación de dependencia | **Parcial:** tiene el cómputo de ANSES y la fecha de cese, pero no los períodos. La historia laboral ya fue pedida |
+| CD-002 | Prestación PBU/PC/PAP otorgada por ANSES en 2009. Varón, relación de dependencia con dos meses simultáneos de autónomo después de 7/94 | **Parcial:** tiene el cómputo de ANSES pero no los períodos. Probablemente no es del régimen general común (ver P-32) |
 
 ### CD-001 (parcial) — aprobado por el responsable el 2026-11-27
 
@@ -68,7 +69,44 @@ Autónomos y simultáneos: vacíos.
 5. **Centavos:** la PAP del documento es 1 centavo menor que la cuenta exacta. Sugiere que ANSES **trunca** en lugar de redondear (R005-n, a confirmar con más casos).
 6. **Edad:** se otorgó con la solicitud presentada al día siguiente de cumplir 65. Es compatible con el criterio de R002 de fecha a fecha (P-15), pero no prueba qué pasa el mismo día del cumpleaños.
 
+**Ampliación del 2026-11-27 (cálculo de BlueCorp del mismo caso, aprobado por el responsable)**
+
+- **Cese de actividades: 30/11/2025** (la solicitud fue en enero de 2026). ANSES computa los servicios hasta el cese, no hasta la solicitud.
+- **Tramo desde 7/94, comparado con el motor:** un período del 01/07/1994 al 30/11/2025 da **31a 5m 0d** en el motor, igual que ANSES. Es la primera coincidencia del motor con un cómputo real. Confirma que se cuentan las dos fechas y que el tramo empieza el 01/07/1994. Supone trabajo continuo, sin cortes; se confirma con la historia laboral.
+- **El tramo antes de 7/94 va a definir el método de días.** Con trabajo continuo hasta el 30/06/1994, los 19 días salen si el ingreso fue el **10/02/1979** con el método actual del motor (meses calendario), y si fue el **12/02/1979** con meses de 30 días. La fecha real de ingreso alcanza para saber qué método usa ANSES (P-1, A2-bis).
+- **BlueCorp no es evidencia independiente del cómputo de tiempo:** copió los tiempos que había cargado ANSES ("informados por el operador"); no los calculó desde los períodos.
+- **Para el haber (R005, a verificar en la fuente oficial antes de usarlo):** BlueCorp limita cada remuneración actualizada a un tope mensual (cita la Res. SSS 6/2009, art. 14) y muestra un tope para la PC. Sus importes difieren de los de ANSES en algunos centavos.
+
 **Qué hace falta para completarlo:** la historia laboral de esta persona (empleadores reemplazados por letras, fechas exactas, con o sin aportes) para cargarla en el programa y ver si da 15a 4m 19d y 31a 5m 0d.
+
+### CD-002 (parcial) — aprobado por el responsable el 2026-11-27
+
+Origen: "Detalle del beneficio" y notificación de acuerdo de ANSES de 2009, traídos por el responsable. **No se guardan** el nombre, el documento, el CUIL, el domicilio, la región, el cónyuge ni los números de beneficio, expediente o cuenta. De los importes se registran solo los que hacen falta para verificar la fórmula (son de 2009 y no identifican a nadie).
+
+**Datos de la persona y fechas**
+
+- Varón. Edad a la solicitud: **55 años y 10 meses**. Con esa edad no podía acceder a la jubilación ordinaria del régimen general: es probable un régimen diferencial o especial (P-32).
+- Cierre del cómputo: 31/12/2008. Solicitud y adquisición del derecho: octubre de 2009.
+
+**Cómputo de ANSES**
+
+| | Antes del 7/94 | Después del 7/94 |
+|--|----------------|------------------|
+| Informado, relación de dependencia | 16a 10m 29d | 9a 3m 14d |
+| Informado, simultáneos (dependencia y autónomo) | — | 0a 2m 0d |
+| Tomado para el cálculo, relación de dependencia | 16a 10m | 9a 3m |
+
+- Tiempo total informado: **34a 6m 23d**, que no coincide con la suma de los tramos (unos 26 años): ver P-33.
+- Tiempo total tomado: impreso **"25a 13m"**. ANSES sumó años y meses sin pasar los 13 meses a 1 año.
+
+**Lo que se pudo comprobar con las cuentas del propio documento**
+
+1. **Una fracción de más de 6 meses suma un año en la PC (P-9).** La PC se calculó con **17 años** a partir de 16a 10m: 1,5 % × 17 × promedio de relación de dependencia (676,68) = 172,55, igual que ANSES.
+2. **Los días sueltos se descartan en cada tramo sin sumarse entre tramos (P-1, P-14).** Hay 29 días en un tramo y 14 en el otro: juntos pasarían de un mes, pero ANSES descarta los dos.
+3. **PAP con servicios mixtos.** Con 9 años y el promedio ponderado de la fórmula de servicios simultáneos (111 meses solo en dependencia y 2 meses simultáneos, con promedios de 676,68 en dependencia y 324,23 en autónomos): 1,5 % × 9 × 682,4186 = 92,1265, y ANSES pagó **92,12**. Coincide con la fórmula de n, m y p que el motor ya separa (R001, criterio 12) y es **el segundo indicio de que ANSES trunca** los centavos (el primero es CD-001).
+4. La resolución cita casi las mismas leyes que la de CD-001 (24.241, 24.476, 25.865 y 25.994 art. 6), 16 años antes: refuerza que es un texto fijo (P-30).
+
+**Qué hace falta para completarlo:** saber el régimen (P-32) y la historia laboral con los períodos.
 
 ## Plantilla para pasar una historia laboral
 

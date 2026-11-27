@@ -23,15 +23,15 @@ O sea: **para el cálculo, ANSES descarta los días sueltos.**
 | 1.1 | ¿Siempre es así? ¿Los días sueltos nunca suman para llegar a los 360 meses? (Ejemplo: 359 meses y 20 días, ¿no alcanza?) | |
 | 1.2 | ¿Cómo llega ANSES a los "19 días": cuenta meses de 30 días (como BlueCorp) o meses del calendario? Mirar la tabla de la hoja de comparación: ¿qué columna coincide con ANSES? | |
 | 1.3 | Febrero completo (del 01/02 al 28/02), ¿cuenta como un mes entero? | |
-| 1.4 | Si una persona tiene días sueltos en **varios** trabajos (20 días en uno, 15 en otro), ¿ANSES los suma entre sí antes de descartar los que sobran? | |
+| 1.4 | En otro caso real (CD-002), ANSES descartó 29 días antes del 7/94 y 14 después, sin sumarlos. Si una persona tiene días sueltos en **varios trabajos del mismo tramo** (20 días en uno, 15 en otro), ¿ANSES los suma entre sí antes de descartar los que sobran? | |
 
 ## 2. Fracciones de año para la PC y la PAP (P-9)
 
-En CD-001, la PC se calculó con 15 años (descartó 4 meses) y la PAP con 31 (descartó 5 meses).
+En CD-001, la PC se calculó con 15 años (descartó 4 meses) y la PAP con 31 (descartó 5 meses). En CD-002, la PC se calculó con 17 años a partir de 16 años y 10 meses: más de 6 meses suma un año.
 
 | # | Pregunta | Respuesta |
 |---|----------|-----------|
-| 2.1 | Con **más** de 6 meses (por ejemplo, 15 años y 7 meses), ¿se toma como 16 años? ¿En la PC y en la PAP? | |
+| 2.1 | ¿Pasa lo mismo en la PAP: más de 6 meses suma un año? | |
 | 2.2 | ¿Y con 6 meses exactos? | |
 
 ## 3. Corte de julio de 1994 (P-8)
@@ -55,13 +55,14 @@ ANSES separa "antes del 7/94" y "después del 7/94".
 | 5.1 | ¿Se puede pedir el **mismo día** del cumpleaños 65 (o 60)? En CD-001 se pidió al día siguiente | |
 | 5.2 | Alguien nacido un 29 de febrero, ¿cumple el 28 de febrero o el 1 de marzo en los años no bisiestos? | |
 
-## 6. Sobre el caso CD-001 (P-29, P-30, P-31)
+## 6. Sobre los casos CD-001 y CD-002 (P-29 a P-33)
 
 | # | Pregunta | Respuesta |
 |---|----------|-----------|
 | 6.1 | El total "tomado para el cálculo" dice 46 años y 5 meses, pero 15a 4m + 31a 5m = 46a 9m. ¿Error de impresión, o hay un tope o descuento que no se ve? | |
-| 6.2 | La resolución cita las leyes 24.476, 25.865, 25.994 y 27.705 (moratorias) aunque no usó moratoria. ¿Es un texto que ANSES pone siempre? | |
+| 6.2 | La resolución cita las leyes 24.476, 25.865, 25.994 y 27.705 (moratorias) aunque no usó moratoria, y la de CD-002 (2009) cita casi las mismas. ¿Es un texto que ANSES pone siempre? | |
 | 6.3 | ¿Tiene otros casos parecidos (resolución de ANSES + historia laboral) que nos pueda pasar con los datos personales tapados? Sirven más los que están cerca de los 30 años, tienen días sueltos o trabajos superpuestos | |
+| 6.4 | CD-002 se jubiló con 55 años y 10 meses. ¿Por qué régimen (¿construcción, Ley 26.494?)? ¿Y de dónde salen los 34a 6m 23d del total informado, si los tramos suman unos 26 años? | |
 
 ## 7. El informe del programa (C4, issue #17)
 
