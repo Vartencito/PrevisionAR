@@ -61,8 +61,7 @@
     [Parameter, EditorRequired]
     public ResultadoDelComputo Resultado { get; set; } = default!;
 
-    // Formato fijo dd/MM/yyyy, sin depender de la configuración regional de la PC.
-    private static string Fecha(DateOnly fecha) => fecha.ToString("dd'/'MM'/'yyyy", System.Globalization.CultureInfo.InvariantCulture);
+    private static string Fecha(DateOnly fecha) => Formato.Fecha(fecha);
 
     private static string DescribirMotivo(MotivoNoComputado motivo) => motivo switch
     {

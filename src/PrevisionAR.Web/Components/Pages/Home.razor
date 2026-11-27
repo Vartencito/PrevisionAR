@@ -3,88 +3,116 @@
 @using PrevisionAR.Motor.Computo
 @using PrevisionAR.Motor.Modelo
 @using PrevisionAR.Motor.Requisitos
+@inject IJSRuntime JS
 
 <PageTitle>Previsión AR — Cómputo y requisitos de la PBU</PageTitle>
 
-<h1>Cómputo de servicios y requisitos de la PBU</h1>
-<p class="aviso">
-    Versión de prueba (fichas R001 y R002, en revisión). Herramienta de apoyo: no reemplaza el criterio profesional.
-    Usar datos ficticios.
-</p>
+@* Todo lo que tiene la clase "solo-pantalla" se oculta al imprimir: en papel queda solo el informe. *@
+<div class="solo-pantalla">
+    <h1>Cómputo de servicios y requisitos de la PBU</h1>
+    <p class="aviso">
+        Versión de prueba (fichas R001 y R002, en revisión). Herramienta de apoyo: no reemplaza el criterio profesional.
+        Usar datos ficticios.
+    </p>
 
-<section>
-    <h2>Persona</h2>
-    <label>
-        Fecha de nacimiento:
-        <input type="date" @bind="_fechaDeNacimiento" />
-    </label>
-    <label>
-        Sexo (Ley 24.241, art. 19):
-        <select @bind="_sexo">
-            <option value="@Sexo.Hombre">Hombre</option>
-            <option value="@Sexo.Mujer">Mujer</option>
-        </select>
-    </label>
-</section>
+    <section>
+        <h2>Ejemplos</h2>
+        <label>
+            Caso de ejemplo:
+            <select @bind="_ejemploElegido">
+                @for (var i = 0; i < EjemplosDeCarga.Todos.Count; i++)
+                {
+                    <option value="@i">@EjemplosDeCarga.Todos[i].Nombre</option>
+                }
+            </select>
+        </label>
+        <button type="button" @onclick="CargarEjemplo">Cargar ejemplo</button>
+        @if (_ejemploCargado is not null)
+        {
+            <p class="nota">Debería dar (si no cambia los datos cargados): @_ejemploCargado.QueMuestra</p>
+        }
+    </section>
 
-<section>
-    <h2>Historia laboral</h2>
-    <table class="tabla">
-        <thead>
-            <tr>
-                <th>Empleador o actividad</th>
-                <th>Desde</th>
-                <th>Hasta (vacío = sigue)</th>
-                <th>Tipo</th>
-                <th>Con aportes</th>
-                <th></th>
-            </tr>
-        </thead>
-        <tbody>
-            @foreach (var fila in _filas)
-            {
+    <section>
+        <h2>Persona</h2>
+        <label>
+            Referencia del caso (opcional, sale en el informe, no se guarda):
+            <input @bind="_referencia" placeholder="Ej.: carpeta 123" />
+        </label>
+        <label>
+            Fecha de nacimiento:
+            <input type="date" @bind="_fechaDeNacimiento" />
+        </label>
+        <label>
+            Sexo (Ley 24.241, art. 19):
+            <select @bind="_sexo">
+                <option value="@Sexo.Hombre">Hombre</option>
+                <option value="@Sexo.Mujer">Mujer</option>
+            </select>
+        </label>
+    </section>
+
+    <section>
+        <h2>Historia laboral</h2>
+        <table class="tabla">
+            <thead>
                 <tr>
-                    <td><input @bind="fila.Empleador" /></td>
-                    <td><input type="date" @bind="fila.Desde" /></td>
-                    <td><input type="date" @bind="fila.Hasta" /></td>
-                    <td>
-                        <select @bind="fila.Tipo">
-                            <option value="@TipoDeServicio.RelacionDeDependencia">Relación de dependencia</option>
-                            <option value="@TipoDeServicio.Autonomo">Autónomo</option>
-                        </select>
-                    </td>
-                    <td><input type="checkbox" @bind="fila.ConAportes" /></td>
-                    <td><button type="button" @onclick="() => Quitar(fila)">Quitar</button></td>
+                    <th>Empleador o actividad</th>
+                    <th>Desde</th>
+                    <th>Hasta (vacío = sigue)</th>
+                    <th>Tipo</th>
+                    <th>Con aportes</th>
+                    <th></th>
                 </tr>
-            }
-        </tbody>
-    </table>
-    <button type="button" @onclick="Agregar">Agregar período</button>
-    <button type="button" @onclick="CargarEjemplo">Cargar ejemplo</button>
-</section>
+            </thead>
+            <tbody>
+                @foreach (var fila in _filas)
+                {
+                    <tr>
+                        <td><input @bind="fila.Empleador" /></td>
+                        <td><input type="date" @bind="fila.Desde" /></td>
+                        <td><input type="date" @bind="fila.Hasta" /></td>
+                        <td>
+                            <select @bind="fila.Tipo">
+                                <option value="@TipoDeServicio.RelacionDeDependencia">Relación de dependencia</option>
+                                <option value="@TipoDeServicio.Autonomo">Autónomo</option>
+                            </select>
+                        </td>
+                        <td><input type="checkbox" @bind="fila.ConAportes" /></td>
+                        <td><button type="button" @onclick="() => Quitar(fila)">Quitar</button></td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+        <button type="button" @onclick="Agregar">Agregar período</button>
+    </section>
 
-<section>
-    <h2>Cálculo</h2>
-    <label>
-        Fecha de cálculo (solicitud):
-        <input type="date" @bind="_fechaDeCalculo" />
-    </label>
-    <button type="button" class="principal" @onclick="Calcular">Calcular</button>
-</section>
+    <section>
+        <h2>Cálculo</h2>
+        <label>
+            Fecha de cálculo (solicitud):
+            <input type="date" @bind="_fechaDeCalculo" />
+        </label>
+        <button type="button" class="principal" @onclick="Calcular">Calcular</button>
+        @if (_calculo is not null)
+        {
+            <button type="button" @onclick="Imprimir">Imprimir informe o guardar como PDF</button>
+        }
+    </section>
 
-@if (_error is not null)
+    @if (_error is not null)
+    {
+        <p class="error">@_error</p>
+    }
+</div>
+
+@if (_calculo is not null)
 {
-    <p class="error">@_error</p>
-}
-
-@if (_requisitos is not null)
-{
-    <ResultadoRequisitos Resultado="_requisitos" />
-}
-
-@if (_resultado is not null)
-{
-    <ResultadoComputo Resultado="_resultado" />
+    <Informe Persona="_calculo.Persona"
+             Historia="_calculo.Historia"
+             Resultado="_calculo.Resultado"
+             FechaDeEmision="_calculo.FechaDeEmision"
+             Referencia="@_referencia" />
 }
 
 @code {
@@ -92,8 +120,10 @@
     private DateOnly _fechaDeCalculo = DateOnly.FromDateTime(DateTime.Today);
     private DateOnly _fechaDeNacimiento = new(1960, 1, 1);
     private Sexo _sexo = Sexo.Hombre;
-    private ResultadoDelComputo? _resultado;
-    private ResultadoRequisitosPbu? _requisitos;
+    private string? _referencia;
+    private int _ejemploElegido;
+    private EjemploDeCarga? _ejemploCargado;
+    private CalculoHecho? _calculo;
     private string? _error;
 
     private void Agregar() => _filas.Add(new FilaPeriodo());
@@ -102,28 +132,27 @@
 
     private void CargarEjemplo()
     {
+        var ejemplo = EjemplosDeCarga.Todos[_ejemploElegido];
         _filas.Clear();
-        _filas.Add(new FilaPeriodo { Empleador = "Empresa A (ficticia)", Desde = new(1990, 1, 1), Hasta = new(2009, 12, 31) });
-        _filas.Add(new FilaPeriodo { Empleador = "Actividad autónoma (ficticia)", Desde = new(2005, 1, 1), Hasta = new(2014, 12, 31), Tipo = TipoDeServicio.Autonomo });
-        _filas.Add(new FilaPeriodo { Empleador = "Empresa B sin aportes (ficticia)", Desde = new(2015, 1, 1), Hasta = new(2016, 6, 30), ConAportes = false });
-        _fechaDeCalculo = new DateOnly(2026, 1, 1);
-        _fechaDeNacimiento = new DateOnly(1958, 4, 15);
-        _sexo = Sexo.Hombre;
-        _resultado = null;
-        _requisitos = null;
+        _filas.AddRange(ejemplo.Periodos.Select(FilaPeriodo.DesdePeriodo));
+        _fechaDeNacimiento = ejemplo.FechaDeNacimiento;
+        _sexo = ejemplo.Sexo;
+        _fechaDeCalculo = ejemplo.FechaDeCalculo;
+        _ejemploCargado = ejemplo;
+        _calculo = null;
         _error = null;
     }
 
     private void Calcular()
     {
         _error = null;
-        _resultado = null;
-        _requisitos = null;
+        _calculo = null;
         try
         {
+            var persona = new Persona(_fechaDeNacimiento, _sexo);
             var historia = new HistoriaLaboral(_filas.Select(f => f.APeriodo()).ToList());
-            _requisitos = RequisitosPbu.Verificar(new Persona(_fechaDeNacimiento, _sexo), historia, _fechaDeCalculo);
-            _resultado = _requisitos.ComputoDeServicios;
+            var resultado = RequisitosPbu.Verificar(persona, historia, _fechaDeCalculo);
+            _calculo = new CalculoHecho(persona, historia, resultado, DateOnly.FromDateTime(DateTime.Today));
         }
         catch (HistoriaLaboralInvalidaException ex)
         {
@@ -135,6 +164,15 @@
         }
     }
 
+    // Abre el diálogo de impresión del navegador; desde ahí también se puede "Guardar como PDF".
+    private async Task Imprimir() => await JS.InvokeVoidAsync("print");
+
+    /// <summary>
+    /// Lo que se usó en el último cálculo. Se guarda aparte de los campos editables para que el informe
+    /// muestre exactamente los datos con que se calculó, aunque después se edite la tabla.
+    /// </summary>
+    private sealed record CalculoHecho(Persona Persona, HistoriaLaboral Historia, ResultadoRequisitosPbu Resultado, DateOnly FechaDeEmision);
+
     /// <summary>Fila editable de la tabla. Solo traslada datos al motor; no calcula nada.</summary>
     private sealed class FilaPeriodo
     {
@@ -143,6 +181,9 @@
         public DateOnly? Hasta { get; set; }
         public TipoDeServicio Tipo { get; set; } = TipoDeServicio.RelacionDeDependencia;
         public bool ConAportes { get; set; } = true;
+
+        public static FilaPeriodo DesdePeriodo(PeriodoDeServicio p) =>
+            new() { Empleador = p.Empleador, Desde = p.Desde, Hasta = p.Hasta, Tipo = p.Tipo, ConAportes = p.ConAportes };
 
         public PeriodoDeServicio APeriodo() =>
             new(string.IsNullOrWhiteSpace(Empleador) ? "(sin nombre)" : Empleador.Trim(), Desde, Hasta, Tipo, ConAportes);

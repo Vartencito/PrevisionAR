@@ -113,3 +113,55 @@ label {
     background: #fdecea;
     color: #8a1c1c;
 }
+
+.nota {
+    color: #52606d;
+    font-style: italic;
+}
+
+/* Informe (issue #16) */
+.informe {
+    border-top: 2px solid #1d4ed8;
+    padding-top: 1rem;
+}
+
+.informe h4 {
+    margin-bottom: .25rem;
+}
+
+.a-validar {
+    background: #fff8e1;
+    padding: .5rem 1rem;
+}
+
+/* Al imprimir (o guardar como PDF) queda solo el informe, sin la carga de datos ni los botones. */
+@media print {
+    .solo-pantalla,
+    #blazor-error-ui,
+    #components-reconnect-modal {
+        display: none !important;
+    }
+
+    body {
+        margin: 0;
+        max-width: none;
+        font-size: 11pt;
+    }
+
+    .informe {
+        border-top: none;
+        padding-top: 0;
+    }
+
+    .informe section,
+    .tabla tr {
+        break-inside: avoid;
+    }
+
+    .veredicto,
+    .a-validar,
+    .aviso {
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+    }
+}

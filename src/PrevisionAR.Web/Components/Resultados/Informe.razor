@@ -1,0 +1,112 @@
+@using PrevisionAR.Motor
+@using PrevisionAR.Motor.Modelo
+@using PrevisionAR.Motor.Requisitos
+
+@*
+    Informe imprimible (issue #16). Junta los datos cargados, los resultados del motor y las normas
+    de cada ficha. No calcula nada: todo sale del motor o de CatalogoDeFichas.
+    Al imprimir, la hoja de estilos oculta la carga de datos y deja solo este bloque.
+*@
+<article class="informe">
+    <header>
+        <h2>Informe de cómputo de servicios y requisitos de la PBU</h2>
+        <p>
+            @if (!string.IsNullOrWhiteSpace(Referencia))
+            {
+                <span>Caso: <strong>@Referencia</strong> · </span>
+            }
+            Emitido el @Formato.Fecha(FechaDeEmision) · Calculado al @Formato.Fecha(Resultado.FechaDeCalculo)
+        </p>
+    </header>
+
+    <section>
+        <h3>Datos considerados</h3>
+        <p>
+            Fecha de nacimiento: @Formato.Fecha(Persona.FechaDeNacimiento) ·
+            Sexo (Ley 24.241, art. 19): @Formato.Sexo(Persona.Sexo)
+        </p>
+        <table class="tabla">
+            <thead>
+                <tr>
+                    <th>Empleador o actividad</th>
+                    <th>Desde</th>
+                    <th>Hasta</th>
+                    <th>Tipo</th>
+                    <th>Aportes</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var p in Historia.Periodos)
+                {
+                    <tr>
+                        <td>@p.Empleador</td>
+                        <td>@Formato.Fecha(p.Desde)</td>
+                        <td>@Formato.Fecha(p.Hasta, "sigue")</td>
+                        <td>@Formato.Tipo(p.Tipo)</td>
+                        <td>@(p.ConAportes ? "Con aportes" : "Sin aportes")</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </section>
+
+    <ResultadoRequisitos Resultado="Resultado" />
+    <ResultadoComputo Resultado="Resultado.ComputoDeServicios" />
+
+    <section>
+        <h3>Normas aplicadas</h3>
+        @foreach (var ficha in Fichas)
+        {
+            <h4>@ficha.Codigo — @ficha.Titulo</h4>
+            <ul>
+                @foreach (var norma in ficha.Normas)
+                {
+                    <li>@norma</li>
+                }
+            </ul>
+        }
+    </section>
+
+    <section class="a-validar">
+        <h3>Criterios todavía no confirmados por un previsionalista</h3>
+        <p>El cálculo usa estas convenciones propuestas. Si alguna no coincide con el criterio de ANSES, el resultado puede cambiar.</p>
+        <ul>
+            @foreach (var ficha in Fichas)
+            {
+                @foreach (var punto in ficha.PuntosAValidar)
+                {
+                    <li>@ficha.Codigo: @punto</li>
+                }
+            }
+        </ul>
+    </section>
+
+    <footer>
+        <p class="aviso">
+            Generado con Previsión AR (software libre, versión de prueba). Herramienta de apoyo:
+            no reemplaza el criterio profesional ni la resolución de ANSES.
+        </p>
+    </footer>
+</article>
+
+@code {
+    [Parameter, EditorRequired]
+    public Persona Persona { get; set; } = default!;
+
+    [Parameter, EditorRequired]
+    public HistoriaLaboral Historia { get; set; } = default!;
+
+    [Parameter, EditorRequired]
+    public ResultadoRequisitosPbu Resultado { get; set; } = default!;
+
+    [Parameter, EditorRequired]
+    public DateOnly FechaDeEmision { get; set; }
+
+    /// <summary>Texto libre que el abogado elige para identificar el caso (opcional). No se guarda.</summary>
+    [Parameter]
+    public string? Referencia { get; set; }
+
+    // Las fichas que intervienen en el resultado, en el orden en que se aplicaron.
+    private IReadOnlyList<FichaNormativa> Fichas =>
+        [CatalogoDeFichas.Obtener(Resultado.ComputoDeServicios.Regla), CatalogoDeFichas.Obtener(Resultado.Regla)];
+}
