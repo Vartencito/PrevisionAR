@@ -79,6 +79,19 @@ Mostrarle un informe impreso.
 | 7.2 | ¿Qué le falta o qué le sobra? | |
 | 7.3 | ¿Qué datos de la persona debería tener (nombre, CUIL, expediente) o conviene que no los tenga? | |
 
+## 8. Para el cálculo del haber (más adelante, si queda tiempo) — P-36 a P-40
+
+Salen de dos videos sobre el cálculo del haber (fuentes secundarias, detalle en `analisis-videos-haber.md`). Algunos puntos contradicen lo que tenemos anotado, por eso se preguntan.
+
+| # | Pregunta | Respuesta |
+|---|----------|-----------|
+| 8.1 | ¿La PAP tiene un tope de 35 años como la PC, o no tiene tope? (Un video dice que sí y que recién se llega en 2029.) | |
+| 8.2 | ¿La PBU sigue sumando un 1 % por cada año por encima de 30, o hoy es igual para todos? ¿Desde cuándo? | |
+| 8.3 | ¿Con qué índice actualiza ANSES hoy las remuneraciones: el RIPTE solo o el índice combinado de la Ley 27.609? ¿Hasta qué fecha: la de solicitud o la de cierre del cómputo (la más tardía)? | |
+| 8.4 | ¿Sigue vigente la jubilación anticipada (PAD)? ¿La usan sus clientes? | |
+| 8.5 | ¿Qué servicios cuentan para el haber y cuáles solo para llegar a los 30 años? Un video dice que monotributo, casas particulares, moratorias, UCAP y tareas de cuidado solo sirven para los 30 años. ¿Es así? ¿Hay excepciones? | |
+| 8.6 | Idea para el programa: cargar los datos del **detalle del beneficio** de ANSES (tiempos y promedios) y que el programa recalcule la PC y la PAP y marque las diferencias. ¿Le serviría? ¿Hoy cómo hace ese control? | |
+
 ---
 
 **Después de la reunión:** pasarle las respuestas a la IA tal cual, con `/procesar-respuestas`, indicando la fecha y quién respondió.

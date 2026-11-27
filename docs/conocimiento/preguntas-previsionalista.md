@@ -86,6 +86,11 @@ Evidencia de un acuerdo de ANSES anonimizado. Detalle en `casos-dorados.md`. No 
 | 33 | ❓ En CD-002 el tiempo total informado es 34a 6m 23d, pero los tramos suman unos 26 años. ¿De dónde salen los otros 8 años: servicios en otra caja (reciprocidad), servicios sin aportes u otra cosa? | | |
 | 34 | ❓ CD-004 es una prestación "PBU/PC/PAP - MORATORIA" otorgada a una mujer de 50 años y 11 meses. ¿Por qué régimen se otorgó a esa edad? ¿Y con qué ley se hizo la moratoria (24.476, la Unidad de Pago o las UCAP de la 27.705)? | | |
 | 35 | ⚠️ ¿ANSES trunca siempre los centavos (en la PC, la PAP y los promedios), o es casualidad en estos casos? *(Cinco cuentas en CD-001, CD-002 y CD-004 dan truncado.)* | | |
+| 36 | ❓ *(De un video, fuente secundaria.)* ¿La PAP tiene un tope de 35 años como la PC, o no tiene tope? *(Las notas de dominio dicen que la PAP no tiene tope; el video dice que sí y que recién se alcanza en 2029.)* | | |
+| 37 | ❓ *(De un video.)* ¿La PBU sigue sumando un 1 % por año por encima de 30, o hoy es igual para todos? ¿Desde cuándo? *(BlueCorp, en CD-003, informa "años de aporte para la PBU: 36".)* | | |
+| 38 | ❓ *(De los dos videos.)* ¿Con qué índice actualiza ANSES hoy las remuneraciones: el RIPTE o el índice combinado de la Ley 27.609? ¿Hasta qué fecha: la de solicitud o la de cierre del cómputo, la que sea más tardía? (Un video menciona una resolución de 2021, sin confirmar.) | | |
+| 39 | ❓ *(De un video.)* ¿Sigue vigente la jubilación anticipada (PAD) para quien tenía 30 años de aportes a junio de 2023? ¿La usan los abogados? | | |
+| 40 | ⚠️ *(De un video, coincide con CD-004 y R003.)* ¿Qué servicios cuentan para el haber y cuáles solo para llegar a los 30 años? Según el video, monotributo, casas particulares, moratorias, UCAP y tareas de cuidado solo sirven para los 30 años. ¿Hay excepciones? | | |
 | 31 | ⚠️ ¿Puede conseguir la historia laboral de CD-001 (con los empleadores tachados) para comparar el cómputo del programa con el de ANSES? ¿Y otros casos con fracciones de **más** de 6 meses en la PC o la PAP, o con días sueltos repartidos en varios períodos? | | |
 
 ## R004 Moratorias — códigos R004-n

@@ -28,7 +28,7 @@ Las transcripciones completas **no se suben al repositorio** (son material de te
 
 ## Qué se puede hacer con esta información (sin implementar nada todavía)
 
-### 1. Preguntas para el abogado (agregar a la próxima hoja)
+### 1. Preguntas para el abogado (ya están en la hoja v0.1, sección 8, y son P-36 a P-40)
 
 1. ¿La PAP tiene un tope de 35 años como la PC, o no tiene tope?
 2. ¿La PBU sigue sumando un 1 % por año por encima de 30, o es igual para todos? ¿Desde cuándo?
