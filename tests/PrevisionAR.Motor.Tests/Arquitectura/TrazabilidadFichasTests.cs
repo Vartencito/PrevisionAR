@@ -1,3 +1,4 @@
+using System.Globalization;
 using System.Text.RegularExpressions;
 
 namespace PrevisionAR.Motor.Tests.Arquitectura;
@@ -74,12 +75,12 @@ public class TrazabilidadFichasTests
     /// <summary>Filas de tabla que empiezan con "| N |".</summary>
     private static HashSet<int> NumerosDeFila(string seccion) =>
         Regex.Matches(seccion, @"^\|\s*(\d+)\s*\|", RegexOptions.Multiline)
-            .Select(m => int.Parse(m.Groups[1].Value)).ToHashSet();
+            .Select(m => int.Parse(m.Groups[1].Value, CultureInfo.InvariantCulture)).ToHashSet();
 
     /// <summary>Ítems de lista numerada "N. ".</summary>
     private static HashSet<int> NumerosDeLista(string seccion) =>
         Regex.Matches(seccion, @"^(\d+)\.\s", RegexOptions.Multiline)
-            .Select(m => int.Parse(m.Groups[1].Value)).ToHashSet();
+            .Select(m => int.Parse(m.Groups[1].Value, CultureInfo.InvariantCulture)).ToHashSet();
 
     /// <summary>Números citados como "Caso 3", "Criterio 5" o "Criterios 3 y 7" en los tests de la ficha.</summary>
     private static HashSet<int> ReferenciasEnTests(string codigo, string palabra)
@@ -98,7 +99,7 @@ public class TrazabilidadFichasTests
             {
                 foreach (Match n in Regex.Matches(m.Groups[1].Value, @"\d+"))
                 {
-                    numeros.Add(int.Parse(n.Value));
+                    numeros.Add(int.Parse(n.Value, CultureInfo.InvariantCulture));
                 }
             }
         }

@@ -1,3 +1,4 @@
+using System.Globalization;
 using PrevisionAR.Motor.Computo;
 using PrevisionAR.Motor.Modelo;
 
@@ -17,7 +18,7 @@ public class ComputoDeServiciosTests
         string? hasta,
         bool conAportes = true,
         TipoDeServicio tipo = TipoDeServicio.RelacionDeDependencia) =>
-        new(empleador, DateOnly.Parse(desde), hasta is null ? null : DateOnly.Parse(hasta), tipo, conAportes);
+        new(empleador, DateOnly.Parse(desde, CultureInfo.InvariantCulture), hasta is null ? null : DateOnly.Parse(hasta, CultureInfo.InvariantCulture), tipo, conAportes);
 
     private static ResultadoDelComputo Calcular(DateOnly fecha, params PeriodoDeServicio[] periodos) =>
         ComputoDeServicios.Calcular(new HistoriaLaboral(periodos), fecha);

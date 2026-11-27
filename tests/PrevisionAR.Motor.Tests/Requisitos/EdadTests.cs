@@ -1,3 +1,4 @@
+using System.Globalization;
 using PrevisionAR.Motor.Requisitos;
 
 namespace PrevisionAR.Motor.Tests.Requisitos;
@@ -14,6 +15,6 @@ public class EdadTests
     [InlineData("1990-01-31", "1990-04-30", 3)]   // nacido un 31: en un mes de 30 días cumple el 30
     public void MesesCumplidos_Fechas_CuentaMesesCumplidos(string nacimiento, string fecha, int esperado)
     {
-        Assert.Equal(esperado, Edad.MesesCumplidos(DateOnly.Parse(nacimiento), DateOnly.Parse(fecha)));
+        Assert.Equal(esperado, Edad.MesesCumplidos(DateOnly.Parse(nacimiento, CultureInfo.InvariantCulture), DateOnly.Parse(fecha, CultureInfo.InvariantCulture)));
     }
 }

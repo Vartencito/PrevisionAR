@@ -387,3 +387,8 @@ dotnet_naming_style.s_camelcase.required_suffix =
 dotnet_naming_style.s_camelcase.word_separator = 
 dotnet_naming_style.s_camelcase.capitalization = camel_case
 
+
+# Tests: la convención del proyecto nombra los tests Metodo_Escenario_ResultadoEsperado (CLAUDE.md),
+# así que se desactiva la regla que prohíbe guiones bajos en nombres de miembros.
+[tests/**.cs]
+dotnet_diagnostic.CA1707.severity = none

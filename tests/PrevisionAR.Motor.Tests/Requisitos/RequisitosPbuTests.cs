@@ -1,3 +1,4 @@
+using System.Globalization;
 using PrevisionAR.Motor.Modelo;
 using PrevisionAR.Motor.Requisitos;
 
@@ -13,9 +14,9 @@ public class RequisitosPbuTests
 
     private static ResultadoRequisitosPbu Verificar(Sexo sexo, string nacimiento, string desde, string hasta) =>
         RequisitosPbu.Verificar(
-            new Persona(DateOnly.Parse(nacimiento), sexo),
+            new Persona(DateOnly.Parse(nacimiento, CultureInfo.InvariantCulture), sexo),
             new HistoriaLaboral(new PeriodoDeServicio(
-                "Empresa (ficticia)", DateOnly.Parse(desde), DateOnly.Parse(hasta), TipoDeServicio.RelacionDeDependencia, ConAportes: true)),
+                "Empresa (ficticia)", DateOnly.Parse(desde, CultureInfo.InvariantCulture), DateOnly.Parse(hasta, CultureInfo.InvariantCulture), TipoDeServicio.RelacionDeDependencia, ConAportes: true)),
             FechaDeCalculo);
 
     // Caso 1 — Criterio 1.
