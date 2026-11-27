@@ -36,4 +36,4 @@ Para la v0.1 un abogado tiene que poder probar el programa en su PC sin instalar
 
 - Aprobar esta propuesta.
 - ~~Decidir la licencia (#20)~~ Decidido: Unlicense (2026-11-27).
-- Crear la etiqueta para publicar la primera versión.
+- ~~Crear la etiqueta para publicar la primera versión~~ Publicada la v0.1.0 el 2026-11-27 (versión preliminar): https://github.com/Vartencito/PrevisionAR/releases/tag/v0.1.0
