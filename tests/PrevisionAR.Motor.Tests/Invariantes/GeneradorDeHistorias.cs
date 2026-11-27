@@ -34,6 +34,8 @@ internal sealed class GeneradorDeHistorias(int semilla)
         return new PeriodoDeServicio(empleador, desde, hasta, tipo, conAportes);
     }
 
+    public Sexo Sexo() => _azar.Next(2) == 0 ? Modelo.Sexo.Hombre : Modelo.Sexo.Mujer;
+
     public DateOnly Fecha(DateOnly desde, DateOnly hasta) =>
         DateOnly.FromDayNumber(_azar.Next(desde.DayNumber, hasta.DayNumber + 1));
 

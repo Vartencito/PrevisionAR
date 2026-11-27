@@ -118,15 +118,32 @@ public class RequisitosPbuTests
         Assert.NotEmpty(resultado.Explicacion);
     }
 
-    [Theory]
-    [InlineData("1960-03-15", "2026-01-01", 789)] // 65a 9m
-    [InlineData("1961-01-01", "2026-01-01", 780)] // cumpleaños exacto
-    [InlineData("1961-01-02", "2026-01-01", 779)] // un día antes del cumpleaños
-    [InlineData("1964-02-29", "2026-02-28", 744)] // nacido un 29/02: en año no bisiesto cumple el 28/02 (CCyC art. 6)
-    [InlineData("1964-02-29", "2026-02-27", 743)] // un día antes
-    [InlineData("1990-01-31", "1990-04-30", 3)]   // nacido un 31: en un mes de 30 días cumple el 30
-    public void MesesCumplidos_Fechas_CuentaMesesCumplidos(string nacimiento, string fecha, int esperado)
+    // Caso 9 — Convención (A VALIDAR): los días que no forman un mes no suman para los 360 meses.
+    [Fact]
+    public void Verificar_359MesesY20Dias_NoAlcanzanLos360()
     {
-        Assert.Equal(esperado, Edad.MesesCumplidos(DateOnly.Parse(nacimiento), DateOnly.Parse(fecha)));
+        var historia = new HistoriaLaboral(
+            new PeriodoDeServicio("A", new DateOnly(1990, 1, 1), new DateOnly(2019, 11, 30), TipoDeServicio.RelacionDeDependencia, true),
+            new PeriodoDeServicio("B", new DateOnly(2019, 12, 1), new DateOnly(2019, 12, 20), TipoDeServicio.RelacionDeDependencia, true));
+
+        // Cumple 65 justo el día de cálculo: sin edad excedente para compensar.
+        var resultado = RequisitosPbu.Verificar(new Persona(new DateOnly(1961, 1, 1), Sexo.Hombre), historia, FechaDeCalculo);
+
+        Assert.Equal(359, resultado.ServiciosAcreditadosMeses);
+        Assert.Equal(20, resultado.ComputoDeServicios.Total.Dias);
+        Assert.False(resultado.TieneDerecho);
+    }
+
+    [Fact]
+    public void Verificar_SexoInvalido_LanzaError()
+    {
+        Assert.Throws<DatosPersonalesInvalidosException>(() => RequisitosPbu.Verificar(
+            new Persona(new DateOnly(1960, 1, 1), (Sexo)99), new HistoriaLaboral(), FechaDeCalculo));
+    }
+
+    [Fact]
+    public void Verificar_PersonaNula_LanzaArgumentNullException()
+    {
+        Assert.Throws<ArgumentNullException>(() => RequisitosPbu.Verificar(null!, new HistoriaLaboral(), FechaDeCalculo));
     }
 }

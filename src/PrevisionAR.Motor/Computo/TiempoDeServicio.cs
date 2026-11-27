@@ -13,7 +13,7 @@ public sealed record TiempoDeServicio(int Anios, int Meses, int Dias, int DiasCa
     public static readonly TiempoDeServicio Cero = new(0, 0, 0, 0);
 
     /// <summary>Total en meses completos (la unidad que usa el Decreto 679/95: 30 años = 360 meses).</summary>
-    public int TotalMeses => (Anios * 12) + Meses;
+    public int TotalMeses => (Anios * ConvencionDeComputo.MesesPorAnio) + Meses;
 
     public override string ToString() => $"{Anios}a {Meses}m {Dias}d";
 }

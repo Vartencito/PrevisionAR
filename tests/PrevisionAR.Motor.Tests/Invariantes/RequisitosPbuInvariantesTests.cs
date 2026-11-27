@@ -59,7 +59,7 @@ public class RequisitosPbuInvariantesTests
     {
         var fecha = generador.Fecha(new DateOnly(2000, 1, 1), new DateOnly(2030, 12, 31));
         var nacimiento = generador.Fecha(new DateOnly(1930, 1, 1), fecha);
-        var sexo = generador.Fecha(new DateOnly(2000, 1, 1), new DateOnly(2000, 1, 2)).Day == 1 ? Sexo.Hombre : Sexo.Mujer;
+        var sexo = generador.Sexo();
         return (new Persona(nacimiento, sexo), generador.Historia(maximoDePeriodos: 8), fecha);
     }
 }

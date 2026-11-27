@@ -12,4 +12,9 @@ public sealed record DesgloseDeTramo(
     TiempoDeServicio Total,
     TiempoDeServicio SoloDependencia,
     TiempoDeServicio SoloAutonomo,
-    TiempoDeServicio Simultaneo);
+    TiempoDeServicio Simultaneo)
+{
+    /// <summary>Tramo sin servicios.</summary>
+    public static readonly DesgloseDeTramo Vacio =
+        new(TiempoDeServicio.Cero, TiempoDeServicio.Cero, TiempoDeServicio.Cero, TiempoDeServicio.Cero);
+}

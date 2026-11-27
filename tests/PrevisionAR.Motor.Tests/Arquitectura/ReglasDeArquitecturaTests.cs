@@ -29,4 +29,17 @@ public class ReglasDeArquitecturaTests
         || nombre == "System"
         || nombre.StartsWith("System.", StringComparison.Ordinal)
         || nombre.StartsWith("Microsoft.Win32.", StringComparison.Ordinal);
+
+    [Fact]
+    public void Motor_TiposResultado_IndicanLaReglaQueLosProdujo()
+    {
+        // Convención de trazabilidad: todo resultado público del motor dice con qué ficha se calculó.
+        var sinRegla = EnsambladoMotor.GetExportedTypes()
+            .Where(t => t.Name.StartsWith("Resultado", StringComparison.Ordinal))
+            .Where(t => t.GetProperty("Regla", typeof(string)) is null)
+            .Select(t => t.FullName)
+            .ToList();
+
+        Assert.Empty(sinRegla);
+    }
 }

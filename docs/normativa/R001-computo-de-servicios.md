@@ -46,7 +46,7 @@ Dada la historia laboral de una persona (lista de períodos de trabajo), el moto
 3. Un período sin fecha de fin (trabajo actual) se computa hasta la **fecha de cálculo**.
 4. Nada posterior a la fecha de cálculo se computa.
 5. El resultado se expresa en **años, meses y días**, y también en **meses totales** (unidad que usa el Decreto 679/95).
-6. Cada superposición detectada se informa (qué períodos, qué tramo, cuántos días se descontaron).
+6. Cada superposición detectada se informa por pares de períodos, ordenada por fecha, con el tramo común y sus días (si tres períodos se pisan, aparecen tres pares).
 7. **Desglose para fórmulas futuras.** El total en meses se separa:
    - por tramo: **hasta el 30/06/1994** y **desde el 01/07/1994** (los usarán la PC y la PAP);
    - por tipo, dentro de cada tramo: **n** = solo relación de dependencia, **m** = solo autónomo, **p** = simultáneo dependencia y autónomo.
@@ -114,6 +114,7 @@ Fecha de cálculo para todos: **01/01/2026** salvo que se indique otra.
 | 9 | A: 01/03/2000–15/03/2000 c/a | 0a 0m 15d — 0 meses (días sueltos) | Construido (convención, **a validar**) |
 | 10 | A: 01/01/1990–31/12/1999 c/a, dependencia | Total 120 meses. Hasta 30/06/1994: 54 meses (n=54). Desde 01/07/1994: 66 meses (n=66) | Construido (criterio 11) |
 | 11 | A: 01/01/2000–31/12/2009 c/a, dependencia; B: 01/01/2005–31/12/2014 c/a, autónomo | Total 180 meses, todo desde 01/07/1994: n=60 (2000–2004), p=60 (2005–2009), m=60 (2010–2014) | Construido (criterio 12) |
+| 12 | A: 01/01/2000–31/12/2000; B: 01/06/2000–31/12/2000; C: 01/10/2000–31/12/2000, todos c/a | 1a 0m 0d — 12 meses (366 días). Se informan 3 superposiciones por pares, ordenadas por fecha; cada una indica los días del tramo común de ese par | Construido (criterios 4 y 5, superposición triple) |
 
 Los casos 1 a 8 usan meses completos a propósito, para no depender de la convención de días sueltos. Sí dependen de contar las dos fechas inclusive (pregunta 2), y los casos 6 y 7 también de contar el día de cálculo. Cuando un previsionalista la confirme, se agregan casos con días sueltos y con un caso real anonimizado.
 

@@ -59,13 +59,14 @@ tests/
 docs/
   plan-del-proyecto.md       Metodología (Kanban), versiones y rutinas
   estado-del-proyecto.md     Avance, pronóstico y qué hacer ahora (generado)
+  arquitectura.md            Mapa, principios, buenas prácticas y evolución por disparadores
   vision.md                  Visión, etapas, alcance
   roadmap-tecnico.md         Piezas técnicas actuales y cuándo se suman las próximas
   decisiones/                ADR numerados (0001, 0002, ...)
   normativa/                 Fichas de reglas (R001, R002, ...)
   conocimiento/              Notas de dominio (no normativa) y preguntas para el previsionalista
 .claude/
-  agents/                    Agentes: investigador-previsional, revisor-de-codigo
+  agents/                    Agentes: investigador-previsional, revisor-de-codigo, arquitecto-de-software
   commands/                  Flujos: /nueva-ficha, /implementar-ficha, /procesar-respuestas
 herramientas/
   estado_del_proyecto.py     Genera docs/estado-del-proyecto.md desde GitHub
@@ -101,7 +102,9 @@ dotnet run --project src/PrevisionAR.Web
 
 ## Evolución técnica
 
-- Las piezas técnicas entran cuando una funcionalidad las necesita, no antes. Plan en `docs/roadmap-tecnico.md`.
+- Arquitectura y buenas prácticas en `docs/arquitectura.md` (ADR 0006). Leerlo antes de agregar código.
+- Las piezas técnicas entran cuando una funcionalidad las necesita, no antes. Plan en `docs/roadmap-tecnico.md` y disparadores en `docs/arquitectura.md`.
+- Si una tarea cumple un disparador de arquitectura (nueva capa, dependencia, persistencia, combinar reglas, valores por vigencia), pedir diseño al agente `arquitecto-de-software` antes de programar.
 - Al empezar una funcionalidad, revisar el roadmap: si su disparador se cumplió, **proponer** la pieza al responsable (qué es, para qué, pros y contras) antes de agregarla.
 - Al agregar o descartar una pieza, actualizar el roadmap y, si es una decisión de arquitectura, crear un ADR.
 

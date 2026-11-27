@@ -1,7 +1,7 @@
 # Roadmap técnico
 
 Qué piezas técnicas tiene el proyecto hoy y cuáles se agregan, y en qué momento.
-Regla: **una pieza entra cuando una funcionalidad la necesita, no antes.**
+Regla: **una pieza entra cuando una funcionalidad la necesita, no antes.** Los cambios de arquitectura y sus disparadores están en `docs/arquitectura.md`.
 La IA actualiza este archivo cada vez que agrega una pieza o cambia el plan.
 
 ## Ya incorporado
@@ -26,6 +26,8 @@ La IA actualiza este archivo cada vez que agrega una pieza o cambia el plan.
 | Medición de cobertura en CI | Informe en cada ejecución; por ahora no bloquea | 2026-11-26 |
 | Pantalla separada en componentes (`Components/Resultados`) | Base reutilizable para el informe | 2026-11-26 |
 | Gestión con Kanban en GitHub y script de estado | Avance, pronóstico y qué hacer ahora (ADR 0005) | 2026-11-26 |
+| Analizadores de .NET y arreglos de la auditoría | Calidad verificada al compilar (ADR 0006) | 2026-11-26 |
+| Agente `arquitecto-de-software` y `docs/arquitectura.md` | Diseño antes de cambios grandes; evolución por disparadores | 2026-11-26 |
 
 ## Próximas piezas (con su disparador)
 

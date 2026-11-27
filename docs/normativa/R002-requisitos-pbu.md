@@ -85,6 +85,7 @@ Fecha de cálculo para todos: **01/01/2026**. "Servicios" = un período con apor
 | 6 | Hombre, nacido 01/01/1958 (68a 0m: 36 meses de exceso) | 01/01/1980–31/12/2006 (324 meses: faltan 36) | No tiene derecho: compensa 18, siguen faltando 18 meses | Construido (criterio 6) |
 | 7 | Mujer, nacida 01/08/1960 (65a 5m: 65 meses de exceso) | 01/01/1990–31/12/2016 (324 meses: faltan 36) | No tiene derecho: compensa 32 (65 ÷ 2 sin redondear), faltan 4 | Construido (convención **a validar**) |
 | 8 | Hombre, nacido 01/02/2026 | Cualquiera | Error: fecha de nacimiento posterior a la de cálculo | Construido (criterio 8) |
+| 9 | Hombre, nacido 01/01/1961 (cumple 65 ese día, sin excedente) | 01/01/1990–30/11/2019 y 01/12/2019–20/12/2019 (359 meses y 20 días) | No tiene derecho: 359 meses no alcanzan | Construido (convención de días sueltos, **a validar**) |
 
 ## Preguntas abiertas para el previsionalista
 

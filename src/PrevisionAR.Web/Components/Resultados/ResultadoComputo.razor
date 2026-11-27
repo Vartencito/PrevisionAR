@@ -7,7 +7,7 @@
         Total de servicios con aportes: <strong>@Resultado.Total</strong>
         (@Resultado.Total.TotalMeses meses · @Resultado.Total.DiasCalendario días calendario)
     </p>
-    <p>Calculado al @Resultado.FechaDeCalculo.ToString("dd/MM/yyyy").</p>
+    <p>Calculado al @Fecha(Resultado.FechaDeCalculo).</p>
 
     <h3>Desglose por tramo y tipo</h3>
     <table class="tabla">
@@ -21,8 +21,8 @@
             </tr>
         </thead>
         <tbody>
-            <FilaDesglose Nombre="Hasta 30/06/1994 (PC)" Desglose="Resultado.HastaJunio1994" />
-            <FilaDesglose Nombre="Desde 01/07/1994 (PAP)" Desglose="Resultado.DesdeJulio1994" />
+            <FilaDesglose Nombre="@($"Hasta {Fecha(ComputoDeServicios.CorteDeTramos.AddDays(-1))} (PC)")" Desglose="Resultado.HastaJunio1994" />
+            <FilaDesglose Nombre="@($"Desde {Fecha(ComputoDeServicios.CorteDeTramos)} (PAP)")" Desglose="Resultado.DesdeJulio1994" />
         </tbody>
     </table>
 
@@ -36,7 +36,7 @@
         <ul>
             @foreach (var s in Resultado.Superposiciones)
             {
-                <li>@s.PeriodoA y @s.PeriodoB: del @s.Desde.ToString("dd/MM/yyyy") al @s.Hasta.ToString("dd/MM/yyyy") (@s.DiasCalendario días)</li>
+                <li>@s.PeriodoA.Empleador y @s.PeriodoB.Empleador: del @Fecha(s.Desde) al @Fecha(s.Hasta) (@s.DiasCalendario días)</li>
             }
         </ul>
     }
@@ -60,6 +60,9 @@
 @code {
     [Parameter, EditorRequired]
     public ResultadoDelComputo Resultado { get; set; } = default!;
+
+    // Formato fijo dd/MM/yyyy, sin depender de la configuración regional de la PC.
+    private static string Fecha(DateOnly fecha) => fecha.ToString("dd'/'MM'/'yyyy", System.Globalization.CultureInfo.InvariantCulture);
 
     private static string DescribirMotivo(MotivoNoComputado motivo) => motivo switch
     {

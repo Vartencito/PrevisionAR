@@ -39,5 +39,5 @@ public sealed record ResultadoRequisitosPbu(
     public bool TieneDerecho => CumpleEdad && CumpleServicios;
 
     /// <summary>Ficha normativa con la que se verificó.</summary>
-    public string Regla => Reglas.RequisitosPbu;
+    public string Regla { get; init; } = Reglas.RequisitosPbu;
 }

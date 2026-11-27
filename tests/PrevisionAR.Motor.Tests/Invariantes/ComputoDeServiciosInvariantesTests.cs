@@ -108,7 +108,7 @@ public class ComputoDeServiciosInvariantesTests
         {
             var historia = generador.Historia();
             var sinAportes = generador.Periodo("Extra") with { ConAportes = false };
-            var ampliada = new HistoriaLaboral([.. historia.Periodos, sinAportes]);
+            var ampliada = new HistoriaLaboral(historia.Periodos.Append(sinAportes));
             var fecha = new DateOnly(2026, 1, 1);
 
             Assert.Equal(
@@ -126,7 +126,7 @@ public class ComputoDeServiciosInvariantesTests
         {
             var historia = generador.Historia();
             var extra = generador.Periodo("Extra") with { ConAportes = true };
-            var ampliada = new HistoriaLaboral([.. historia.Periodos, extra]);
+            var ampliada = new HistoriaLaboral(historia.Periodos.Append(extra));
             var fecha = new DateOnly(2026, 1, 1);
 
             Assert.True(

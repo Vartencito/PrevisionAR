@@ -77,7 +77,7 @@ public class ComputoDeServiciosTests
 
         AssertTiempo(resultado.Total, 10, 0, 0);
         var superposicion = Assert.Single(resultado.Superposiciones);
-        Assert.Equal(("A", "B"), (superposicion.PeriodoA, superposicion.PeriodoB));
+        Assert.Equal(("A", "B"), (superposicion.PeriodoA.Empleador, superposicion.PeriodoB.Empleador));
         Assert.Equal(new DateOnly(2003, 1, 1), superposicion.Desde);
         Assert.Equal(new DateOnly(2004, 12, 31), superposicion.Hasta);
         Assert.Equal(731, superposicion.DiasCalendario); // 2003 (365) + 2004 bisiesto (366)

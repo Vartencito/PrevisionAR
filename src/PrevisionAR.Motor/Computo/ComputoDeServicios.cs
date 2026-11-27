@@ -16,10 +16,14 @@ namespace PrevisionAR.Motor.Computo;
 public static class ComputoDeServicios
 {
     /// <summary>
-    /// Primer día de vigencia del SIJP (Ley 24.241, Libro I). Separa los servicios que usa la PC
-    /// (hasta el 30/06/1994) de los que usa la PAP (desde el 01/07/1994).
+    /// Día en que empieza el segundo tramo: la PAP toma los meses desde julio de 1994 inclusive
+    /// (Ley 24.241, art. 30 inc. b; Decreto 679/95, reglamentación del art. 30). El primer tramo lo usará la PC.
     /// </summary>
-    public static readonly DateOnly InicioSijp = new(1994, 7, 1);
+    /// <remarks>
+    /// A VALIDAR (pregunta 8): para la PC, el art. 23 toma servicios hasta la vigencia del Libro I,
+    /// que el Decreto 56/94 fijó el 15/07/1994. Si el previsionalista lo confirma, la PC usaría otro corte.
+    /// </remarks>
+    public static readonly DateOnly CorteDeTramos = new(1994, 7, 1);
 
     /// <summary>Calcula el tiempo de servicios con aportes hasta la fecha de cálculo (inclusive).</summary>
     /// <exception cref="HistoriaLaboralInvalidaException">Si algún período tiene fechas invertidas.</exception>
@@ -33,18 +37,18 @@ public static class ComputoDeServicios
 
         if (computables.Count == 0)
         {
-            var vacio = new DesgloseDeTramo(TiempoDeServicio.Cero, TiempoDeServicio.Cero, TiempoDeServicio.Cero, TiempoDeServicio.Cero);
-            return new ResultadoDelComputo(fechaDeCalculo, TiempoDeServicio.Cero, vacio, vacio, superposiciones, noComputados);
+            return new ResultadoDelComputo(
+                fechaDeCalculo, TiempoDeServicio.Cero, DesgloseDeTramo.Vacio, DesgloseDeTramo.Vacio, superposiciones, noComputados);
         }
 
         var calendario = CalendarioDeCobertura.Armar(computables);
-        var finTramo1 = InicioSijp.AddDays(-1);
+        var finTramo1 = CorteDeTramos.AddDays(-1);
 
         return new ResultadoDelComputo(
             fechaDeCalculo,
             Total: calendario.Contar(calendario.Inicio, calendario.Fin, c => c != Cobertura.Ninguna),
             HastaJunio1994: Desglosar(calendario, calendario.Inicio, Min(calendario.Fin, finTramo1)),
-            DesdeJulio1994: Desglosar(calendario, Max(calendario.Inicio, InicioSijp), calendario.Fin),
+            DesdeJulio1994: Desglosar(calendario, Max(calendario.Inicio, CorteDeTramos), calendario.Fin),
             superposiciones,
             noComputados);
     }
@@ -100,8 +104,8 @@ public static class ComputoDeServicios
                 if (desde <= hasta)
                 {
                     superposiciones.Add(new Superposicion(
-                        tramos[i].Periodo.Empleador,
-                        tramos[j].Periodo.Empleador,
+                        tramos[i].Periodo,
+                        tramos[j].Periodo,
                         desde,
                         hasta,
                         hasta.DayNumber - desde.DayNumber + 1));
@@ -109,7 +113,8 @@ public static class ComputoDeServicios
             }
         }
 
-        return superposiciones;
+        // Orden estable para el informe: por fecha de inicio del tramo común (el orden de carga no importa).
+        return [.. superposiciones.OrderBy(s => s.Desde).ThenBy(s => s.Hasta)];
     }
 
     private static DesgloseDeTramo Desglosar(CalendarioDeCobertura calendario, DateOnly desde, DateOnly hasta) =>
@@ -155,7 +160,12 @@ public static class ComputoDeServicios
             var calendario = new CalendarioDeCobertura(tramos.Min(t => t.Desde), tramos.Max(t => t.Hasta));
             foreach (var tramo in tramos)
             {
-                var marca = tramo.Periodo.Tipo == TipoDeServicio.Autonomo ? Cobertura.Autonomo : Cobertura.Dependencia;
+                var marca = tramo.Periodo.Tipo switch
+                {
+                    TipoDeServicio.RelacionDeDependencia => Cobertura.Dependencia,
+                    TipoDeServicio.Autonomo => Cobertura.Autonomo,
+                    _ => throw new HistoriaLaboralInvalidaException(tramo.Periodo, "el tipo de servicio no es válido."),
+                };
                 for (var dia = tramo.Desde.DayNumber; dia <= tramo.Hasta.DayNumber; dia++)
                 {
                     calendario._dias[dia - calendario.Inicio.DayNumber] |= marca;

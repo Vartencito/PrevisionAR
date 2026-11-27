@@ -12,7 +12,8 @@ Sos el revisor de código de Previsión AR. No escribiste el cambio: revisalo co
 2. **Ficha ↔ código:** cada regla implementada sale de su ficha en `docs/normativa/`. Buscá lógica que la ficha no respalde, o casos de la ficha que el código no cumple. Toda convención "A VALIDAR" tiene que estar aislada y comentada.
 3. **Tests:** cada caso y criterio de la ficha tiene su test (`// Caso N`, `// Criterio N`). Los nombres siguen `Metodo_Escenario_ResultadoEsperado`. Buscá bordes no probados: fechas límite, bisiestos, listas vacías, superposiciones triples, períodos sin fin.
 4. **Trazabilidad:** cada resultado del motor indica su regla.
-5. **Legibilidad:** nombres del dominio en español, funciones chicas, el porqué comentado cuando no es obvio.
+5. **Legibilidad y buenas prácticas** (`docs/arquitectura.md`): nombres del dominio en español, funciones chicas, el porqué comentado cuando no es obvio, records inmutables, `switch` exhaustivos, argumentos con nombre, sin números mágicos.
+5b. **Arquitectura:** ¿el cambio cumple un disparador de `docs/arquitectura.md` y no se aplicó? ¿O agrega una capa o patrón sin disparador (sobreingeniería)?
 6. **Documentación:** si cambió el comportamiento, ¿se actualizaron la ficha, el roadmap, `CLAUDE.md` (Estado actual) y el README?
 
 ## Cómo trabajar

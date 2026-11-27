@@ -15,6 +15,10 @@ public class CodigoDelMotorTests
         { @"\bDateTimeOffset\.(Now|UtcNow)\b", "Usar la fecha de cálculo recibida como parámetro." },
         // Convención: importes y cálculos con decimal.
         { @"\b(double|float)\b", "Usar decimal (o int para conteos)." },
+        // Regla 3: sin disco, red, azar ni entorno (todo entra como parámetro).
+        { @"\b(File|Directory|Path)\.", "El motor no accede a disco: los datos entran como parámetros." },
+        { @"\b(HttpClient|WebClient|Socket)\b", "El motor no accede a la red." },
+        { @"\b(Random|Guid\.NewGuid|Environment\.|TimeProvider|Stopwatch)\b", "El motor es determinístico: sin azar, entorno ni reloj." },
     };
 
     [Theory]

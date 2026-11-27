@@ -16,5 +16,5 @@ public sealed record ResultadoDelComputo(
     IReadOnlyList<PeriodoNoComputado> NoComputados)
 {
     /// <summary>Ficha normativa con la que se calculó.</summary>
-    public string Regla => Reglas.ComputoDeServicios;
+    public string Regla { get; init; } = Reglas.ComputoDeServicios;
 }
