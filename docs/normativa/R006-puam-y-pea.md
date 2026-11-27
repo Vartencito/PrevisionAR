@@ -1,10 +1,10 @@
 # R006 — Prestaciones para quienes no llegan a la PBU: PUAM y Prestación por Edad Avanzada (PEA)
 
-- **Estado:** Investigación (borrador). No implementar hasta que el responsable y un previsionalista revisen las preguntas de `docs/conocimiento/preguntas-R006.md`.
-- **Validada por:** (pendiente)
+- **Estado:** Borrador con criterios y casos (A VALIDAR, no implementar)
+- **Validada por:** (pendiente: responsable y previsionalista; se revisa en la reunión del issue #23, bloque E)
 - **Alcance:** fuera del MVP actual (el MVP solo verifica la PBU, R002). Sirve para informar al abogado qué alternativa evaluar cuando R002 da "no tiene derecho".
 - **Depende de:** R001 (cómputo de servicios con aportes) y R002 (requisitos de la PBU).
-- **Fecha de consulta de todas las fuentes:** 26/11/2026.
+- **Fecha de consulta de todas las fuentes:** 26/11/2026. Criterios y casos armados el 27/11/2026 con las mismas fuentes (no se agregaron normas nuevas).
 
 ## Norma y fuente
 
@@ -95,20 +95,62 @@ Los servicios no son requisito de la PUAM: es no contributiva.
 
 **Relación con R002:** la PBU pide 65/60 años y 30 años de aportes, con compensación de edad. La PEA pide más edad (70) y menos servicios (10). La PUAM no pide servicios. Quien no llega a R002 puede caer en la PEA (si tiene 70 y servicios recientes), en la PUAM (si tiene 65 y cumple residencia) o en ninguna. Elegir entre ellas es decisión del abogado.
 
-## Casos tomados de fuentes
+## Criterios de aceptación
 
-Fecha de cálculo para todos: **01/01/2026** (igual que R002). "Servicios" = períodos con aportes en relación de dependencia, salvo que se diga otra cosa. El cese es la fecha de fin del último período.
+Los criterios marcados **A VALIDAR** dependen de la pregunta indicada. "R006-n" es la pregunta n de `docs/conocimiento/preguntas-R006.md`; "P-n" es la pregunta n de `docs/conocimiento/preguntas-previsionalista.md`. Fecha de cálculo = fecha de solicitud.
+
+**PEA (Ley 24.241, art. 34 bis)**
+
+1. **Edad.** Dada una persona con 70 años o más a la fecha de cálculo, sea varón o mujer, entonces cumple la edad de la PEA. El día del cumpleaños ya la cumple (misma convención que R002; **A VALIDAR P-15**). *(Art. 34 bis, ap. 2 inc. a)*
+2. **Diez años con aportes.** Dados 120 meses o más con aportes según R001, entonces cumple los servicios. Con 119 o menos, no. Por ahora no se suman meses de moratoria ni años por hijos (**A VALIDAR R006-5 y R006-6**). *(Art. 34 bis, ap. 2 inc. b)*
+3. **Cinco de los últimos ocho.** Dados 60 meses o más con aportes dentro de los 96 meses inmediatamente anteriores al cese, entonces cumple. Propuesta: cese = último día del último período con aportes, y la cuenta se hace en meses. **A VALIDAR R006-1, R006-2, R006-3 y R006-17.** *(Art. 34 bis, ap. 2 inc. b; Decreto 679/95, regl. art. 34 bis, ap. 1)*
+4. **Autónomos.** Dada una persona con servicios autónomos, entonces además tiene que tener 5 años o más de antigüedad en la afiliación. El motor no la calcula: la recibe como dato cargado por el abogado (años contados como dice el Decreto 679/95). **A VALIDAR R006-7.** *(Art. 34 bis, ap. 2 inc. c; Decreto 679/95, regl. art. 34 bis, ap. 2)*
+5. **Incompatibilidad.** Dada una persona que cumple 1 a 4 y cobra una jubilación, pensión o retiro, entonces el motor informa "cumple los requisitos, pero es incompatible: puede optar". *(Art. 34 bis, ap. 4)*
+6. **Sin compensación por edad.** Dada una persona con más de 70 años y menos de 120 meses, entonces el exceso de edad no compensa servicios. **A VALIDAR R006-4.** *(El art. 19 prevé la compensación solo para la PBU)*
+7. **Casas particulares.** Dados servicios como personal de casas particulares, entonces el motor muestra una advertencia (la guía oficial los excluye) y no da un resultado firme. **A VALIDAR R006-8.**
+8. **Relación con R002.** El motor evalúa la PEA aunque la PBU se cumpla, y muestra los dos resultados sin recomendar. **A VALIDAR R006-10.**
+
+**PUAM (Ley 27.260, arts. 13 a 17)**
+
+9. **Edad.** Dada una persona con 65 años o más, sea varón o mujer, entonces cumple la edad de la PUAM. *(Art. 13, primer párrafo)*
+10. **Nacionalidad y residencia.** Argentino nativo o por opción: cumple. Naturalizado: cumple con 10 años o más de residencia legal antes de la solicitud. Extranjero: cumple con 20 años o más de residencia legal, de los cuales los últimos 10 son inmediatamente anteriores a la solicitud. Los años se cuentan de fecha a fecha (**A VALIDAR P-15**). *(Art. 13, inc. 1)*
+11. **Otras prestaciones.** Dada una persona que cobra jubilación, pensión, retiro o prestación por desempleo, entonces no cumple. Si cobra una sola prestación, el motor informa que puede optar por la PUAM. *(Art. 13)*
+12. **Trabajo.** Dada una persona que trabaja en relación de dependencia o por cuenta propia, entonces no cumple, salvo que sea monotributista social inscripta en el Registro de Efectores. *(Art. 16, texto de la Ley 27.467)*
+13. **Evaluación socioeconómica.** Siempre se informa como "pendiente: la hace ANSES". El motor no la verifica. *(Art. 13, último párrafo; Res. ANSES 56/2023)*
+14. **Derecho a otra prestación no pedida.** Dada una persona que cumple la PEA o la PBU pero no la cobra, entonces el motor informa los dos resultados y advierte que la guía oficial pide "no tener derecho" a otra prestación. **A VALIDAR R006-11.**
+15. **Ausencias del país.** Dada una ausencia de más de 90 días corridos, entonces el motor advierte (Res. ANSES 918/2024) y no decide. **A VALIDAR R006-14.**
+16. **Trazabilidad.** Cada requisito aparece con su resultado (cumple, no cumple, pendiente o a revisar), la norma y la regla R006.
+
+## Casos de prueba
+
+Fecha de cálculo para todos: **01/01/2026** (igual que R002). "Servicios" = períodos con aportes en relación de dependencia, salvo que se diga otra cosa. El cese es la fecha de fin del último período. Todos los datos son ficticios.
 
 | # | Persona | Datos | Resultado esperado | Fuente del caso |
 |---|---------|-------|--------------------|-----------------|
-| 1 | Hombre, nacido 01/01/1955 (71 años) | Servicios 01/01/2016–31/12/2025 (120 meses). Cese 31/12/2025. En los 8 años anteriores (2018–2025): 96 meses. No cobra otra prestación | **Cumple PEA**: 70 años, 10 años con aportes, 5 de los últimos 8. Para R002 **no** cumple PBU: 72 meses de exceso compensan 36 y faltan 240 | Ley 24.241, art. 34 bis, ap. 2 incs. a) y b); R002 |
+| 1 | Hombre, nacido 01/01/1955 (71 años) | Servicios 01/01/2016–31/12/2025 (120 meses). Cese 31/12/2025. En los 8 años anteriores (2018–2025): 96 meses. No cobra otra prestación | **Cumple PEA**: 70 años, 10 años con aportes, 5 de los últimos 8. Para R002 **no** cumple PBU: le faltan 240 meses; los 72 meses de edad excedente compensan 36 y siguen faltando 204 | Ley 24.241, art. 34 bis, ap. 2 incs. a) y b); R002 |
 | 2 | Mujer, nacida 01/06/1956 (69 años y 7 meses) | Mismos servicios que el caso 1 | **No cumple PEA**: le faltan 5 meses para los 70 (la edad es igual para ambos sexos). Por edad podría evaluarse la PUAM (65 o más) | Ley 24.241, art. 34 bis, ap. 2 inc. a) ("cualquiera fuera su sexo"); Ley 27.260, art. 13 |
 | 3 | Hombre, nacido 01/01/1950 (76 años) | Servicios 01/01/1990–31/12/1995 (72 meses) y 01/01/2014–31/12/2017 (48 meses). Total 120 meses. Cese 31/12/2017 | **No cumple PEA**: en los 8 años antes del cese (2010–2017) tiene 48 meses, menos de 5 años. Da igual si los 8 años se cuentan desde el cese o desde la solicitud | Ley 24.241, art. 34 bis, ap. 2 inc. b); Decreto 679/95, regl. art. 34 bis, ap. 1 |
 | 4 | Hombre, nacido 01/01/1950 (76 años) | Servicios 01/01/2006–31/12/2015 (120 meses). Cese 31/12/2015. No trabajó después | **A VALIDAR.** Si los 8 años se cuentan hacia atrás desde el cese de 2015 (2008–2015): 96 meses, **cumple**. Si se cuentan desde la solicitud (2018–2025): 0 meses, **no cumple**. La ley dice "cese de la actividad" pero no lo define para la PEA | Ley 24.241, art. 34 bis, ap. 2 inc. b); Decreto 679/95 (define "cese" solo para el art. 24) |
 | 5 | Mujer argentina nativa, nacida 01/03/1963 (62 años y 10 meses) | Sin prestación, sin trabajo, vive en el país | **No cumple PUAM**: le faltan 2 años y 2 meses para los 65 (la edad es igual para ambos sexos; el proyecto que la bajaba a 60 fue vetado) | Ley 27.260, art. 13, primer párrafo; Decreto 534/2025 |
 | 6 | Hombre extranjero, nacido 01/01/1959 (67 años) | Residencia legal en el país 01/01/2000–31/12/2015 y desde 01/01/2018 hasta hoy (24 años en total; 8 años inmediatamente anteriores). Sin prestación, sin trabajo | **No cumple PUAM**: tiene más de 20 años de residencia, pero solo 8 inmediatamente anteriores a la solicitud (pide 10) | Ley 27.260, art. 13 inc. 1 |
+| 7 | Hombre, nacido 01/01/1956 (70 años exactos) | Mismos servicios que el caso 1 | **Cumple PEA** (borde: cumple los 70 ese mismo día) | Art. 34 bis, ap. 2 inc. a); convención de R002 (**A VALIDAR P-15**) |
+| 8 | Hombre, nacido 01/01/1955 (71 años) | Servicios 01/02/2016–31/12/2025 (119 meses). Cese 31/12/2025 | **No cumple PEA**: le falta 1 mes para los 120 | Art. 34 bis, ap. 2 inc. b) |
+| 9 | Hombre, nacido 01/01/1954 (72 años) | Servicios 01/01/2008–31/12/2012 (60 meses) y 01/01/2021–31/12/2025 (60 meses). Total 120. Cese 31/12/2025 | **Cumple PEA** (borde): en los 8 años anteriores al cese (2018–2025) tiene 60 meses justos | Art. 34 bis, ap. 2 inc. b); Decreto 679/95, regl. art. 34 bis, ap. 1 |
+| 10 | Hombre, nacido 01/01/1954 (72 años) | Servicios 01/01/2008–31/01/2013 (61 meses) y 01/02/2021–31/12/2025 (59 meses). Total 120. Cese 31/12/2025 | **No cumple PEA**: 59 meses en los últimos 8 años (falta 1) | Ídem |
+| 11 | Hombre autónomo, nacido 01/01/1955 (71 años) | Aportes autónomos 01/01/2016–31/12/2025 (120 meses). Antigüedad en la afiliación computable cargada por el abogado: 3 años | **No cumple PEA**: le faltan 2 años de antigüedad en la afiliación. Cómo se obtiene ese dato: **A VALIDAR R006-7** | Art. 34 bis, ap. 2 inc. c); Decreto 679/95, regl. art. 34 bis, ap. 2 |
+| 12 | Hombre, nacido 01/01/1955 (71 años) | Mismos servicios que el caso 1. Cobra una pensión por fallecimiento | **Cumple los requisitos de la PEA, pero es incompatible** con la pensión: el abogado evalúa la opción | Art. 34 bis, ap. 4 |
+| 13 | Hombre, nacido 01/01/1946 (80 años: 120 meses por encima de los 70) | Servicios 01/05/2018–31/12/2025 (92 meses; faltan 28). Cese 31/12/2025 | Propuesta: **no cumple PEA** (sin compensación). Si se aplicara el 2 a 1, 120 ÷ 2 = 60 meses compensarían los 28 y cumpliría. **A VALIDAR R006-4** | Art. 34 bis (no prevé compensación); Ley 24.241, art. 19 |
+| 14 | Mujer, nacida 01/01/1955 (71 años) | 120 meses con aportes como personal de casas particulares, 2016–2025 | El motor **advierte** que la guía oficial excluye a este personal de la PEA; no da resultado firme. **A VALIDAR R006-8** | Guía "Obtener la prestación por edad avanzada" (04/05/2023) |
+| 15 | Mujer argentina nativa, nacida 01/01/1961 (65 años exactos) | Sin prestación, sin trabajo, vive en el país | **Cumple los requisitos que el motor verifica** para la PUAM (borde: cumple los 65 ese día). Evaluación socioeconómica: **pendiente (ANSES)** | Ley 27.260, art. 13 y último párrafo |
+| 16 | Hombre naturalizado, nacido 01/01/1959 (67 años) | Residencia legal desde 01/01/2016 (10 años justos al 01/01/2026). Sin prestación, sin trabajo | **Cumple** residencia (borde, contando de fecha a fecha: **A VALIDAR P-15**). Evaluación socioeconómica pendiente | Ley 27.260, art. 13 inc. 1 |
+| 17 | Igual que el 16 | Residencia legal desde 02/01/2016 | **No cumple** residencia: le falta 1 día para los 10 años | Ídem |
+| 18 | Hombre extranjero, nacido 01/01/1959 (67 años) | Residencia legal continua desde 01/01/2001 (25 años). Sin prestación, sin trabajo | **Cumple** residencia: más de 20 años y los últimos 10 continuos | Ídem |
+| 19 | Mujer argentina nativa, nacida 01/01/1960 (66 años) | Trabaja en relación de dependencia | **No cumple PUAM** (incompatible). Si en cambio fuera monotributista social inscripta en el Registro de Efectores, **sería compatible** | Ley 27.260, art. 16 (texto de la Ley 27.467) |
+| 20 | Hombre argentino nativo, nacido 01/01/1958 (68 años) | Cobra solo una pensión no contributiva por invalidez | El motor informa que **puede optar** por la PUAM | Ley 27.260, art. 13 (opción de quien cobra una única prestación) |
+| 21 | Hombre argentino nativo, nacido 01/01/1955 (71 años) | Mismos servicios que el caso 1 (cumple PEA), sin ninguna prestación ni trabajo | El motor informa **cumple PEA** y **cumple los requisitos verificables de la PUAM**, con una advertencia: la guía oficial pide no tener derecho a otra prestación. **A VALIDAR R006-11** | Ley 27.260, art. 13 ("no ser beneficiario"); guía Derecho Fácil |
+| 22 | Mujer argentina nativa, nacida 01/01/1956 (70 años) | En 2025 estuvo 120 días corridos fuera del país. Sin prestación, sin trabajo | El motor **advierte** sobre la ausencia de más de 90 días; no decide. **A VALIDAR R006-14** | Res. ANSES 918/2024 |
 
-Casos que faltan y dependen de respuestas: autónomo con afiliación formal tardía (Decreto 679/95, ap. 2), persona con servicios por moratoria, persona que cobra una pensión no contributiva y quiere optar.
+Casos que faltan y dependen de respuestas: persona con servicios por moratoria (R006-6), mujer con años por hijos que pide la PEA (R006-5 y P-25) y paso de la PUAM a una jubilación (R006-15).
 
 ## Preguntas abiertas para el previsionalista
 

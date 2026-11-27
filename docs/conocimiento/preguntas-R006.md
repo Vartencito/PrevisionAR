@@ -25,3 +25,7 @@ Referencias: ❓ sin norma encontrada · ⚠️ hay norma pero hay que confirmar
 14. ⚠️ Residencia: ¿un viaje de más de 90 días corridos hace perder la PUAM o solo la suspende? ¿Y cuenta para los "10 años inmediatamente anteriores"? *(Res. ANSES 918/2024 habla de suspensión. [Boletín Oficial](https://www.boletinoficial.gob.ar/detalleAviso/primera/315235/20241007))* — Respuesta:
 15. ⚠️ Si alguien cobra la PUAM y después junta los requisitos de una jubilación, ¿cómo se pasa de una a otra? *(La ley permite optar si se cobra una sola prestación, pero no explica el paso al revés.)* — Respuesta:
 16. ❓ ¿Quieren que el programa revise la PUAM, que no depende de los servicios, o solo la PEA? *(Pregunta de alcance para el responsable.)* — Respuesta:
+
+## Agregada al armar criterios y casos (2026-11-27)
+
+17. ⚠️ PEA: los "5 años en los 8 anteriores al cese", ¿se cuentan en meses (60 de 96), como en los casos 9 y 10 de la ficha? ¿Qué pasa con los días sueltos de un período que empieza o termina a mitad de mes? *(El art. 34 bis habla de años y el Decreto 679/95 no fija la unidad para este requisito. Ligada a las preguntas 1 y 14 de `preguntas-previsionalista.md`.)* — Respuesta:

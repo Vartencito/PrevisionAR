@@ -83,3 +83,8 @@ Contexto para las próximas fichas. Las fuentes y los links están en `preguntas
 - **Moratorias vigentes hoy:** Ley 24.476 (aportes de autónomos hasta 09/1993, con evaluación socioeconómica) y Unidades de Cancelación de Aportes Previsionales de la Ley 27.705 (personas en actividad cerca de la edad jubilatoria, períodos hasta 03/2012). La moratoria para quien ya tiene la edad (Ley 27.705, Unidad de Pago) venció en 2025; la prórroga (Ley 27.792) fue vetada (Decreto 534/2025). Ver R004.
 - **Haber inicial:** PBU suma fija (Ley 26.417). PC: 1,5% por año (fracción mayor de 6 meses = 1 año), tope 35 años, sobre el promedio de 120 remuneraciones actualizadas. PAP: 1,5% por año desde 07/1994, sin tope (0,85% para pedidos antes del 01/07/2007). Actualización por índice combinado trimestral (Ley 27.609); movilidad mensual por IPC (Decreto 274/2024). El art. 125 bis garantiza el 82% del salario mínimo con 30 años de aportes efectivos. Ver R005.
 - **Sin 30 años:** PEA (70 años, 10 años de aportes con 5 en los últimos 8; 70% de PBU + PC + PAP) y PUAM (65 años, no contributiva, 80% del haber mínimo). Ver R006.
+
+## Hallazgos del 2026-11-27 (R003)
+
+- **Texto del art. 22 bis:** los 2 años adicionales por AUH valen "en la medida en que por este se haya computado el tiempo previsto **en el presente apartado**" (no "párrafo anterior", como decía antes la ficha). Verificado en InfoLEG y en el Boletín Oficial del 19/07/2021.
+- **Normativa ANSES PREV-11-67 (tareas de cuidado):** sigue sin texto oficial publicado. Solo circula en sitios de estudios jurídicos, así que no se usa como fuente. Se le pide al abogado en la hoja de reunión v0.2.
