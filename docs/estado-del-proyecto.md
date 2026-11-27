@@ -1,18 +1,18 @@
 # Estado del proyecto
 
-Generado el 26/11/2026 con `herramientas/estado_del_proyecto.py` a partir de GitHub. No editar a mano.
+Generado el 27/11/2026 con `herramientas/estado_del_proyecto.py` a partir de GitHub. No editar a mano.
 
 ## Avance por versión
 
 | Versión | Tareas hechas | Horas hechas / total | Avance | Fecha objetivo | Pronóstico |
 | --- | --- | --- | --- | --- | --- |
 | v0.0 Base | 7/7 | 34 / 34 h | 100% | — | Terminada |
-| v0.1 MVP: cómputo, requisitos e informe | 0/12 | 0 / 38 h | 0% | 28/12/2026 | ~24/12/2026 |
-| v0.2 ¿A qué puede acceder? | 0/8 | 0 / 40 h | 0% | 25/01/2027 | ~21/01/2027 |
-| v0.3 Haber inicial | 0/5 | 0 / 32 h | 0% | 22/02/2027 | ~11/02/2027 |
-| v0.4 Distribución y beta | 0/3 | 0 / 16 h | 0% | 08/03/2027 | ~25/02/2027 |
+| v0.1 MVP: cómputo, requisitos e informe | 0/12 | 0 / 38 h | 0% | 28/12/2026 | ~25/12/2026 |
+| v0.2 ¿A qué puede acceder? | 0/10 | 0 / 46 h | 0% | 25/01/2027 | ~29/01/2027 |
+| v0.3 Haber inicial | 0/5 | 0 / 32 h | 0% | 22/02/2027 | ~19/02/2027 |
+| v0.4 Distribución y beta | 0/3 | 0 / 16 h | 0% | 08/03/2027 | ~05/03/2027 |
 
-**Total:** 34 de 160 horas estimadas (21%). Quedan ~126 horas, unas **13 semanas** a 10 h por semana, sin contar las esperas del abogado.
+**Total:** 34 de 166 horas estimadas (20%). Quedan ~132 horas, unas **14 semanas** a 10 h por semana, sin contar las esperas del abogado.
 
 ## Qué hacer ahora (v0.1 MVP: cómputo, requisitos e informe)
 
