@@ -121,3 +121,5 @@ Los casos 1 a 8 usan meses completos a propósito, para no depender de la conven
 ## Preguntas abiertas para el previsionalista
 
 Están en `docs/conocimiento/preguntas-previsionalista.md` (preguntas 1 a 9). Cuando se respondan, se actualiza esta ficha y se agregan casos con días sueltos y un caso real anonimizado.
+
+**Métodos para contar días:** el abogado informó que BlueCorp usa meses de 30 días (año de 360). La comparación del método actual con esa alternativa, con casos concretos, está en `docs/conocimiento/comparacion-metodos-de-dias-R001.md` (repregunta A2-bis). El cálculo no se cambia hasta que confirme el criterio de ANSES.
