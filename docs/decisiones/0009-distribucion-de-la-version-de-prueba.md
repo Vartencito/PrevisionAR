@@ -1,6 +1,6 @@
 # 0009 — Distribución de la versión de prueba: ejecutable autocontenido local
 
-- **Estado:** Aceptada el 2026-11-27 por el responsable. Programada, todavía sin publicar: la primera versión se publica cuando el responsable crea la etiqueta, después de decidir la licencia (issue #20; hoy es Unlicense)
+- **Estado:** Aceptada el 2026-11-27 por el responsable. Programada, todavía sin publicar: la primera versión se publica cuando el responsable crea la etiqueta, con la licencia ya decidida (Unlicense, ADR 0002, issue #20)
 - **Fecha:** 2026-11-27
 - **Issues:** #19 (publicar v0.1) · relacionado con #37 (instalador, v0.4)
 
@@ -35,4 +35,5 @@ Para la v0.1 un abogado tiene que poder probar el programa en su PC sin instalar
 ## Pendiente del responsable
 
 - Aprobar esta propuesta.
-- Decidir la licencia (#20) antes de la primera publicación.
+- ~~Decidir la licencia (#20)~~ Decidido: Unlicense (2026-11-27).
+- Crear la etiqueta para publicar la primera versión.

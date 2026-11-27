@@ -26,7 +26,7 @@ No se encontró ninguna norma de ANSES, del Poder Judicial ni de colegios profes
 
 ## Licencia
 
-En Argentina los derechos morales del autor son irrenunciables, por lo que una renuncia total como la de la Unlicense podría no ser plenamente eficaz. Alternativas igual de libres pensadas para ese caso: CC0 (incluye licencia de respaldo) o MIT. **Decisión del responsable** (cambio de licencia requiere su aprobación).
+En Argentina los derechos morales del autor son irrenunciables, por lo que una renuncia total como la de la Unlicense podría no ser plenamente eficaz. Alternativas igual de libres pensadas para ese caso: CC0 (incluye licencia de respaldo) o MIT. **Decisión del responsable** (cambio de licencia requiere su aprobación). **Decidido el 2026-11-27: se mantiene la Unlicense** (ADR 0002, revisión).
 
 ## Aviso al usuario
 
