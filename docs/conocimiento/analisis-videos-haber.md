@@ -56,7 +56,7 @@ Es una hipótesis que hay que **validar con el abogado y con la norma** antes de
 
 ### 4. Ideas de producto (para priorizar con los abogados)
 
-- **Control del detalle del beneficio:** el abogado carga lo que figura en el detalle de ANSES (tiempos tomados para el cálculo, promedios de dependencia y de autónomos, fechas) y el programa recalcula la PC y la PAP y marca las diferencias. **No hace falta el índice de actualización**, porque los promedios vienen en el detalle. Usaría solo reglas que ya verificamos en cuatro casos reales: 1,5 % por año, fracciones y truncamiento de centavos. El video B muestra que los abogados hoy hacen este control a mano o con sistemas pagos.
+- **Control del detalle del beneficio** (candidata aprobada, [#41](https://github.com/Vartencito/PrevisionAR/issues/41)): el abogado carga lo que figura en el detalle de ANSES (tiempos tomados para el cálculo, promedios de dependencia y de autónomos, fechas) y el programa recalcula la PC y la PAP y marca las diferencias. **No hace falta el índice de actualización**, porque los promedios vienen en el detalle. Usaría solo reglas que ya verificamos en cuatro casos reales: 1,5 % por año, fracciones y truncamiento de centavos. El video B muestra que los abogados hoy hacen este control a mano o con sistemas pagos.
 - **Revisión del SICAM:** una lista de controles para encontrar años de autónomo mal cargados y "rescatarlos". Sería más una guía que un cálculo.
 - **Etapa 2 (importar documentos):** las fuentes concretas son la historia laboral de Mi ANSES, el SICAM y el detalle del beneficio.
 

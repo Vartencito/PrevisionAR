@@ -22,8 +22,9 @@ CAPACIDAD_SEMANAL_HORAS = 10  # disponibilidad del responsable; ver plan
 def gh(ruta):
     """Lee la API de GitHub con la CLI `gh`; si no está instalada o autenticada, usa la API pública."""
     try:
+        # encoding explícito: en Windows, sin esto Python lee la salida de gh como cp1252 y falla con los acentos.
         salida = subprocess.run(["gh", "api", "--paginate", f"repos/{REPO}/{ruta}"],
-                                capture_output=True, text=True, check=True).stdout
+                                capture_output=True, text=True, encoding="utf-8", check=True).stdout
         # --paginate concatena arrays JSON: los unimos.
         return json.loads(salida.replace("][", ","))
     except (FileNotFoundError, subprocess.CalledProcessError):
