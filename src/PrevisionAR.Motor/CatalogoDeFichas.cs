@@ -33,7 +33,7 @@ public static class CatalogoDeFichas
             "Ley 24.241, arts. 23, 24 y 30; Decreto 679/95: separación de tramos antes y desde el 01/07/1994",
         ],
         [
-            "Cómo se convierten los días sueltos en meses (hoy: 30 días = 1 mes, sumando días de distintos meses)",
+            "Cómo se convierten los días sueltos en meses (hoy: 30 días = 1 mes, sumando días de distintos meses; lo confirmó un abogado, falta una segunda fuente)",
             "Si las fechas desde y hasta se cuentan las dos (hoy: sí)",
             "Corte de tramos para la PC y la PAP en julio de 1994",
         ]);
@@ -50,7 +50,7 @@ public static class CatalogoDeFichas
         ],
         [
             "Redondeo de la compensación (hoy: meses de edad excedente ÷ 2, sin redondear hacia arriba)",
-            "Si los días sueltos ayudan a llegar a 360 meses (hoy: no)",
+            "Si los días sueltos ayudan a llegar a 360 meses (hoy: solo si llegan a 30 y forman un mes; lo confirmó un abogado, falta una segunda fuente)",
             "Cómo se cumple la edad un 29 de febrero (hoy: el 28/02 en años no bisiestos)",
         ]);
 
