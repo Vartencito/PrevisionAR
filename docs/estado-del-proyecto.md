@@ -8,11 +8,11 @@ Generado el 27/11/2026 con `herramientas/estado_del_proyecto.py` a partir de Git
 | --- | --- | --- | --- | --- | --- |
 | v0.0 Base | 7/7 | 34 / 34 h | 100% | — | Terminada |
 | v0.1 MVP: cómputo, requisitos e informe | 6/12 | 18 / 38 h | 47% | 28/12/2026 | ~11/12/2026 |
-| v0.2 ¿A qué puede acceder? | 0/10 | 0 / 46 h | 0% | 25/01/2027 | ~15/01/2027 |
+| v0.2 ¿A qué puede acceder? | 0/11 | 0 / 48 h | 0% | 25/01/2027 | ~15/01/2027 |
 | v0.3 Haber inicial | 0/6 | 0 / 40 h | 0% | 22/02/2027 | ~12/02/2027 |
 | v0.4 Distribución y beta | 0/3 | 0 / 16 h | 0% | 08/03/2027 | ~26/02/2027 |
 
-**Total:** 52 de 174 horas estimadas (30%). Quedan ~122 horas, unas **13 semanas** a 10 h por semana, sin contar las esperas del abogado.
+**Total:** 52 de 176 horas estimadas (30%). Quedan ~124 horas, unas **13 semanas** a 10 h por semana, sin contar las esperas del abogado.
 
 ## Qué hacer ahora (v0.1 MVP: cómputo, requisitos e informe)
 
