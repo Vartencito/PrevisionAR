@@ -94,7 +94,7 @@ Contexto para las próximas fichas. Las fuentes y los links están en `preguntas
 Son afirmaciones de un abogado, sin norma citada: sirven para preguntar e investigar, y entran a una ficha solo con su fuente.
 
 - **Dos cuentas distintas:** para **llegar a los 30 años** se cuenta todo, días incluidos (30 días = 1 mes). Para la **PC y la PAP** se cuentan años enteros, y más de 6 meses suma un año.
-- **Promedio en dependencia:** las últimas 120 remuneraciones aunque no sean consecutivas; si hay meses incompletos, se suman días hasta completar 120 meses; con menos de 10 años, se divide por los meses que haya. **El aguinaldo no entra.** Los conceptos sin aportes tampoco, salvo que se ganen en un juicio.
+- **Promedio en dependencia:** las últimas 120 remuneraciones aunque no sean consecutivas; si hay meses incompletos, se suman días hasta completar 120 meses; con menos de 10 años, se divide por los meses que haya (⚠️ el Decreto 679/95 dice dividir por 120: P-45). **El aguinaldo no entra** (✅ Ley 24.241, art. 25). Los conceptos sin aportes tampoco, salvo que se ganen en un juicio.
 - **Promedio de autónomos:** todas las categorías aportadas en la vida laboral, sin el límite de 10 años.
 - **Topes:** (1) la remuneración máxima sujeta a aportes de cada mes; (2) la remuneración actualizada frente a la máxima actual; (3) el tope de la PC; (4) el haber máximo, también cuando se cobran jubilación y pensión a la vez. Las sentencias suelen liberar un tope si la diferencia supera el 15 % (se considera confiscatorio).
 - **Sentencias de reajuste:** cada fallo trae su criterio (con o sin tope, el 15 %). Mencionó tres fallos nuevos para el período 2021 a junio de 2024.

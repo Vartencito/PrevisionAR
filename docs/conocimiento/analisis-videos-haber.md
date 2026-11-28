@@ -60,6 +60,13 @@ Es una hipótesis que hay que **validar con el abogado y con la norma** antes de
 - **Revisión del SICAM:** una lista de controles para encontrar años de autónomo mal cargados y "rescatarlos". Sería más una guía que un cálculo.
 - **Etapa 2 (importar documentos):** las fuentes concretas son la historia laboral de Mi ANSES, el SICAM y el detalle del beneficio.
 
+## Actualización del 2026-11-27 (norma revisada por el investigador)
+
+- **PBU:** el art. 20 vigente fija un monto único sin plus por año (Ley 26.417). Tenía razón el video B; el dato "años de aporte para la PBU" de BlueCorp sería un resto de la fórmula vieja.
+- **Tope de 35 años:** confirmado para la PC (art. 24). Para la PAP, la norma no fija un tope propio: sigue abierto (P-36).
+- **Jubilación anticipada:** la de 80 % es la del DNU 674/2021, prorrogada por el DNU 558/2023; el abogado dice que ya no está vigente (P-39).
+- **Topes del haber:** Res. SSS 6/2009, art. 14 (remuneración actualizada y tope de la PC) y Ley 24.463, art. 9 (haber máximo).
+
 ## Cuidados
 
 - Ninguno de los dos videos es una fuente oficial. Los datos que contradicen lo que ya sabemos (índice, tope de la PAP, PBU) se **investigan en la norma**, no se toman del video.
