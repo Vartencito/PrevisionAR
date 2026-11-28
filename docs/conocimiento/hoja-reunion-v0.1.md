@@ -15,7 +15,7 @@ Objetivo: cerrar los criterios que faltan para la primera versión de prueba (c�
 |---|----------|-----------|
 | 0.1 | Meses incompletos con día 31: (a) del 10/05 al 31/05, ¿21 o 22 días? (b) del 15/01 al 14/02, ¿1 mes o 1 mes y 1 día? (c) del 31/01 al 29/02/2020, ¿1 mes o 1 mes y 1 día? (P-41) | |
 | 0.2 | Con 6 meses **exactos** (20 años y 6 meses), ¿20 o 21 años para la PC y la PAP? La ley dice "más de 6 meses" (P-42) | |
-| 0.3 | La ley (art. 19) dice **2 años de edad por 1 de servicio**. Si faltan 6 meses de servicios y sobran 12 de edad, ¿llega (12 ÷ 2 = 6) o le sobra (12 × 2 = 24)? (P-43) | |
+| 0.3 | La ley (art. 19) y la cartilla oficial de ANSES de octubre de 2025 dicen **2 años de edad por 1 de servicio**. Si faltan 6 meses de servicios y sobran 12 de edad, ¿llega (12 ÷ 2 = 6) o le sobra (12 × 2 = 24)? (P-43) | |
 | 0.4 | ¿El monotributo entra en el promedio de autónomos para el haber, o solo sirve para los 30 años? (P-44) | |
 | 0.5 | (Para el haber, si queda tiempo.) Con menos de 120 meses de remuneraciones, usted dijo que se divide por los meses trabajados; el Decreto 679/95 dice dividir por 120. ¿De dónde sale su criterio? (P-45) | |
 

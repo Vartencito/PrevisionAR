@@ -102,3 +102,19 @@ Son afirmaciones de un abogado, sin norma citada: sirven para preguntar e invest
 - **Régimen anterior (Ley 18.037):** el haber era un porcentaje (70 a 82 %) del promedio de los últimos 10 años, según los años de más. Se usa poco hoy.
 - **Otras prestaciones:** pensión derivada (de un jubilado), pensión directa (fallece en actividad; pide regularidad de aportes), retiro por invalidez, PEA. La anticipada por desempleo ya no está vigente.
 - **Cómo trabaja:** usa BlueCorp y consigue PRPA de colegas. Su interés principal es la **liquidación de sentencias** ("subir la sentencia o la PRPA y que el programa calcule").
+
+## Material leído el 2026-11-27 (segunda tanda)
+
+**Cartilla oficial de ANSES "Jubilación ordinaria" (SIPA, actualizada a octubre de 2025).** Es fuente oficial.
+- Requisitos: 60 años las mujeres y 65 los hombres, y 30 años de servicios con aportes en el sistema de reciprocidad. Se compensa **un año de servicios por cada dos años de edad excedentes**, como dice el art. 19 y al revés de lo que dijo el abogado.
+- Documentación que pide ANSES. Sirve para la etapa 2 (importar documentos) y para una guía de trámite:
+  - dependencia: formulario PS. 6.2 "Certificación de Servicios y Remuneraciones";
+  - autónomos y monotributo: formularios 558/A, 558/B y 558/C del SICAM (ARCA) y, si hay moratoria de la Ley 24.476, el plan y la aceptación del descuento de cuotas (PS. 6.278);
+  - el formulario PS. 6.284, para declarar prestaciones en provincias no adheridas o en fuerzas armadas y de seguridad.
+
+**Presentación de un curso de la SCBA sobre el régimen de ANSES** (material de terceros, de alrededor de 2016: tiene importes viejos). Sirve como guía para investigar, no como fuente:
+- **Caja otorgante:** si hubo aportes en varias cajas, la que tiene más años fija la edad y los servicios exigidos, y paga la prestación (reciprocidad, Decreto-Ley 9.316/46). El programa hoy supone siempre ANSES: conviene avisarlo cuando haya servicios en otras cajas.
+- **Servicios por declaración jurada** (Ley 24.241, art. 38): un máximo de años según el año de cese (7 años en 1994-95, bajando hasta 1 año en 2006-07). Ya figura como excepción en R001 y R002.
+- **Pensión por fallecimiento y retiro por invalidez:** piden ser aportante "regular" o "irregular con derecho": por ejemplo, 30 de los últimos 36 meses, o 18 de 36 con los años mínimos, o 12 de 60 con la mitad de los años (Decretos 1120/94, 136/97 y 460/99). Para una ficha futura.
+- **Autónomos:** prescripción de deudas a los 10 años (Ley 14.236, art. 16); renuncia a meses de autónomo que sobran o son simultáneos (Ley 25.321, art. 1); padrón histórico de autónomos (PUC) y SICAM. Para R004 y para la idea de revisar el SICAM.
+- **Moratoria y PEA:** cita la Res. ANSES 540/2014 (ver R006-6, a verificar).
