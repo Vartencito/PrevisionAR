@@ -77,7 +77,7 @@ Dada la historia laboral de una persona (lista de períodos de trabajo), el moto
 | Fechas inclusive | Desde y hasta se cuentan las dos | Ley 18.037: la antigüedad corre "desde la fecha de iniciación… hasta la de cesación". **Confirmar** con previsionalista |
 | Tope calendario | Nunca más tiempo que el calendario ni más de 12 meses por año calendario | Ley 18.037. El algoritmo lo cumple por construcción: cuenta cada día del calendario una sola vez |
 | Meses completos | Se cuentan meses calendario cubiertos enteros | Propuesta técnica |
-| Días sueltos | **30 días sueltos = 1 mes** | **A VALIDAR.** No hay norma nacional explícita encontrada. El IPS (provincia de Bs. As.) usa mes de 30 días (otra caja, solo como referencia) |
+| Días sueltos | **30 días sueltos = 1 mes**, sumando los días de distintos períodos. Un mes completo cuenta como 1 mes, tenga 28, 30 o 31 días | **A VALIDAR (1 de 2 fuentes).** Sin norma nacional explícita. **El abogado lo confirmó el 2026-11-27** (P-1). Falta la segunda fuente: la historia laboral de CD-001 (`casos-dorados.md`), y aclarar los meses incompletos con día 31 (P-41) |
 | Años | 12 meses = 1 año | — |
 
 La conversión de días sueltos está aislada en el código (`ConvencionDeComputo`) para poder cambiarla sin tocar el resto.

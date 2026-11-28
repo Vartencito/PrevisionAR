@@ -9,6 +9,15 @@ Objetivo: cerrar los criterios que faltan para la primera versión de prueba (c�
 
 ---
 
+## 0. Repreguntas (lo que quedó pendiente de las respuestas del 27/11) — empezar por acá
+
+| # | Pregunta | Respuesta |
+|---|----------|-----------|
+| 0.1 | Meses incompletos con día 31: (a) del 10/05 al 31/05, ¿21 o 22 días? (b) del 15/01 al 14/02, ¿1 mes o 1 mes y 1 día? (c) del 31/01 al 29/02/2020, ¿1 mes o 1 mes y 1 día? (P-41) | |
+| 0.2 | Con 6 meses **exactos** (20 años y 6 meses), ¿20 o 21 años para la PC y la PAP? La ley dice "más de 6 meses" (P-42) | |
+| 0.3 | La ley (art. 19) dice **2 años de edad por 1 de servicio**. Si faltan 6 meses de servicios y sobran 12 de edad, ¿llega (12 ÷ 2 = 6) o le sobra (12 × 2 = 24)? (P-43) | |
+| 0.4 | ¿El monotributo entra en el promedio de autónomos para el haber, o solo sirve para los 30 años? (P-44) | |
+
 ## 1. Días sueltos y meses (A2-bis, P-1, P-14) — lo más importante
 
 En un acuerdo real de ANSES (caso CD-001, anonimizado) vimos esto:
@@ -22,10 +31,10 @@ O sea: **para el cálculo, ANSES descarta los días sueltos.** Pasa lo mismo en 
 
 | # | Pregunta | Respuesta |
 |---|----------|-----------|
-| 1.1 | ¿Siempre es así? ¿Los días sueltos nunca suman para llegar a los 360 meses? (Ejemplo: 359 meses y 20 días, ¿no alcanza?) | |
-| 1.2 | ¿Cómo llega ANSES a los "19 días": cuenta meses de 30 días (como BlueCorp) o meses del calendario? Mirar la tabla de la hoja de comparación: ¿qué columna coincide con ANSES? | |
-| 1.3 | Febrero completo (del 01/02 al 28/02), ¿cuenta como un mes entero? | |
-| 1.4 | En otro caso real (CD-002), ANSES descartó 29 días antes del 7/94 y 14 después, sin sumarlos. Si una persona tiene días sueltos en **varios trabajos del mismo tramo** (20 días en uno, 15 en otro), ¿ANSES los suma entre sí antes de descartar los que sobran? | |
+| 1.1 | ¿Siempre es así? ¿Los días sueltos nunca suman para llegar a los 360 meses? (Ejemplo: 359 meses y 20 días, ¿no alcanza?) | ✅ 27/11: los días suman, pero 30 forman un mes: 359 meses y 20 días no alcanza |
+| 1.2 | ¿Cómo llega ANSES a los "19 días": cuenta meses de 30 días (como BlueCorp) o meses del calendario? Mirar la tabla de la hoja de comparación: ¿qué columna coincide con ANSES? | ✅ 27/11: meses de 30 días; mes completo = 1 mes; mes incompleto = días trabajados. Falta el día 31 (0.1) |
+| 1.3 | Febrero completo (del 01/02 al 28/02), ¿cuenta como un mes entero? | ✅ 27/11: sí, febrero completo es un mes |
+| 1.4 | En otro caso real (CD-002), ANSES descartó 29 días antes del 7/94 y 14 después, sin sumarlos. Si una persona tiene días sueltos en **varios trabajos del mismo tramo** (20 días en uno, 15 en otro), ¿ANSES los suma entre sí antes de descartar los que sobran? | ✅ 27/11: sí, se suman los días de distintos períodos |
 
 ## 2. Fracciones de año para la PC y la PAP (P-9)
 
@@ -33,8 +42,8 @@ En CD-001, la PC se calculó con 15 años (descartó 4 meses) y la PAP con 31 (d
 
 | # | Pregunta | Respuesta |
 |---|----------|-----------|
-| 2.1 | ¿Pasa lo mismo en la PAP: más de 6 meses suma un año? | |
-| 2.2 | ¿Y con 6 meses exactos? BlueCorp (caso CD-003) no suma el año: 18 años y 6 meses los toma como 18. ¿ANSES hace lo mismo? | |
+| 2.1 | ¿Pasa lo mismo en la PAP: más de 6 meses suma un año? | ✅ 27/11: sí, igual en la PAP |
+| 2.2 | ¿Y con 6 meses exactos? BlueCorp (caso CD-003) no suma el año: 18 años y 6 meses los toma como 18. ¿ANSES hace lo mismo? | ✅ 27/11: se contradijo; ver 0.2 |
 
 ## 3. Corte de julio de 1994 (P-8)
 
@@ -48,7 +57,7 @@ ANSES separa "antes del 7/94" y "después del 7/94".
 
 | # | Pregunta | Respuesta |
 |---|----------|-----------|
-| 4.1 | Si a alguien le sobran 5 meses de edad, ¿compensan 2 meses de servicios, 2 meses y medio o 3 meses? ¿Tiene algún caso real de ANSES con compensación? | |
+| 4.1 | Si a alguien le sobran 5 meses de edad, ¿compensan 2 meses de servicios, 2 meses y medio o 3 meses? ¿Tiene algún caso real de ANSES con compensación? | ✅ 27/11: dijo "el doble", al revés que la ley; ver 0.3 |
 
 ## 5. Edad (P-15)
 
@@ -88,8 +97,8 @@ Salen de dos videos sobre el cálculo del haber (fuentes secundarias, detalle en
 | 8.1 | ¿La PAP tiene un tope de 35 años como la PC, o no tiene tope? (Un video dice que sí y que recién se llega en 2029.) | |
 | 8.2 | ¿La PBU sigue sumando un 1 % por cada año por encima de 30, o hoy es igual para todos? ¿Desde cuándo? | |
 | 8.3 | ¿Con qué índice actualiza ANSES hoy las remuneraciones: el RIPTE solo o el índice combinado de la Ley 27.609? ¿Hasta qué fecha: la de solicitud o la de cierre del cómputo (la más tardía)? | |
-| 8.4 | ¿Sigue vigente la jubilación anticipada (PAD)? ¿La usan sus clientes? | |
-| 8.5 | ¿Qué servicios cuentan para el haber y cuáles solo para llegar a los 30 años? Un video dice que monotributo, casas particulares, moratorias, UCAP y tareas de cuidado solo sirven para los 30 años. ¿Es así? ¿Hay excepciones? | |
+| 8.4 | ¿Sigue vigente la jubilación anticipada (PAD)? ¿La usan sus clientes? | ✅ 27/11: no está vigente |
+| 8.5 | ¿Qué servicios cuentan para el haber y cuáles solo para llegar a los 30 años? Un video dice que monotributo, casas particulares, moratorias, UCAP y tareas de cuidado solo sirven para los 30 años. ¿Es así? ¿Hay excepciones? | ✅ 27/11: solo cuenta lo aportado; incluye el monotributo en autónomos; ver 0.4 |
 | 8.6 | Idea para el programa: cargar los datos del **detalle del beneficio** de ANSES (tiempos y promedios) y que el programa recalcule la PC y la PAP y marque las diferencias. ¿Le serviría? ¿Hoy cómo hace ese control? | |
 
 ---

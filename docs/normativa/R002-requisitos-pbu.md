@@ -56,8 +56,8 @@ Dada una persona (fecha de nacimiento y sexo según el art. 19) y su historia la
 | Punto | Decisión propuesta | Respaldo |
 |-------|-------------------|----------|
 | Edad en meses | Meses cumplidos "de fecha a fecha" entre el nacimiento y la fecha de cálculo. Si el mes no tiene ese día (29/02, 31), se cumple el último día del mes. El día del cumpleaños ya cuenta como cumplido | Código Civil y Comercial, art. 6 ([texto](https://www.argentina.gob.ar/normativa/nacional/norma-235975/actualizacion)). **Confirmar** que ANSES lo aplica así a la edad jubilatoria (pregunta 15) |
-| Compensación en meses | Meses compensados = meses de edad excedente ÷ 2, **sin redondear hacia arriba** (5 meses de exceso compensan 2 meses) | La ley fija la proporción 2 a 1 y el Decreto 679/95 admite fracciones de edad. El redondeo de la fracción no está explícito: **A VALIDAR** |
-| Días sueltos de servicios | Se usan los meses que da R001 (que ya convierte cada 30 días sueltos en un mes); los días que quedan sin formar un mes no suman (359 meses y 20 días no alcanza) | **A VALIDAR** (ligado a la pregunta 1 de R001) |
+| Compensación en meses | Meses compensados = meses de edad excedente ÷ 2, **sin redondear hacia arriba** (5 meses de exceso compensan 2 meses) | La ley fija la proporción 2 a 1 y el Decreto 679/95 admite fracciones de edad. El redondeo de la fracción no está explícito: **A VALIDAR**. El 2026-11-27 el abogado dijo que la edad vale **el doble** como servicio, al revés que la ley, y aclaró "me parece". **Se mantiene el texto de la ley** y se repregunta (P-43) |
+| Días sueltos de servicios | Se usan los meses que da R001 (que ya convierte cada 30 días sueltos en un mes); los días que quedan sin formar un mes no suman (359 meses y 20 días no alcanza) | **A VALIDAR (1 de 2 fuentes).** El abogado lo confirmó el 2026-11-27 (P-1, P-14). Falta la segunda fuente |
 
 ## Criterios de aceptación
 

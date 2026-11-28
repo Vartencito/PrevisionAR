@@ -88,3 +88,17 @@ Contexto para las próximas fichas. Las fuentes y los links están en `preguntas
 
 - **Texto del art. 22 bis:** los 2 años adicionales por AUH valen "en la medida en que por este se haya computado el tiempo previsto **en el presente apartado**" (no "párrafo anterior", como decía antes la ficha). Verificado en InfoLEG y en el Boletín Oficial del 19/07/2021.
 - **Normativa ANSES PREV-11-67 (tareas de cuidado):** sigue sin texto oficial publicado. Solo circula en sitios de estudios jurídicos, así que no se usa como fuente. Se le pide al abogado en la hoja de reunión v0.2.
+
+## Lo que contó el abogado el 2026-11-27 (resumido; detalle en `reuniones/2026-11-27.md`)
+
+Son afirmaciones de un abogado, sin norma citada: sirven para preguntar e investigar, y entran a una ficha solo con su fuente.
+
+- **Dos cuentas distintas:** para **llegar a los 30 años** se cuenta todo, días incluidos (30 días = 1 mes). Para la **PC y la PAP** se cuentan años enteros, y más de 6 meses suma un año.
+- **Promedio en dependencia:** las últimas 120 remuneraciones aunque no sean consecutivas; si hay meses incompletos, se suman días hasta completar 120 meses; con menos de 10 años, se divide por los meses que haya. **El aguinaldo no entra.** Los conceptos sin aportes tampoco, salvo que se ganen en un juicio.
+- **Promedio de autónomos:** todas las categorías aportadas en la vida laboral, sin el límite de 10 años.
+- **Topes:** (1) la remuneración máxima sujeta a aportes de cada mes; (2) la remuneración actualizada frente a la máxima actual; (3) el tope de la PC; (4) el haber máximo, también cuando se cobran jubilación y pensión a la vez. Las sentencias suelen liberar un tope si la diferencia supera el 15 % (se considera confiscatorio).
+- **Sentencias de reajuste:** cada fallo trae su criterio (con o sin tope, el 15 %). Mencionó tres fallos nuevos para el período 2021 a junio de 2024.
+- **Regímenes diferenciales y especiales:** muchas actividades (aeronavegantes, subte, docentes, investigadores, radiólogos, choferes, construcción, ballet) piden menos edad o menos años, o computan el tiempo distinto. La actividad se acredita con la certificación de servicios, no con la palabra de la persona.
+- **Régimen anterior (Ley 18.037):** el haber era un porcentaje (70 a 82 %) del promedio de los últimos 10 años, según los años de más. Se usa poco hoy.
+- **Otras prestaciones:** pensión derivada (de un jubilado), pensión directa (fallece en actividad; pide regularidad de aportes), retiro por invalidez, PEA. La anticipada por desempleo ya no está vigente.
+- **Cómo trabaja:** usa BlueCorp y consigue PRPA de colegas. Su interés principal es la **liquidación de sentencias** ("subir la sentencia o la PRPA y que el programa calcule").

@@ -32,6 +32,10 @@ Todos con aportes, en relación de dependencia. "a m d" = años, meses, días.
 
 **Conclusión:** los métodos solo se separan en los días sueltos de los bordes (el 31 y febrero). En historias largas la diferencia es de unos pocos días. Igual importa justo en el límite de los 360 meses (caso H y pregunta 14).
 
+## Respuesta del abogado (2026-11-27)
+
+Dijo que ANSES usa meses de 30 días, que un mes completo vale un mes (febrero y los meses de 31 incluidos), que en un mes incompleto se toman los días trabajados y que los días de distintos períodos se suman. **Eso coincide con la columna "Actual"** en los casos A, C, D, G, H e I. Falta aclarar los casos con día 31 (B, E y F), donde "trabajados" puede dar 22 o 21 días: es la repregunta P-41. La historia laboral de CD-001 lo puede resolver con un dato real.
+
 ## Qué hay que preguntarle al abogado
 
 1. ¿Cuál de las tres columnas coincide con lo que hace **ANSES** (no BlueCorp)? Si no lo sabe, ¿cuál usa él en la práctica y por qué?
